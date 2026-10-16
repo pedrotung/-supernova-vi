@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#E9ECEF;font-family:'IBM Plex Sans','Noto Sans SC',Arial,sans-serif;color:#161815}a{color:#173A63}a:hover{color:#CE0058}</style>
+</helmet>
+<svg width="0" height="0" style="position:absolute"><defs>
+<path id="px" d="M3 0h.88v.88h-.88zM3 1h.88v.88h-.88zM2 2h.88v.88h-.88zM3 2h.88v.88h-.88zM4 2h.88v.88h-.88zM0 3h.88v.88h-.88zM1 3h.88v.88h-.88zM2 3h.88v.88h-.88zM4 3h.88v.88h-.88zM5 3h.88v.88h-.88zM6 3h.88v.88h-.88zM2 4h.88v.88h-.88zM3 4h.88v.88h-.88zM4 4h.88v.88h-.88zM3 5h.88v.88h-.88zM3 6h.88v.88h-.88z"></path>
+<path id="pxc" d="M3 3h.88v.88h-.88z"></path>
+<path id="pxIn" d="M0 3h.88v.88h-.88zM1 3h.88v.88h-.88zM2 3h.88v.88h-.88zM2 4h.88v.88h-.88zM3 4h.88v.88h-.88zM3 5h.88v.88h-.88zM3 6h.88v.88h-.88z"></path>
+<path id="pxOut" d="M3 0h.88v.88h-.88zM3 1h.88v.88h-.88zM2 2h.88v.88h-.88zM3 2h.88v.88h-.88zM4 2h.88v.88h-.88zM4 3h.88v.88h-.88zM5 3h.88v.88h-.88zM6 3h.88v.88h-.88zM4 4h.88v.88h-.88z"></path>
+<g id="ic2a"><rect x="0" y="4" width="60" height="60" rx="10" fill="#0F2A4A"></rect><use href="#px" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFFFFF" transform="translate(24,-2) scale(6)"></use><rect x="42" y="-2" width="5.28" height="5.28" fill="#0F2A4A"></rect><rect x="60" y="16" width="5.28" height="5.28" fill="#0F2A4A"></rect></g>
+<g id="ic2b"><rect x="0" y="4" width="60" height="60" rx="10" fill="#FFCD00"></rect><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFFFFF" transform="translate(24,-2) scale(6)"></use></g>
+<g id="ic2d"><rect x="0" y="0" width="64" height="64" rx="10" fill="#FFCD00"></rect><use href="#px" fill="#0F2A4A" transform="translate(10,10) scale(6.3)"></use><use href="#pxc" fill="#FFFFFF" transform="translate(10,10) scale(6.3)"></use></g>
+</defs></svg>
+
+<section data-screen-label="Round 7" style="padding:56px 56px 0;display:flex;flex-direction:column;gap:32px">
+<div style="width:1472px;background:#FFFFFF;padding:28px 32px;display:flex;flex-direction:column;gap:12px;border-top:1.5px solid #0F2A4A;box-sizing:border-box">
+  <div style="display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.14em;color:#6E7379">
+    <div style="display:flex;gap:2px"><div style="width:7px;height:3px;background:#0F2A4A"></div><div style="width:7px;height:3px;background:#00A3E0"></div><div style="width:7px;height:3px;background:#CE0058"></div><div style="width:7px;height:3px;background:#FFCD00"></div></div>
+    ROUND 07 · 信纸 · <a href="#5a">5a</a> 标识应用
+  </div>
+  <div style="font-weight:600;font-size:32px;letter-spacing:-0.02em;color:#0F2A4A">信纸页眉 · 五种色彩方案</div>
+  <div style="font-size:15px;line-height:1.6;color:#454A50;max-width:980px;text-wrap:pretty">所有版本都换成 5a 像素线框标识（页眉图标约 20mm，用标准版），右侧都放像素色块来平衡页眉。替代深蓝的思路有三种：提亮蓝色（7b、7c）、改用品牌黄（7d）、浅色底（7e）。7a 为白底版，加上色块后整体更完整。</div>
+</div>
+
+<div style="width:1472px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px">
+
+<div id="7a" style="display:flex;flex-direction:column;gap:12px">
+  <div style="display:flex;align-items:center;gap:10px"><span style="background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:12px;padding:3px 7px">7a</span><span style="font-weight:600;font-size:16px;color:#0F2A4A">白底 · 深蓝细线</span><span style="font-family:'IBM Plex Mono';font-size:11px;color:#6E7379">#FFFFFF</span></div>
+  <div style="aspect-ratio:210/297;background:#FFFFFF;border:1px solid rgba(23,58,99,.28);display:flex;flex-direction:column">
+    <div style="padding:32px 36px 20px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1.5px solid #0F2A4A;margin:0 36px;padding-left:0;padding-right:0">
+      <div style="display:flex;align-items:center;gap:11px">
+        <svg viewBox="0 0 64 64" width="40" height="40" style="overflow:visible"><use href="#v6std" fill="#0F2A4A"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg>
+        <div style="display:flex;flex-direction:column;gap:5px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:18px;line-height:.9;letter-spacing:-0.03em;color:#0F2A4A">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:7px;letter-spacing:.15em;color:#53565A">INDUSTRY CO., LIMITED</div><div style="display:flex;align-items:center;gap:4px;font-family:'IBM Plex Mono';font-size:6.5px;letter-spacing:.16em;color:#0F2A4A;border-top:1px solid rgba(23,58,99,.28);padding-top:4px"><svg viewBox="0 0 16 16" width="6" height="6"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(8,6px);gap:2px">
+        <div style="height:6px;background:#FFCD00"></div><div style="height:6px;background:#0F2A4A"></div><div style="height:6px"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px"></div><div style="height:6px;background:#00A3E0"></div><div style="height:6px;background:#0F2A4A"></div><div style="height:6px;background:#FFCD00"></div>
+        <div style="height:6px"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px;background:#0F2A4A"></div><div style="height:6px"></div><div style="height:6px;background:#CE0058"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px"></div><div style="height:6px;background:#0F2A4A"></div>
+      </div>
+    </div>
+    <div style="flex:1"></div>
+    <div style="padding:0 36px 26px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;gap:16px;font-size:7.5px;line-height:1.5;color:#454A50;border-top:1px solid rgba(23,58,99,.12);padding-top:12px"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600;color:#0F2A4A">SUPERNOVA INDUSTRY CO., LIMITED</span><span>Room A35, Unit 10, 2/F, Man Lee Industrial Building, 13 Kin Hong Street,<br>Kwai Chung, New Territories, Hong Kong</span></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-family:'IBM Plex Mono';font-size:7px;letter-spacing:.06em;white-space:nowrap"><span>TAX ID 2587062</span><span>ZIP 999077</span></div></div><div style="display:flex;gap:2px"><div style="flex:1;height:3px;background:#0F2A4A"></div><div style="flex:1;height:3px;background:#00A3E0"></div><div style="flex:1;height:3px;background:#CE0058"></div><div style="flex:1;height:3px;background:#FFCD00"></div></div></div>
+  </div>
+</div>
+
+<div id="7b" style="display:flex;flex-direction:column;gap:12px">
+  <div style="display:flex;align-items:center;gap:10px"><span style="background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:12px;padding:3px 7px">7b</span><span style="font-weight:600;font-size:16px;color:#0F2A4A">钢蓝 · 母色提亮两级</span><span style="font-family:'IBM Plex Mono';font-size:11px;color:#6E7379">#2A5585</span></div>
+  <div style="aspect-ratio:210/297;background:#FFFFFF;border:1px solid rgba(23,58,99,.28);display:flex;flex-direction:column">
+    <div style="background:#2A5585;padding:30px 36px 24px;display:flex;justify-content:space-between;align-items:flex-end">
+      <div style="display:flex;align-items:center;gap:11px">
+        <svg viewBox="0 0 64 64" width="40" height="40" style="overflow:visible"><use href="#v6std" fill="#FFFFFF"></use><use href="#px" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFFFFF" transform="translate(24,-2) scale(6)"></use></svg>
+        <div style="display:flex;flex-direction:column;gap:5px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:18px;line-height:.9;letter-spacing:-0.03em;color:#FFFFFF">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:7px;letter-spacing:.15em;color:#D5DEE8">INDUSTRY CO., LIMITED</div><div style="display:flex;align-items:center;gap:4px;font-family:'IBM Plex Mono';font-size:6.5px;letter-spacing:.16em;color:#FFFFFF;border-top:1px solid rgba(255,255,255,.35);padding-top:4px"><svg viewBox="0 0 16 16" width="6" height="6"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#FFCD00"></path></svg>A UNITED STAR COMPANY</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(8,6px);gap:2px">
+        <div style="height:6px;background:#FFCD00"></div><div style="height:6px;background:#173A63"></div><div style="height:6px"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px"></div><div style="height:6px;background:#00A3E0"></div><div style="height:6px;background:#173A63"></div><div style="height:6px;background:#FFCD00"></div>
+        <div style="height:6px"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px;background:#173A63"></div><div style="height:6px"></div><div style="height:6px;background:#CE0058"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px"></div><div style="height:6px;background:#FFFFFF"></div>
+      </div>
+    </div>
+    <div style="height:3px;background:#FFCD00"></div>
+    <div style="flex:1"></div>
+    <div style="padding:0 36px 26px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;gap:16px;font-size:7.5px;line-height:1.5;color:#454A50;border-top:1px solid rgba(23,58,99,.12);padding-top:12px"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600;color:#0F2A4A">SUPERNOVA INDUSTRY CO., LIMITED</span><span>Room A35, Unit 10, 2/F, Man Lee Industrial Building, 13 Kin Hong Street,<br>Kwai Chung, New Territories, Hong Kong</span></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-family:'IBM Plex Mono';font-size:7px;letter-spacing:.06em;white-space:nowrap"><span>TAX ID 2587062</span><span>ZIP 999077</span></div></div><div style="display:flex;gap:2px"><div style="flex:1;height:3px;background:#2A5585"></div><div style="flex:1;height:3px;background:#00A3E0"></div><div style="flex:1;height:3px;background:#CE0058"></div><div style="flex:1;height:3px;background:#FFCD00"></div></div></div>
+  </div>
+</div>
+
+<div id="7c" style="display:flex;flex-direction:column;gap:12px">
+  <div style="display:flex;align-items:center;gap:10px"><span style="background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:12px;padding:3px 7px">7c</span><span style="font-weight:600;font-size:16px;color:#0F2A4A">电光蓝 · 最年轻</span><span style="font-family:'IBM Plex Mono';font-size:11px;color:#6E7379">#2F5BFF</span></div>
+  <div style="aspect-ratio:210/297;background:#FFFFFF;border:1px solid rgba(23,58,99,.28);display:flex;flex-direction:column">
+    <div style="background:#2F5BFF;padding:30px 36px 24px;display:flex;justify-content:space-between;align-items:flex-end">
+      <div style="display:flex;align-items:center;gap:11px">
+        <svg viewBox="0 0 64 64" width="40" height="40" style="overflow:visible"><use href="#v6std" fill="#FFFFFF"></use><use href="#px" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFFFFF" transform="translate(24,-2) scale(6)"></use></svg>
+        <div style="display:flex;flex-direction:column;gap:5px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:18px;line-height:.9;letter-spacing:-0.03em;color:#FFFFFF">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:7px;letter-spacing:.15em;color:#E6ECFF">INDUSTRY CO., LIMITED</div><div style="display:flex;align-items:center;gap:4px;font-family:'IBM Plex Mono';font-size:6.5px;letter-spacing:.16em;color:#FFFFFF;border-top:1px solid rgba(255,255,255,.4);padding-top:4px"><svg viewBox="0 0 16 16" width="6" height="6"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#FFCD00"></path></svg>A UNITED STAR COMPANY</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(8,6px);gap:2px">
+        <div style="height:6px;background:#FFCD00"></div><div style="height:6px;background:#0F2A4A"></div><div style="height:6px"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px"></div><div style="height:6px;background:#FFFFFF"></div><div style="height:6px;background:#0F2A4A"></div><div style="height:6px;background:#FFCD00"></div>
+        <div style="height:6px"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px;background:#0F2A4A"></div><div style="height:6px"></div><div style="height:6px;background:#CE0058"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px"></div><div style="height:6px;background:#FFFFFF"></div>
+      </div>
+    </div>
+    <div style="height:3px;background:#FFCD00"></div>
+    <div style="flex:1"></div>
+    <div style="padding:0 36px 26px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;gap:16px;font-size:7.5px;line-height:1.5;color:#454A50;border-top:1px solid rgba(23,58,99,.12);padding-top:12px"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600;color:#0F2A4A">SUPERNOVA INDUSTRY CO., LIMITED</span><span>Room A35, Unit 10, 2/F, Man Lee Industrial Building, 13 Kin Hong Street,<br>Kwai Chung, New Territories, Hong Kong</span></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-family:'IBM Plex Mono';font-size:7px;letter-spacing:.06em;white-space:nowrap"><span>TAX ID 2587062</span><span>ZIP 999077</span></div></div><div style="display:flex;gap:2px"><div style="flex:1;height:3px;background:#2F5BFF"></div><div style="flex:1;height:3px;background:#00A3E0"></div><div style="flex:1;height:3px;background:#CE0058"></div><div style="flex:1;height:3px;background:#FFCD00"></div></div></div>
+  </div>
+</div>
+
+<div id="7d" style="display:flex;flex-direction:column;gap:12px">
+  <div style="display:flex;align-items:center;gap:10px"><span style="background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:12px;padding:3px 7px">7d</span><span style="font-weight:600;font-size:16px;color:#0F2A4A">信号黄 · 最醒目</span><span style="font-family:'IBM Plex Mono';font-size:11px;color:#6E7379">#FFCD00</span></div>
+  <div style="aspect-ratio:210/297;background:#FFFFFF;border:1px solid rgba(23,58,99,.28);display:flex;flex-direction:column">
+    <div style="background:#FFCD00;padding:30px 36px 24px;display:flex;justify-content:space-between;align-items:flex-end">
+      <div style="display:flex;align-items:center;gap:11px">
+        <svg viewBox="0 0 64 64" width="40" height="40" style="overflow:visible"><use href="#v6std" fill="#0F2A4A"></use><use href="#pxc" fill="#FFFFFF" transform="translate(24,-2) scale(6)"></use></svg>
+        <div style="display:flex;flex-direction:column;gap:5px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:18px;line-height:.9;letter-spacing:-0.03em;color:#0F2A4A">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:7px;letter-spacing:.15em;color:#0F2A4A">INDUSTRY CO., LIMITED</div><div style="display:flex;align-items:center;gap:4px;font-family:'IBM Plex Mono';font-size:6.5px;letter-spacing:.16em;color:#0F2A4A;border-top:1px solid rgba(15,42,74,.35);padding-top:4px"><svg viewBox="0 0 16 16" width="6" height="6"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(8,6px);gap:2px">
+        <div style="height:6px;background:#0F2A4A"></div><div style="height:6px;background:#FFFFFF"></div><div style="height:6px"></div><div style="height:6px;background:#0F2A4A"></div><div style="height:6px"></div><div style="height:6px;background:#00A3E0"></div><div style="height:6px;background:#FFFFFF"></div><div style="height:6px;background:#0F2A4A"></div>
+        <div style="height:6px"></div><div style="height:6px;background:#0F2A4A"></div><div style="height:6px;background:#FFFFFF"></div><div style="height:6px"></div><div style="height:6px;background:#CE0058"></div><div style="height:6px;background:#0F2A4A"></div><div style="height:6px"></div><div style="height:6px;background:#FFFFFF"></div>
+      </div>
+    </div>
+    <div style="height:3px;background:#0F2A4A"></div>
+    <div style="flex:1"></div>
+    <div style="padding:0 36px 26px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;gap:16px;font-size:7.5px;line-height:1.5;color:#454A50;border-top:1px solid rgba(23,58,99,.12);padding-top:12px"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600;color:#0F2A4A">SUPERNOVA INDUSTRY CO., LIMITED</span><span>Room A35, Unit 10, 2/F, Man Lee Industrial Building, 13 Kin Hong Street,<br>Kwai Chung, New Territories, Hong Kong</span></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-family:'IBM Plex Mono';font-size:7px;letter-spacing:.06em;white-space:nowrap"><span>TAX ID 2587062</span><span>ZIP 999077</span></div></div><div style="display:flex;gap:2px"><div style="flex:1;height:3px;background:#0F2A4A"></div><div style="flex:1;height:3px;background:#00A3E0"></div><div style="flex:1;height:3px;background:#CE0058"></div><div style="flex:1;height:3px;background:#FFCD00"></div></div></div>
+  </div>
+</div>
+
+<div id="7e" style="display:flex;flex-direction:column;gap:12px">
+  <div style="display:flex;align-items:center;gap:10px"><span style="background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:12px;padding:3px 7px">7e</span><span style="font-weight:600;font-size:16px;color:#0F2A4A">雾蓝浅底 · 轻盈</span><span style="font-family:'IBM Plex Mono';font-size:11px;color:#6E7379">#E8EDF3</span></div>
+  <div style="aspect-ratio:210/297;background:#FFFFFF;border:1px solid rgba(23,58,99,.28);display:flex;flex-direction:column">
+    <div style="background:#E8EDF3;padding:30px 36px 24px;display:flex;justify-content:space-between;align-items:flex-end">
+      <div style="display:flex;align-items:center;gap:11px">
+        <svg viewBox="0 0 64 64" width="40" height="40" style="overflow:visible"><use href="#v6std" fill="#0F2A4A"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg>
+        <div style="display:flex;flex-direction:column;gap:5px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:18px;line-height:.9;letter-spacing:-0.03em;color:#0F2A4A">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:7px;letter-spacing:.15em;color:#53565A">INDUSTRY CO., LIMITED</div><div style="display:flex;align-items:center;gap:4px;font-family:'IBM Plex Mono';font-size:6.5px;letter-spacing:.16em;color:#0F2A4A;border-top:1px solid rgba(23,58,99,.28);padding-top:4px"><svg viewBox="0 0 16 16" width="6" height="6"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(8,6px);gap:2px">
+        <div style="height:6px;background:#FFCD00"></div><div style="height:6px;background:#0F2A4A"></div><div style="height:6px"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px"></div><div style="height:6px;background:#00A3E0"></div><div style="height:6px;background:#0F2A4A"></div><div style="height:6px;background:#FFCD00"></div>
+        <div style="height:6px"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px;background:#0F2A4A"></div><div style="height:6px"></div><div style="height:6px;background:#CE0058"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px"></div><div style="height:6px;background:#FFFFFF"></div>
+      </div>
+    </div>
+    <div style="height:3px;background:#FFCD00"></div>
+    <div style="flex:1"></div>
+    <div style="padding:0 36px 26px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;gap:16px;font-size:7.5px;line-height:1.5;color:#454A50;border-top:1px solid rgba(23,58,99,.12);padding-top:12px"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600;color:#0F2A4A">SUPERNOVA INDUSTRY CO., LIMITED</span><span>Room A35, Unit 10, 2/F, Man Lee Industrial Building, 13 Kin Hong Street,<br>Kwai Chung, New Territories, Hong Kong</span></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-family:'IBM Plex Mono';font-size:7px;letter-spacing:.06em;white-space:nowrap"><span>TAX ID 2587062</span><span>ZIP 999077</span></div></div><div style="display:flex;gap:2px"><div style="flex:1;height:3px;background:#0F2A4A"></div><div style="flex:1;height:3px;background:#00A3E0"></div><div style="flex:1;height:3px;background:#CE0058"></div><div style="flex:1;height:3px;background:#FFCD00"></div></div></div>
+  </div>
+</div>
+
+</div>
+</section>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<path id="pxP" d="M3 0h.8v.8h-.8zM3 1h.8v.8h-.8zM2 2h.8v.8h-.8zM3 2h.8v.8h-.8zM4 2h.8v.8h-.8zM0 3h.8v.8h-.8zM1 3h.8v.8h-.8zM2 3h.8v.8h-.8zM4 3h.8v.8h-.8zM5 3h.8v.8h-.8zM6 3h.8v.8h-.8zM2 4h.8v.8h-.8zM3 4h.8v.8h-.8zM4 4h.8v.8h-.8zM3 5h.8v.8h-.8zM3 6h.8v.8h-.8z"></path>
+<path id="pxcP" d="M3 3h.8v.8h-.8z"></path>
+<path id="fP" d="M0 4h4.8v4.8h-4.8zM6 4h4.8v4.8h-4.8zM12 4h4.8v4.8h-4.8zM18 4h4.8v4.8h-4.8zM24 4h4.8v4.8h-4.8zM0 58h4.8v4.8h-4.8zM6 58h4.8v4.8h-4.8zM12 58h4.8v4.8h-4.8zM18 58h4.8v4.8h-4.8zM24 58h4.8v4.8h-4.8zM30 58h4.8v4.8h-4.8zM36 58h4.8v4.8h-4.8zM42 58h4.8v4.8h-4.8zM48 58h4.8v4.8h-4.8zM54 58h4.8v4.8h-4.8zM0 10h4.8v4.8h-4.8zM0 16h4.8v4.8h-4.8zM0 22h4.8v4.8h-4.8zM0 28h4.8v4.8h-4.8zM0 34h4.8v4.8h-4.8zM0 40h4.8v4.8h-4.8zM0 46h4.8v4.8h-4.8zM0 52h4.8v4.8h-4.8zM54 34h4.8v4.8h-4.8zM54 40h4.8v4.8h-4.8zM54 46h4.8v4.8h-4.8zM54 52h4.8v4.8h-4.8z"></path>
+<path id="pxS" d="M3 0h1v1h-1zM3 1h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM0 3h1v1h-1zM1 3h1v1h-1zM2 3h1v1h-1zM4 3h1v1h-1zM5 3h1v1h-1zM6 3h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM3 5h1v1h-1zM3 6h1v1h-1z"></path>
+<path id="pxcS" d="M3 3h1v1h-1z"></path>
+<path id="fS" d="M0 4h30v6h-30zM0 58h60v6h-60zM0 10h6v48h-6zM54 34h6v24h-6z"></path>
+<g id="v6std"><use href="#f4"></use><use href="#c5a"></use><use href="#px" transform="translate(24,-2) scale(6)"></use></g>
+<g id="v6prt"><use href="#fP"></use><use href="#pxP" transform="translate(24,-2) scale(6)"></use></g>
+<g id="v6sol"><use href="#fS"></use><use href="#pxS" transform="translate(24,-2) scale(6)"></use></g>
+</defs></svg>
+
+<section data-screen-label="Round 6" style="padding:56px 56px 0;display:flex;flex-direction:column;gap:32px">
+<div id="6a" style="width:1472px;background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:24px 28px;border-bottom:1.5px solid #0F2A4A">
+    <div style="width:40px;height:40px;background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">6a</div>
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">ROUND 06 · <a href="#5a">5a</a> 印刷规范 · PRINT SPEC</div>
+      <div style="font-weight:600;font-size:22px;letter-spacing:-0.02em;color:#0F2A4A">按尺寸分三档：标准版 · 印刷版 · 实心版</div>
+    </div>
+  </div>
+  <div style="padding:18px 28px;font-size:14px;line-height:1.6;color:#454A50;max-width:1000px;text-wrap:pretty">像素间隙按图标宽度等比缩放。标准版间隙约为图标宽度的 1.1%，图标小于 18mm 时间隙不足 0.2mm（胶印反白细缝的常用下限），油墨扩散后容易糊。印刷版把间隙加大到 1.9%，太小的尺寸改用无间隙的实心版，外形不变。</div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(23,58,99,.12);border-top:1px solid rgba(23,58,99,.12)">
+    <div style="background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:600;font-size:18px;color:#0F2A4A">标准版 STANDARD</span><span style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.1em;color:#6E7379">间隙 0.72 / 64</span></div>
+      <div style="height:180px;background:#F4F5F6;display:flex;align-items:center;justify-content:center;gap:28px"><svg viewBox="0 0 64 64" width="120" height="120" style="overflow:visible"><use href="#v6std" fill="#0F2A4A"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg></div>
+      <div style="display:flex;flex-direction:column;font-size:13px;border-top:1.5px solid #0F2A4A">
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid rgba(23,58,99,.12)"><span style="font-family:'IBM Plex Mono';font-size:11px;color:#6E7379">印刷</span><span>图标宽 ≥ 18 mm</span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid rgba(23,58,99,.12)"><span style="font-family:'IBM Plex Mono';font-size:11px;color:#6E7379">屏幕</span><span>≥ 32 px</span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:10px;padding:8px 0"><span style="font-family:'IBM Plex Mono';font-size:11px;color:#6E7379">用于</span><span>网站、PPT、展板、包装大面、信纸页眉</span></div>
+      </div>
+    </div>
+    <div style="background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:600;font-size:18px;color:#0F2A4A">印刷版 PRINT</span><span style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.1em;color:#6E7379">间隙 1.2 / 64</span></div>
+      <div style="height:180px;background:#F4F5F6;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 64 64" width="120" height="120" style="overflow:visible"><use href="#v6prt" fill="#0F2A4A"></use><use href="#pxcP" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg></div>
+      <div style="display:flex;flex-direction:column;font-size:13px;border-top:1.5px solid #0F2A4A">
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid rgba(23,58,99,.12)"><span style="font-family:'IBM Plex Mono';font-size:11px;color:#6E7379">印刷</span><span>图标宽 11 – 18 mm</span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid rgba(23,58,99,.12)"><span style="font-family:'IBM Plex Mono';font-size:11px;color:#6E7379">屏幕</span><span>24 – 32 px</span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:10px;padding:8px 0"><span style="font-family:'IBM Plex Mono';font-size:11px;color:#6E7379">用于</span><span>名片正面、产品标签、封套、COA/TDS 页眉</span></div>
+      </div>
+    </div>
+    <div style="background:#FFFFFF;padding:24px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:600;font-size:18px;color:#0F2A4A">实心版 SOLID</span><span style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.1em;color:#6E7379">无间隙</span></div>
+      <div style="height:180px;background:#F4F5F6;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 64 64" width="120" height="120" style="overflow:visible"><use href="#v6sol" fill="#0F2A4A"></use><use href="#pxcS" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg></div>
+      <div style="display:flex;flex-direction:column;font-size:13px;border-top:1.5px solid #0F2A4A">
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid rgba(23,58,99,.12)"><span style="font-family:'IBM Plex Mono';font-size:11px;color:#6E7379">印刷</span><span>图标宽 &lt; 11 mm</span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid rgba(23,58,99,.12)"><span style="font-family:'IBM Plex Mono';font-size:11px;color:#6E7379">屏幕</span><span>&lt; 24 px（favicon）</span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:10px;padding:8px 0"><span style="font-family:'IBM Plex Mono';font-size:11px;color:#6E7379">用于</span><span>名片背面小标、烫金/丝印/刺绣/激光雕刻、印章</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:28px">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">实际尺寸对照（屏幕近似）· 20 / 15 / 10 MM</div>
+      <div style="display:flex;align-items:flex-end;gap:28px;border-top:1.5px solid #0F2A4A;padding-top:16px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><svg viewBox="0 0 64 64" style="width:20mm;height:20mm;overflow:visible"><use href="#v6std" fill="#0F2A4A"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg><span style="font-family:'IBM Plex Mono';font-size:10px;color:#6E7379">20mm 标准</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><svg viewBox="0 0 64 64" style="width:15mm;height:15mm;overflow:visible"><use href="#v6prt" fill="#0F2A4A"></use><use href="#pxcP" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg><span style="font-family:'IBM Plex Mono';font-size:10px;color:#6E7379">15mm 印刷</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><svg viewBox="0 0 64 64" style="width:10mm;height:10mm;overflow:visible"><use href="#v6sol" fill="#0F2A4A"></use><use href="#pxcS" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg><span style="font-family:'IBM Plex Mono';font-size:10px;color:#6E7379">10mm 实心</span></div>
+        <div style="width:1px;align-self:stretch;background:rgba(23,58,99,.28)"></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:#0F2A4A;padding:10px 12px"><svg viewBox="0 0 64 64" style="width:15mm;height:15mm;overflow:visible"><use href="#v6prt" fill="#FFFFFF"></use><use href="#pxcP" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg><span style="font-family:'IBM Plex Mono';font-size:10px;color:#B9C6D6">15mm 反白</span></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">名片建议 · BUSINESS CARD</div>
+      <div style="display:flex;flex-direction:column;font-size:13px;line-height:1.55;color:#161815;border-top:1.5px solid #0F2A4A">
+        <div style="padding:9px 0;border-bottom:1px solid rgba(23,58,99,.12)">正面图标放大到 ≥ 13 mm，使用<b style="font-weight:600;color:#0F2A4A">印刷版</b>（反白在深蓝底上）</div>
+        <div style="padding:9px 0;border-bottom:1px solid rgba(23,58,99,.12)">背面角标约 7 mm，使用<b style="font-weight:600;color:#0F2A4A">实心版</b></div>
+        <div style="padding:9px 0;border-bottom:1px solid rgba(23,58,99,.12)">深蓝底反白时，白色像素之间是深蓝细线，比白缝更不容易糊；深蓝建议用专色或单色 K+C，避免四色叠印套准偏差</div>
+        <div style="padding:9px 0;color:#454A50">0.2 mm 为通用经验值，开印前请向印厂确认其最小反白线宽，并先打样</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<path id="c5a" d="M0 4h5.28v5.28h-5.28zM0 58h5.28v5.28h-5.28zM54 58h5.28v5.28h-5.28z"></path>
+<path id="c5b" d="M6 10h5.28v5.28h-5.28zM6 52h5.28v5.28h-5.28zM48 52h5.28v5.28h-5.28z"></path>
+</defs></svg>
+
+<section data-screen-label="Round 5" style="padding:56px 56px 0;display:flex;flex-direction:column;gap:32px">
+<div style="width:1472px;background:#FFFFFF;padding:28px 32px;display:flex;flex-direction:column;gap:12px;border-top:1.5px solid #0F2A4A;box-sizing:border-box">
+  <div style="display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.14em;color:#6E7379">
+    <div style="display:flex;gap:2px"><div style="width:7px;height:3px;background:#0F2A4A"></div><div style="width:7px;height:3px;background:#00A3E0"></div><div style="width:7px;height:3px;background:#CE0058"></div><div style="width:7px;height:3px;background:#FFCD00"></div></div>
+    ROUND 05 · <a href="#4b">4b</a> 像素线框 · 转角处理
+  </div>
+  <div style="font-weight:600;font-size:32px;letter-spacing:-0.02em;color:#0F2A4A">线框转角的三种过渡</div>
+  <div style="font-size:15px;line-height:1.6;color:#454A50;max-width:980px;text-wrap:pretty">4b 直接去掉角格，转角处断开，显得突兀。这里给出三种补法：补齐直角、内移一格做像素圆角、角格用半透明色做"抗锯齿"。右上角仍为星留出缺口。</div>
+</div>
+
+<div style="width:1472px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px">
+
+<div id="5a" style="background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:22px 24px;border-bottom:1.5px solid #0F2A4A">
+    <div style="width:40px;height:40px;background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">5a</div>
+    <div style="display:flex;flex-direction:column;gap:4px"><div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">SQUARE CORNER</div><div style="font-weight:600;font-size:20px;letter-spacing:-0.02em;color:#0F2A4A">补齐直角</div></div>
+  </div>
+  <div style="padding:16px 24px;font-size:14px;line-height:1.6;color:#454A50;text-wrap:pretty">角格补回，线框连续闭合。最干净、最"像素"，和 VI 的直角规范一致；但会失去母标识的圆角特征。</div>
+  <div style="height:220px;background:#F4F5F6;border-top:1px solid rgba(23,58,99,.12);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 64 64" width="140" height="140" style="overflow:visible"><use href="#f4" fill="#0F2A4A"></use><use href="#c5a" fill="#0F2A4A"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg></div>
+  <div style="height:170px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;gap:16px">
+    <svg viewBox="0 0 64 64" width="68" height="68" style="overflow:visible"><use href="#f4" fill="#0F2A4A"></use><use href="#c5a" fill="#0F2A4A"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg>
+    <div style="display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:30px;line-height:.9;letter-spacing:-0.03em;color:#0F2A4A">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#53565A">INDUSTRY CO., LIMITED</div><div style="height:1px;background:rgba(23,58,99,.28)"></div><div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.16em;color:#0F2A4A"><svg viewBox="0 0 16 16" width="8" height="8"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div></div>
+  </div>
+  <div style="height:170px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;gap:16px">
+    <svg viewBox="0 0 64 64" width="68" height="68" style="overflow:visible"><use href="#f4" fill="#FFFFFF"></use><use href="#c5a" fill="#FFFFFF"></use><use href="#px" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFFFFF" transform="translate(24,-2) scale(6)"></use></svg>
+    <div style="display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:30px;line-height:.9;letter-spacing:-0.03em;color:#FFFFFF">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#B9C6D6">INDUSTRY CO., LIMITED</div><div style="height:1px;background:rgba(255,255,255,.28)"></div><div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.16em;color:#FFFFFF"><svg viewBox="0 0 16 16" width="8" height="8"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#FFCD00"></path></svg>A UNITED STAR COMPANY</div></div>
+  </div>
+  <div style="padding:18px 24px 24px;display:flex;align-items:flex-end;gap:20px"><svg viewBox="0 0 64 64" width="48" height="48" style="overflow:visible"><use href="#f4" fill="#0F2A4A"></use><use href="#c5a" fill="#0F2A4A"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg><svg viewBox="0 0 64 64" width="24" height="24" style="overflow:visible"><use href="#f4" fill="#0F2A4A"></use><use href="#c5a" fill="#0F2A4A"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg><span style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.12em;color:#6E7379">48 / 24 PX</span></div>
+</div>
+
+<div id="5b" style="background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:22px 24px;border-bottom:1.5px solid #0F2A4A">
+    <div style="width:40px;height:40px;background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">5b</div>
+    <div style="display:flex;flex-direction:column;gap:4px"><div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">PIXEL ROUND</div><div style="font-weight:600;font-size:20px;letter-spacing:-0.02em;color:#0F2A4A">内移一格 · 像素圆角</div></div>
+  </div>
+  <div style="padding:16px 24px;font-size:14px;line-height:1.6;color:#454A50;text-wrap:pretty">角格去掉，在内侧对角补一格，把两条边接起来。这是像素画画圆角的标准做法，线框连续，又保留了母标识的圆角感。推荐。</div>
+  <div style="height:220px;background:#F4F5F6;border-top:1px solid rgba(23,58,99,.12);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 64 64" width="140" height="140" style="overflow:visible"><use href="#f4" fill="#0F2A4A"></use><use href="#c5b" fill="#0F2A4A"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg></div>
+  <div style="height:170px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;gap:16px">
+    <svg viewBox="0 0 64 64" width="68" height="68" style="overflow:visible"><use href="#f4" fill="#0F2A4A"></use><use href="#c5b" fill="#0F2A4A"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg>
+    <div style="display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:30px;line-height:.9;letter-spacing:-0.03em;color:#0F2A4A">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#53565A">INDUSTRY CO., LIMITED</div><div style="height:1px;background:rgba(23,58,99,.28)"></div><div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.16em;color:#0F2A4A"><svg viewBox="0 0 16 16" width="8" height="8"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div></div>
+  </div>
+  <div style="height:170px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;gap:16px">
+    <svg viewBox="0 0 64 64" width="68" height="68" style="overflow:visible"><use href="#f4" fill="#FFFFFF"></use><use href="#c5b" fill="#FFFFFF"></use><use href="#px" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFFFFF" transform="translate(24,-2) scale(6)"></use></svg>
+    <div style="display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:30px;line-height:.9;letter-spacing:-0.03em;color:#FFFFFF">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#B9C6D6">INDUSTRY CO., LIMITED</div><div style="height:1px;background:rgba(255,255,255,.28)"></div><div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.16em;color:#FFFFFF"><svg viewBox="0 0 16 16" width="8" height="8"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#FFCD00"></path></svg>A UNITED STAR COMPANY</div></div>
+  </div>
+  <div style="padding:18px 24px 24px;display:flex;align-items:flex-end;gap:20px"><svg viewBox="0 0 64 64" width="48" height="48" style="overflow:visible"><use href="#f4" fill="#0F2A4A"></use><use href="#c5b" fill="#0F2A4A"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg><svg viewBox="0 0 64 64" width="24" height="24" style="overflow:visible"><use href="#f4" fill="#0F2A4A"></use><use href="#c5b" fill="#0F2A4A"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg><span style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.12em;color:#6E7379">48 / 24 PX</span></div>
+</div>
+
+<div id="5c" style="background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:22px 24px;border-bottom:1.5px solid #0F2A4A">
+    <div style="width:40px;height:40px;background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">5c</div>
+    <div style="display:flex;flex-direction:column;gap:4px"><div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">ANTI-ALIAS CORNER</div><div style="font-weight:600;font-size:20px;letter-spacing:-0.02em;color:#0F2A4A">半透明角格 · 抗锯齿</div></div>
+  </div>
+  <div style="padding:16px 24px;font-size:14px;line-height:1.6;color:#454A50;text-wrap:pretty">角格保留，改用 35% 透明度，像屏幕的抗锯齿像素。远看是圆角，近看是像素，和"颜色/屏幕"概念呼应。印刷时需定专色浅调。</div>
+  <div style="height:220px;background:#F4F5F6;border-top:1px solid rgba(23,58,99,.12);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 64 64" width="140" height="140" style="overflow:visible"><use href="#f4" fill="#0F2A4A"></use><use href="#c5a" fill="#0F2A4A" fill-opacity=".35"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg></div>
+  <div style="height:170px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;gap:16px">
+    <svg viewBox="0 0 64 64" width="68" height="68" style="overflow:visible"><use href="#f4" fill="#0F2A4A"></use><use href="#c5a" fill="#0F2A4A" fill-opacity=".35"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg>
+    <div style="display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:30px;line-height:.9;letter-spacing:-0.03em;color:#0F2A4A">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#53565A">INDUSTRY CO., LIMITED</div><div style="height:1px;background:rgba(23,58,99,.28)"></div><div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.16em;color:#0F2A4A"><svg viewBox="0 0 16 16" width="8" height="8"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div></div>
+  </div>
+  <div style="height:170px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;gap:16px">
+    <svg viewBox="0 0 64 64" width="68" height="68" style="overflow:visible"><use href="#f4" fill="#FFFFFF"></use><use href="#c5a" fill="#FFFFFF" fill-opacity=".35"></use><use href="#px" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFFFFF" transform="translate(24,-2) scale(6)"></use></svg>
+    <div style="display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:30px;line-height:.9;letter-spacing:-0.03em;color:#FFFFFF">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#B9C6D6">INDUSTRY CO., LIMITED</div><div style="height:1px;background:rgba(255,255,255,.28)"></div><div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.16em;color:#FFFFFF"><svg viewBox="0 0 16 16" width="8" height="8"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#FFCD00"></path></svg>A UNITED STAR COMPANY</div></div>
+  </div>
+  <div style="padding:18px 24px 24px;display:flex;align-items:flex-end;gap:20px"><svg viewBox="0 0 64 64" width="48" height="48" style="overflow:visible"><use href="#f4" fill="#0F2A4A"></use><use href="#c5a" fill="#0F2A4A" fill-opacity=".35"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg><svg viewBox="0 0 64 64" width="24" height="24" style="overflow:visible"><use href="#f4" fill="#0F2A4A"></use><use href="#c5a" fill="#0F2A4A" fill-opacity=".35"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></svg><span style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.12em;color:#6E7379">48 / 24 PX</span></div>
+</div>
+
+</div>
+</section>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<path id="t4" d="M6 4H54V10H60V58H54V64H6V58H0V10H6Z"></path>
+<path id="g4" d="M5.7 4V64M11.7 4V64M17.7 4V64M23.7 4V64M29.7 4V64M35.7 4V64M41.7 4V64M47.7 4V64M53.7 4V64M0 9.7H60M0 15.7H60M0 21.7H60M0 27.7H60M0 33.7H60M0 39.7H60M0 45.7H60M0 51.7H60M0 57.7H60"></path>
+<path id="f4" d="M6 4h5.28v5.28h-5.28zM12 4h5.28v5.28h-5.28zM18 4h5.28v5.28h-5.28zM24 4h5.28v5.28h-5.28zM6 58h5.28v5.28h-5.28zM12 58h5.28v5.28h-5.28zM18 58h5.28v5.28h-5.28zM24 58h5.28v5.28h-5.28zM30 58h5.28v5.28h-5.28zM36 58h5.28v5.28h-5.28zM42 58h5.28v5.28h-5.28zM48 58h5.28v5.28h-5.28zM0 10h5.28v5.28h-5.28zM0 16h5.28v5.28h-5.28zM0 22h5.28v5.28h-5.28zM0 28h5.28v5.28h-5.28zM0 34h5.28v5.28h-5.28zM0 40h5.28v5.28h-5.28zM0 46h5.28v5.28h-5.28zM0 52h5.28v5.28h-5.28zM54 34h5.28v5.28h-5.28zM54 40h5.28v5.28h-5.28zM54 46h5.28v5.28h-5.28zM54 52h5.28v5.28h-5.28z"></path>
+<g id="ic4a"><use href="#t4" fill="#0F2A4A"></use><use href="#px" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFFFFF" transform="translate(24,-2) scale(6)"></use><rect x="42" y="-2" width="5.28" height="5.28" fill="#0F2A4A"></rect><rect x="60" y="16" width="5.28" height="5.28" fill="#0F2A4A"></rect></g>
+<g id="rv4a"><use href="#t4" fill="#FFFFFF"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><rect x="42" y="-2" width="5.28" height="5.28" fill="#FFCD00"></rect><rect x="60" y="16" width="5.28" height="5.28" fill="#FFCD00"></rect></g>
+<g id="ic4b"><use href="#f4" fill="#0F2A4A"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use></g>
+<g id="rv4b"><use href="#f4" fill="#FFFFFF"></use><use href="#px" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFFFFF" transform="translate(24,-2) scale(6)"></use></g>
+<g id="ic4c"><use href="#t4" fill="#0F2A4A"></use><use href="#px" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFFFFF" transform="translate(24,-2) scale(6)"></use><rect x="42" y="-2" width="5.28" height="5.28" fill="#0F2A4A"></rect><rect x="60" y="16" width="5.28" height="5.28" fill="#0F2A4A"></rect><use href="#g4" fill="none" stroke="#FFFFFF" stroke-width=".6"></use></g>
+<g id="rv4c"><use href="#t4" fill="#FFFFFF"></use><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><rect x="42" y="-2" width="5.28" height="5.28" fill="#FFCD00"></rect><rect x="60" y="16" width="5.28" height="5.28" fill="#FFCD00"></rect><use href="#g4" fill="none" stroke="#0F2A4A" stroke-width=".6"></use></g>
+</defs></svg>
+
+<section data-screen-label="Round 4" style="padding:56px 56px 0;display:flex;flex-direction:column;gap:32px">
+<div style="width:1472px;background:#FFFFFF;padding:28px 32px;display:flex;flex-direction:column;gap:12px;border-top:1.5px solid #0F2A4A;box-sizing:border-box">
+  <div style="display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.14em;color:#6E7379">
+    <div style="display:flex;gap:2px"><div style="width:7px;height:3px;background:#0F2A4A"></div><div style="width:7px;height:3px;background:#00A3E0"></div><div style="width:7px;height:3px;background:#CE0058"></div><div style="width:7px;height:3px;background:#FFCD00"></div></div>
+    ROUND 04 · 外框像素化 · 基于 <a href="#3a">3a</a>
+  </div>
+  <div style="font-weight:600;font-size:32px;letter-spacing:-0.02em;color:#0F2A4A">外框也用像素 — 三种做法</div>
+  <div style="font-size:15px;line-height:1.6;color:#454A50;max-width:980px;text-wrap:pretty">外框和星使用同一套 10 × 10 像素网格，圆角改为"台阶角"（去掉四角各一格）。三版的像素感依次增强：阶梯实心块 → 像素线框 → 全网格马赛克。</div>
+</div>
+
+<div style="width:1472px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px">
+
+<div id="4a" style="background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:22px 24px;border-bottom:1.5px solid #0F2A4A">
+    <div style="width:40px;height:40px;background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">4a</div>
+    <div style="display:flex;flex-direction:column;gap:4px"><div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">STEPPED TILE</div><div style="font-weight:600;font-size:20px;letter-spacing:-0.02em;color:#0F2A4A">台阶角实心块</div></div>
+  </div>
+  <div style="padding:16px 24px;font-size:14px;line-height:1.6;color:#454A50;text-wrap:pretty">改动最小：实心块保留，四个圆角换成像素台阶。白底上的分量与 3a 相同，像素感更统一。</div>
+  <div style="height:200px;background:#FFFFFF;border-top:1px solid rgba(23,58,99,.12);display:flex;align-items:center;justify-content:center;gap:16px">
+    <svg viewBox="0 0 64 64" width="72" height="72" style="overflow:visible"><use href="#ic4a"></use></svg>
+    <div style="display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:30px;line-height:.9;letter-spacing:-0.03em;color:#0F2A4A">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#53565A">INDUSTRY CO., LIMITED</div><div style="height:1px;background:rgba(23,58,99,.28)"></div><div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.16em;color:#0F2A4A"><svg viewBox="0 0 16 16" width="8" height="8"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div></div>
+  </div>
+  <div style="height:200px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;gap:16px">
+    <svg viewBox="0 0 64 64" width="72" height="72" style="overflow:visible"><use href="#rv4a"></use></svg>
+    <div style="display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:30px;line-height:.9;letter-spacing:-0.03em;color:#FFFFFF">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#B9C6D6">INDUSTRY CO., LIMITED</div><div style="height:1px;background:rgba(255,255,255,.28)"></div><div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.16em;color:#FFFFFF"><svg viewBox="0 0 16 16" width="8" height="8"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#FFCD00"></path></svg>A UNITED STAR COMPANY</div></div>
+  </div>
+  <div style="padding:18px 24px 24px;display:flex;flex-direction:column;gap:10px">
+    <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">小尺寸 · 48 / 24 / 16 PX</div>
+    <div style="display:flex;align-items:flex-end;gap:20px;border-top:1.5px solid #0F2A4A;padding-top:14px"><svg viewBox="0 0 64 64" width="48" height="48" style="overflow:visible"><use href="#ic4a"></use></svg><svg viewBox="0 0 64 64" width="24" height="24" style="overflow:visible"><use href="#ic4a"></use></svg><svg viewBox="0 0 64 64" width="16" height="16" style="overflow:visible"><use href="#ic4a"></use></svg></div>
+  </div>
+</div>
+
+<div id="4b" style="background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:22px 24px;border-bottom:1.5px solid #0F2A4A">
+    <div style="width:40px;height:40px;background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">4b</div>
+    <div style="display:flex;flex-direction:column;gap:4px"><div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">PIXEL FRAME</div><div style="font-weight:600;font-size:20px;letter-spacing:-0.02em;color:#0F2A4A">像素线框</div></div>
+  </div>
+  <div style="padding:16px 24px;font-size:14px;line-height:1.6;color:#454A50;text-wrap:pretty">回到母公司的"空心框 + 破角星"结构，框由一圈方格组成，右上角留出缺口给星。和母标识最像，但白底上比实心块轻。</div>
+  <div style="height:200px;background:#FFFFFF;border-top:1px solid rgba(23,58,99,.12);display:flex;align-items:center;justify-content:center;gap:16px">
+    <svg viewBox="0 0 64 64" width="72" height="72" style="overflow:visible"><use href="#ic4b"></use></svg>
+    <div style="display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:30px;line-height:.9;letter-spacing:-0.03em;color:#0F2A4A">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#53565A">INDUSTRY CO., LIMITED</div><div style="height:1px;background:rgba(23,58,99,.28)"></div><div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.16em;color:#0F2A4A"><svg viewBox="0 0 16 16" width="8" height="8"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div></div>
+  </div>
+  <div style="height:200px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;gap:16px">
+    <svg viewBox="0 0 64 64" width="72" height="72" style="overflow:visible"><use href="#rv4b"></use></svg>
+    <div style="display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:30px;line-height:.9;letter-spacing:-0.03em;color:#FFFFFF">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#B9C6D6">INDUSTRY CO., LIMITED</div><div style="height:1px;background:rgba(255,255,255,.28)"></div><div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.16em;color:#FFFFFF"><svg viewBox="0 0 16 16" width="8" height="8"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#FFCD00"></path></svg>A UNITED STAR COMPANY</div></div>
+  </div>
+  <div style="padding:18px 24px 24px;display:flex;flex-direction:column;gap:10px">
+    <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">小尺寸 · 48 / 24 / 16 PX</div>
+    <div style="display:flex;align-items:flex-end;gap:20px;border-top:1.5px solid #0F2A4A;padding-top:14px"><svg viewBox="0 0 64 64" width="48" height="48" style="overflow:visible"><use href="#ic4b"></use></svg><svg viewBox="0 0 64 64" width="24" height="24" style="overflow:visible"><use href="#ic4b"></use></svg><svg viewBox="0 0 64 64" width="16" height="16" style="overflow:visible"><use href="#ic4b"></use></svg></div>
+  </div>
+</div>
+
+<div id="4c" style="background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:22px 24px;border-bottom:1.5px solid #0F2A4A">
+    <div style="width:40px;height:40px;background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">4c</div>
+    <div style="display:flex;flex-direction:column;gap:4px"><div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">MOSAIC TILE</div><div style="font-weight:600;font-size:20px;letter-spacing:-0.02em;color:#0F2A4A">全网格马赛克</div></div>
+  </div>
+  <div style="padding:16px 24px;font-size:14px;line-height:1.6;color:#454A50;text-wrap:pretty">整块由 96 个像素格拼成，像一块屏幕或一张色卡，星是被"点亮"的像素。像素感最强，48px 以下网格会消失，自然退化为 4a。</div>
+  <div style="height:200px;background:#FFFFFF;border-top:1px solid rgba(23,58,99,.12);display:flex;align-items:center;justify-content:center;gap:16px">
+    <svg viewBox="0 0 64 64" width="72" height="72" style="overflow:visible"><use href="#ic4c"></use></svg>
+    <div style="display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:30px;line-height:.9;letter-spacing:-0.03em;color:#0F2A4A">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#53565A">INDUSTRY CO., LIMITED</div><div style="height:1px;background:rgba(23,58,99,.28)"></div><div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.16em;color:#0F2A4A"><svg viewBox="0 0 16 16" width="8" height="8"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div></div>
+  </div>
+  <div style="height:200px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;gap:16px">
+    <svg viewBox="0 0 64 64" width="72" height="72" style="overflow:visible"><use href="#rv4c"></use></svg>
+    <div style="display:flex;flex-direction:column;gap:8px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:30px;line-height:.9;letter-spacing:-0.03em;color:#FFFFFF">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#B9C6D6">INDUSTRY CO., LIMITED</div><div style="height:1px;background:rgba(255,255,255,.28)"></div><div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.16em;color:#FFFFFF"><svg viewBox="0 0 16 16" width="8" height="8"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#FFCD00"></path></svg>A UNITED STAR COMPANY</div></div>
+  </div>
+  <div style="padding:18px 24px 24px;display:flex;flex-direction:column;gap:10px">
+    <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">小尺寸 · 48 / 24 / 16 PX（小尺寸用 4a）</div>
+    <div style="display:flex;align-items:flex-end;gap:20px;border-top:1.5px solid #0F2A4A;padding-top:14px"><svg viewBox="0 0 64 64" width="48" height="48" style="overflow:visible"><use href="#ic4c"></use></svg><svg viewBox="0 0 64 64" width="24" height="24" style="overflow:visible"><use href="#ic4a"></use></svg><svg viewBox="0 0 64 64" width="16" height="16" style="overflow:visible"><use href="#ic4a"></use></svg></div>
+  </div>
+</div>
+
+</div>
+</section>
+
+<section data-screen-label="Round 3" style="padding:56px 56px 0;display:flex;flex-direction:column;gap:32px">
+<div style="max-width:1472px;background:#FFFFFF;padding:28px 32px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;border-top:1.5px solid #0F2A4A">
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.14em;color:#6E7379">
+      <div style="display:flex;gap:2px"><div style="width:7px;height:3px;background:#0F2A4A"></div><div style="width:7px;height:3px;background:#00A3E0"></div><div style="width:7px;height:3px;background:#CE0058"></div><div style="width:7px;height:3px;background:#FFCD00"></div></div>
+      ROUND 03 · <a href="#2a">2a</a> 定稿 + 正式信息
+    </div>
+    <div style="font-weight:600;font-size:32px;letter-spacing:-0.02em;color:#0F2A4A">SUPERNOVA · 字标改为一词连写</div>
+    <div style="font-size:15px;line-height:1.6;color:#454A50;max-width:640px;text-wrap:pretty">按法定名称 SUPERNOVA INDUSTRY CO., LIMITED，字标改为连写 "SUPERNOVA"，副线使用公司全名 "INDUSTRY CO., LIMITED"，图标与背书位置沿用 2a。信纸暂不放电话、邮箱、网址。</div>
+  </div>
+  <div style="display:flex;flex-direction:column;font-size:13px;color:#161815;border-top:1.5px solid #0F2A4A">
+    <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid rgba(23,58,99,.12)"><span style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.1em;color:#6E7379">NAME</span><span>SUPERNOVA INDUSTRY CO., LIMITED</span></div>
+    <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid rgba(23,58,99,.12)"><span style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.1em;color:#6E7379">ADDRESS</span><span>Room A35, Unit 10, 2/F, Man Lee Industrial Building, 13 Kin Hong Street, Kwai Chung, New Territories, Hong Kong</span></div>
+    <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid rgba(23,58,99,.12)"><span style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.1em;color:#6E7379">TEL</span><span>+852 3119 8808</span></div>
+    <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid rgba(23,58,99,.12)"><span style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.1em;color:#6E7379">TAX ID / ZIP</span><span>2587062 · 999077</span></div>
+    <div style="display:grid;grid-template-columns:90px 1fr;gap:12px;padding:9px 0"><span style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.1em;color:#CE0058">仍缺</span><span style="color:#454A50">中文名称 · 邮箱 · 网址</span></div>
+  </div>
+</div>
+
+<div id="3a" style="width:1472px;background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:24px 28px;border-bottom:1.5px solid #0F2A4A">
+    <div style="width:40px;height:40px;background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">3a</div>
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">MASTER LOCKUP · 标准组合</div>
+      <div style="font-weight:600;font-size:22px;letter-spacing:-0.02em;color:#0F2A4A">SUPERNOVA 主标识 · 名片 · 信纸</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(23,58,99,.12)">
+    <div style="height:280px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#6E7379">POSITIVE</div>
+      <div style="display:flex;align-items:center;gap:18px">
+        <svg viewBox="0 0 64 64" width="84" height="84" style="overflow:visible"><use href="#ic2a"></use></svg>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <div style="font-family:'IBM Plex Mono';font-weight:600;font-size:36px;line-height:.9;letter-spacing:-0.03em;color:#0F2A4A">SUPERNOVA</div>
+          <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.15em;color:#53565A">INDUSTRY CO., LIMITED</div>
+          <div style="height:1px;background:rgba(23,58,99,.28)"></div>
+          <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.16em;color:#0F2A4A"><svg viewBox="0 0 16 16" width="10" height="10"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div>
+        </div>
+      </div>
+    </div>
+    <div style="height:280px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#B9C6D6">REVERSED</div>
+      <div style="display:flex;align-items:center;gap:18px">
+        <svg viewBox="0 0 64 64" width="84" height="84" style="overflow:visible"><rect x="0" y="4" width="60" height="60" rx="10" fill="#FFFFFF"></rect><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><rect x="42" y="-2" width="5.28" height="5.28" fill="#FFCD00"></rect><rect x="60" y="16" width="5.28" height="5.28" fill="#FFCD00"></rect></svg>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <div style="font-family:'IBM Plex Mono';font-weight:600;font-size:36px;line-height:.9;letter-spacing:-0.03em;color:#FFFFFF">SUPERNOVA</div>
+          <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.15em;color:#B9C6D6">INDUSTRY CO., LIMITED</div>
+          <div style="height:1px;background:rgba(255,255,255,.28)"></div>
+          <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.16em;color:#FFFFFF"><svg viewBox="0 0 16 16" width="10" height="10"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#FFCD00"></path></svg>A UNITED STAR COMPANY</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;padding:28px">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">名片 · BUSINESS CARD 90 × 54 MM</div>
+      <div style="aspect-ratio:90/54;background:#0F2A4A;display:flex;flex-direction:column;justify-content:space-between;padding:28px">
+        <div style="display:flex;align-items:center;gap:14px">
+          <svg viewBox="0 0 64 64" width="52" height="52" style="overflow:visible"><rect x="0" y="4" width="60" height="60" rx="10" fill="#FFFFFF"></rect><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><rect x="42" y="-2" width="5.28" height="5.28" fill="#FFCD00"></rect><rect x="60" y="16" width="5.28" height="5.28" fill="#FFCD00"></rect></svg>
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:24px;line-height:.9;letter-spacing:-0.03em;color:#FFFFFF">SUPERNOVA</div><div style="font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.15em;color:#B9C6D6">INDUSTRY CO., LIMITED</div></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-end">
+          <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.16em;color:#FFFFFF"><svg viewBox="0 0 16 16" width="9" height="9"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#FFCD00"></path></svg>A UNITED STAR COMPANY</div>
+          <div style="display:flex;gap:2px"><div style="width:14px;height:4px;background:#FFFFFF"></div><div style="width:14px;height:4px;background:#00A3E0"></div><div style="width:14px;height:4px;background:#CE0058"></div><div style="width:14px;height:4px;background:#FFCD00"></div></div>
+        </div>
+      </div>
+      <div style="aspect-ratio:90/54;background:#FFFFFF;border:1px solid rgba(23,58,99,.28);display:flex;flex-direction:column;justify-content:space-between;padding:28px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div style="display:flex;flex-direction:column;gap:5px"><div style="font-weight:600;font-size:20px;letter-spacing:-0.01em;color:#0F2A4A">[姓名 Name]</div><div style="font-size:12px;color:#454A50">[职位 Title]</div></div>
+          <svg viewBox="0 0 64 64" width="30" height="30" style="overflow:visible"><use href="#ic2a"></use></svg>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:5px;font-size:10.5px;line-height:1.45;color:#454A50">
+          <div style="font-weight:600;color:#0F2A4A">SUPERNOVA INDUSTRY CO., LIMITED</div>
+          <div>Room A35, Unit 10, 2/F, Man Lee Industrial Building,<br>13 Kin Hong Street, Kwai Chung, N.T., Hong Kong</div>
+          <div style="display:flex;gap:16px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.04em;padding-top:4px"><span>T  +852 3119 8808</span><span>[EMAIL]</span></div>
+        </div>
+        <div style="height:2px;background:#FFCD00;width:48px"></div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">信纸 A · 浅色页眉 LETTERHEAD</div>
+      <div style="aspect-ratio:210/297;background:#FFFFFF;border:1px solid rgba(23,58,99,.28);display:flex;flex-direction:column;padding:36px 36px 26px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding-bottom:16px;border-bottom:1.5px solid #0F2A4A">
+          <div style="display:flex;align-items:center;gap:11px">
+            <svg viewBox="0 0 64 64" width="40" height="40" style="overflow:visible"><use href="#ic2a"></use></svg>
+            <div style="display:flex;flex-direction:column;gap:5px">
+              <div style="font-family:'IBM Plex Mono';font-weight:600;font-size:18px;line-height:.9;letter-spacing:-0.03em;color:#0F2A4A">SUPERNOVA</div>
+              <div style="font-family:'IBM Plex Mono';font-size:7px;letter-spacing:.15em;color:#53565A">INDUSTRY CO., LIMITED</div>
+              <div style="display:flex;align-items:center;gap:4px;font-family:'IBM Plex Mono';font-size:6.5px;letter-spacing:.16em;color:#0F2A4A;border-top:1px solid rgba(23,58,99,.28);padding-top:4px"><svg viewBox="0 0 16 16" width="6" height="6"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div>
+            </div>
+          </div>
+          
+        </div>
+        <div style="flex:1"></div>
+        <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(23,58,99,.12);padding-top:12px">
+          <div style="display:flex;justify-content:space-between;gap:16px;font-size:7.5px;line-height:1.5;color:#454A50">
+            <div style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600;color:#0F2A4A">SUPERNOVA INDUSTRY CO., LIMITED</span><span>Room A35, Unit 10, 2/F, Man Lee Industrial Building, 13 Kin Hong Street,<br>Kwai Chung, New Territories, Hong Kong</span></div>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-family:'IBM Plex Mono';font-size:7px;letter-spacing:.06em;white-space:nowrap"><span>TAX ID 2587062</span><span>ZIP 999077</span></div>
+          </div>
+          <div style="display:flex;gap:2px"><div style="flex:1;height:3px;background:#0F2A4A"></div><div style="flex:1;height:3px;background:#00A3E0"></div><div style="flex:1;height:3px;background:#CE0058"></div><div style="flex:1;height:3px;background:#FFCD00"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">信纸 B · 深色页眉 LETTERHEAD</div>
+      <div style="aspect-ratio:210/297;background:#FFFFFF;border:1px solid rgba(23,58,99,.28);display:flex;flex-direction:column">
+        <div style="background:#0F2A4A;padding:30px 36px 24px;display:flex;justify-content:space-between;align-items:flex-end">
+          <div style="display:flex;align-items:center;gap:11px">
+            <svg viewBox="0 0 64 64" width="40" height="40" style="overflow:visible"><rect x="0" y="4" width="60" height="60" rx="10" fill="#FFFFFF"></rect><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><rect x="42" y="-2" width="5.28" height="5.28" fill="#FFCD00"></rect><rect x="60" y="16" width="5.28" height="5.28" fill="#FFCD00"></rect></svg>
+            <div style="display:flex;flex-direction:column;gap:5px">
+              <div style="font-family:'IBM Plex Mono';font-weight:600;font-size:18px;line-height:.9;letter-spacing:-0.03em;color:#FFFFFF">SUPERNOVA</div>
+              <div style="font-family:'IBM Plex Mono';font-size:7px;letter-spacing:.15em;color:#B9C6D6">INDUSTRY CO., LIMITED</div>
+              <div style="display:flex;align-items:center;gap:4px;font-family:'IBM Plex Mono';font-size:6.5px;letter-spacing:.16em;color:#FFFFFF;border-top:1px solid rgba(255,255,255,.28);padding-top:4px"><svg viewBox="0 0 16 16" width="6" height="6"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#FFCD00"></path></svg>A UNITED STAR COMPANY</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(8,6px);gap:2px">
+            <div style="height:6px;background:#FFCD00"></div><div style="height:6px;background:#355F8F"></div><div style="height:6px"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px"></div><div style="height:6px;background:#00A3E0"></div><div style="height:6px;background:#355F8F"></div><div style="height:6px;background:#FFCD00"></div>
+            <div style="height:6px"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px;background:#355F8F"></div><div style="height:6px"></div><div style="height:6px;background:#CE0058"></div><div style="height:6px;background:#FFCD00"></div><div style="height:6px"></div><div style="height:6px;background:#FFFFFF"></div>
+          </div>
+        </div>
+        <div style="height:3px;background:#FFCD00"></div>
+        <div style="flex:1"></div>
+        <div style="padding:0 36px 26px;display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;justify-content:space-between;gap:16px;font-size:7.5px;line-height:1.5;color:#454A50;border-top:1px solid rgba(23,58,99,.12);padding-top:12px">
+            <div style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600;color:#0F2A4A">SUPERNOVA INDUSTRY CO., LIMITED</span><span>Room A35, Unit 10, 2/F, Man Lee Industrial Building, 13 Kin Hong Street,<br>Kwai Chung, New Territories, Hong Kong</span></div>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-family:'IBM Plex Mono';font-size:7px;letter-spacing:.06em;white-space:nowrap"><span>TAX ID 2587062</span><span>ZIP 999077</span></div>
+          </div>
+          <div style="display:flex;gap:2px"><div style="flex:1;height:3px;background:#0F2A4A"></div><div style="flex:1;height:3px;background:#00A3E0"></div><div style="flex:1;height:3px;background:#CE0058"></div><div style="flex:1;height:3px;background:#FFCD00"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section data-screen-label="Round 2" style="padding:56px 56px 0;display:flex;flex-direction:column;gap:32px">
+<div style="max-width:1472px;background:#FFFFFF;padding:28px 32px;display:flex;flex-direction:column;gap:12px;border-top:1.5px solid #0F2A4A">
+  <div style="display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.14em;color:#6E7379">
+    <div style="display:flex;gap:2px"><div style="width:7px;height:3px;background:#0F2A4A"></div><div style="width:7px;height:3px;background:#00A3E0"></div><div style="width:7px;height:3px;background:#CE0058"></div><div style="width:7px;height:3px;background:#FFCD00"></div></div>
+    ROUND 02 · 基于 <a href="#1c">1c</a> 像素星深化
+  </div>
+  <div style="font-weight:600;font-size:32px;letter-spacing:-0.02em;color:#0F2A4A">浅色背景更醒目 · 背书位置四种摆法</div>
+  <div style="font-size:15px;line-height:1.6;color:#454A50;max-width:980px;text-wrap:pretty">1c 在白底上偏弱，原因是细线外框加小像素，面积太轻。这一轮把标识做成实心色块，像素放大、字标加粗；星仍然"破框而出"，出框的像素换色，延续母公司的图形逻辑。四版的"A UNITED STAR COMPANY"分别放在不同位置，并附小尺寸测试和网站顶栏应用。</div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start;max-width:1504px">
+
+<!-- 2a -->
+<div id="2a" style="width:720px;background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:24px 28px;border-bottom:1.5px solid #0F2A4A">
+    <div style="width:40px;height:40px;background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">2a</div>
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">方案 2A · SOLID TILE</div>
+      <div style="font-weight:600;font-size:22px;letter-spacing:-0.02em;color:#0F2A4A">实心深蓝块 + 黄色像素星</div>
+    </div>
+  </div>
+  <div style="padding:18px 28px;font-size:14px;line-height:1.6;color:#454A50;text-wrap:pretty">外框改为实心深蓝圆角块，黄星在块内，上、右两个尖角伸出块外，伸出部分变为深蓝。白底上分量最重，母公司的圆角块、破角星依然清晰可辨。背书放在字标下方，用细线隔开。</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(23,58,99,.12)">
+    <div style="height:240px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#6E7379">POSITIVE</div>
+      <div style="display:flex;align-items:center;gap:16px">
+        <svg viewBox="0 0 64 64" width="72" height="72" style="overflow:visible"><use href="#ic2a"></use></svg>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-family:'IBM Plex Mono';font-weight:600;font-size:30px;line-height:.9;letter-spacing:-0.02em;color:#0F2A4A">SUPER NOVA</div>
+          <div style="font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.15em;color:#53565A">INDUSTRY · HONG KONG</div>
+          <div style="height:1px;background:rgba(23,58,99,.28)"></div>
+          <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.16em;color:#0F2A4A"><svg viewBox="0 0 16 16" width="9" height="9"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div>
+        </div>
+      </div>
+    </div>
+    <div style="height:240px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#B9C6D6">REVERSED</div>
+      <div style="display:flex;align-items:center;gap:16px">
+        <svg viewBox="0 0 64 64" width="72" height="72" style="overflow:visible"><rect x="0" y="4" width="60" height="60" rx="10" fill="#FFFFFF"></rect><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFCD00" transform="translate(24,-2) scale(6)"></use><rect x="42" y="-2" width="5.28" height="5.28" fill="#FFCD00"></rect><rect x="60" y="16" width="5.28" height="5.28" fill="#FFCD00"></rect></svg>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-family:'IBM Plex Mono';font-weight:600;font-size:30px;line-height:.9;letter-spacing:-0.02em;color:#FFFFFF">SUPER NOVA</div>
+          <div style="font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.15em;color:#B9C6D6">INDUSTRY · HONG KONG</div>
+          <div style="height:1px;background:rgba(255,255,255,.28)"></div>
+          <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.16em;color:#FFFFFF"><svg viewBox="0 0 16 16" width="9" height="9"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#FFCD00"></path></svg>A UNITED STAR COMPANY</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:22px 28px 0">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">小尺寸 · 48 / 24 / 16 PX</div>
+      <div style="display:flex;align-items:flex-end;gap:20px;border-top:1.5px solid #0F2A4A;padding-top:14px">
+        <svg viewBox="0 0 64 64" width="48" height="48" style="overflow:visible"><use href="#ic2a"></use></svg>
+        <svg viewBox="0 0 64 64" width="24" height="24" style="overflow:visible"><use href="#ic2a"></use></svg>
+        <svg viewBox="0 0 64 64" width="16" height="16" style="overflow:visible"><use href="#ic2a"></use></svg>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">背书位置 · ENDORSEMENT</div>
+      <div style="border-top:1.5px solid #0F2A4A;padding-top:12px;font-size:13px;line-height:1.55;color:#454A50">字标正下方，细线分隔，作为组合的第三行。最稳妥，名片、信纸都好用。</div>
+    </div>
+  </div>
+  <div style="padding:22px 28px 0;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">应用 · 网站顶栏</div>
+  <div style="margin:12px 28px 28px;height:68px;border:1px solid rgba(23,58,99,.28);padding:0 20px;display:flex;align-items:center;justify-content:space-between">
+    <div style="display:flex;align-items:center;gap:10px"><svg viewBox="0 0 64 64" width="32" height="32" style="overflow:visible"><use href="#ic2a"></use></svg><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:17px;letter-spacing:-0.02em;color:#0F2A4A">SUPER NOVA</div></div>
+    <div style="display:flex;gap:22px;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.12em;color:#454A50"><span style="color:#0F2A4A;border-bottom:2px solid #0F2A4A;padding-bottom:3px">PRODUCTS</span><span>QC LAB</span><span>CONTACT</span></div>
+  </div>
+</div>
+
+<!-- 2b -->
+<div id="2b" style="width:720px;background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:24px 28px;border-bottom:1.5px solid #0F2A4A">
+    <div style="width:40px;height:40px;background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">2b</div>
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">方案 2B · YELLOW TILE</div>
+      <div style="font-weight:600;font-size:22px;letter-spacing:-0.02em;color:#0F2A4A">黄色块 + 深蓝像素星</div>
+    </div>
+  </div>
+  <div style="padding:18px 28px;font-size:14px;line-height:1.6;color:#454A50;text-wrap:pretty">把信号黄定为标识专属色，无论放在什么背景上，图标始终是一块黄。最活泼、最好认，像一枚色卡。字标叠成两行，和图标等高。背书放在右侧，竖线分隔。</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(23,58,99,.12)">
+    <div style="height:240px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#6E7379">POSITIVE</div>
+      <div style="display:flex;align-items:center;gap:14px">
+        <svg viewBox="0 0 64 64" width="68" height="68" style="overflow:visible"><use href="#ic2b"></use></svg>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:29px;line-height:.92;letter-spacing:-0.02em;color:#0F2A4A">SUPER<br>NOVA</div><div style="font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.15em;color:#53565A">INDUSTRY · HK</div></div>
+        <div style="width:1px;align-self:stretch;background:rgba(23,58,99,.28)"></div>
+        <div style="display:flex;flex-direction:column;gap:6px;font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.16em;line-height:1.5;color:#0F2A4A"><svg viewBox="0 0 16 16" width="10" height="10"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg><span>A UNITED STAR<br>COMPANY</span></div>
+      </div>
+    </div>
+    <div style="height:240px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#B9C6D6">REVERSED</div>
+      <div style="display:flex;align-items:center;gap:14px">
+        <svg viewBox="0 0 64 64" width="68" height="68" style="overflow:visible"><rect x="0" y="4" width="60" height="60" rx="10" fill="#FFCD00"></rect><use href="#px" fill="#0F2A4A" transform="translate(24,-2) scale(6)"></use><use href="#pxc" fill="#FFFFFF" transform="translate(24,-2) scale(6)"></use><rect x="42" y="-2" width="5.28" height="5.28" fill="#FFFFFF"></rect><rect x="60" y="16" width="5.28" height="5.28" fill="#FFFFFF"></rect></svg>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:29px;line-height:.92;letter-spacing:-0.02em;color:#FFFFFF">SUPER<br>NOVA</div><div style="font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.15em;color:#B9C6D6">INDUSTRY · HK</div></div>
+        <div style="width:1px;align-self:stretch;background:rgba(255,255,255,.28)"></div>
+        <div style="display:flex;flex-direction:column;gap:6px;font-family:'IBM Plex Mono';font-size:8.5px;letter-spacing:.16em;line-height:1.5;color:#FFFFFF"><svg viewBox="0 0 16 16" width="10" height="10"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#FFCD00"></path></svg><span>A UNITED STAR<br>COMPANY</span></div>
+      </div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:22px 28px 0">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">小尺寸 · 48 / 24 / 16 PX</div>
+      <div style="display:flex;align-items:flex-end;gap:20px;border-top:1.5px solid #0F2A4A;padding-top:14px">
+        <svg viewBox="0 0 64 64" width="48" height="48" style="overflow:visible"><use href="#ic2b"></use></svg>
+        <svg viewBox="0 0 64 64" width="24" height="24" style="overflow:visible"><use href="#ic2b"></use></svg>
+        <svg viewBox="0 0 64 64" width="16" height="16" style="overflow:visible"><use href="#ic2b"></use></svg>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">背书位置 · ENDORSEMENT</div>
+      <div style="border-top:1.5px solid #0F2A4A;padding-top:12px;font-size:13px;line-height:1.55;color:#454A50">右侧竖线分隔，两行排列，母公司小星作为引导。横向空间充足时（网站页脚、展板）效果最好。</div>
+    </div>
+  </div>
+  <div style="padding:22px 28px 0;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">应用 · 网站顶栏</div>
+  <div style="margin:12px 28px 28px;height:68px;border:1px solid rgba(23,58,99,.28);padding:0 20px;display:flex;align-items:center;justify-content:space-between">
+    <div style="display:flex;align-items:center;gap:10px"><svg viewBox="0 0 64 64" width="32" height="32" style="overflow:visible"><use href="#ic2b"></use></svg><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:17px;letter-spacing:-0.02em;color:#0F2A4A">SUPER NOVA</div></div>
+    <div style="display:flex;gap:22px;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.12em;color:#454A50"><span style="color:#0F2A4A;border-bottom:2px solid #FFCD00;padding-bottom:3px">PRODUCTS</span><span>QC LAB</span><span>CONTACT</span></div>
+  </div>
+</div>
+
+<!-- 2c -->
+<div id="2c" style="width:720px;background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:24px 28px;border-bottom:1.5px solid #0F2A4A">
+    <div style="width:40px;height:40px;background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">2c</div>
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">方案 2C · PIXEL BAR</div>
+      <div style="font-weight:600;font-size:22px;letter-spacing:-0.02em;color:#0F2A4A">横条标识 — 星从条角破出</div>
+    </div>
+  </div>
+  <div style="padding:18px 28px;font-size:14px;line-height:1.6;color:#454A50;text-wrap:pretty">整个标识就是一块深蓝横条，像一枚标签或色号牌。像素星坐在右上角，条内一半为黄，条外一半为深蓝，"破框"效果最强。适合包装、标签、展会物料。背书放在横条下方，右对齐。</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(23,58,99,.12)">
+    <div style="height:240px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#6E7379">POSITIVE</div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+        <div style="position:relative;background:#0F2A4A;padding:16px 46px 14px 20px;display:flex;flex-direction:column;gap:7px">
+          <div style="font-family:'IBM Plex Mono';font-weight:600;font-size:28px;line-height:.9;letter-spacing:-0.02em;color:#FFFFFF">SUPER NOVA</div>
+          <div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#B9C6D6">INDUSTRY · HONG KONG</div>
+          <svg viewBox="0 0 7 7" width="49" height="49" style="position:absolute;top:-21px;right:-21px;overflow:visible"><use href="#pxIn" fill="#FFCD00"></use><use href="#pxOut" fill="#0F2A4A"></use><use href="#pxc" fill="#FFFFFF"></use></svg>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.16em;color:#0F2A4A"><svg viewBox="0 0 16 16" width="9" height="9"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div>
+      </div>
+    </div>
+    <div style="height:240px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#B9C6D6">REVERSED</div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+        <div style="position:relative;background:#FFFFFF;padding:16px 46px 14px 20px;display:flex;flex-direction:column;gap:7px">
+          <div style="font-family:'IBM Plex Mono';font-weight:600;font-size:28px;line-height:.9;letter-spacing:-0.02em;color:#0F2A4A">SUPER NOVA</div>
+          <div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#53565A">INDUSTRY · HONG KONG</div>
+          <svg viewBox="0 0 7 7" width="49" height="49" style="position:absolute;top:-21px;right:-21px;overflow:visible"><use href="#pxIn" fill="#0F2A4A"></use><use href="#pxOut" fill="#FFCD00"></use><use href="#pxc" fill="#FFCD00"></use></svg>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.16em;color:#FFFFFF"><svg viewBox="0 0 16 16" width="9" height="9"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#FFCD00"></path></svg>A UNITED STAR COMPANY</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:22px 28px 0">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">小尺寸 · 方形简标</div>
+      <div style="display:flex;align-items:flex-end;gap:20px;border-top:1.5px solid #0F2A4A;padding-top:14px">
+        <div style="width:48px;height:48px;background:#0F2A4A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 7 7" width="34" height="34"><use href="#px" fill="#FFCD00"></use><use href="#pxc" fill="#FFFFFF"></use></svg></div>
+        <div style="width:24px;height:24px;background:#0F2A4A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 7 7" width="17" height="17"><use href="#px" fill="#FFCD00"></use><use href="#pxc" fill="#FFFFFF"></use></svg></div>
+        <div style="width:16px;height:16px;background:#0F2A4A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 7 7" width="12" height="12"><use href="#px" fill="#FFCD00"></use><use href="#pxc" fill="#FFCD00"></use></svg></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">背书位置 · ENDORSEMENT</div>
+      <div style="border-top:1.5px solid #0F2A4A;padding-top:12px;font-size:13px;line-height:1.55;color:#454A50">横条下方右对齐，像标签的底注。横条本身不能放背书，所以小尺寸时需要另配方形简标。</div>
+    </div>
+  </div>
+  <div style="padding:22px 28px 0;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">应用 · 网站顶栏</div>
+  <div style="margin:12px 28px 28px;height:68px;border:1px solid rgba(23,58,99,.28);padding:0 20px;display:flex;align-items:center;justify-content:space-between">
+    <div style="position:relative;background:#0F2A4A;padding:8px 28px 8px 12px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:16px;letter-spacing:-0.02em;color:#FFFFFF">SUPER NOVA</div><svg viewBox="0 0 7 7" width="28" height="28" style="position:absolute;top:-12px;right:-12px;overflow:visible"><use href="#pxIn" fill="#FFCD00"></use><use href="#pxOut" fill="#0F2A4A"></use><use href="#pxc" fill="#FFFFFF"></use></svg></div>
+    <div style="display:flex;gap:22px;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.12em;color:#454A50"><span style="color:#0F2A4A;border-bottom:2px solid #0F2A4A;padding-bottom:3px">PRODUCTS</span><span>QC LAB</span><span>CONTACT</span></div>
+  </div>
+</div>
+
+<!-- 2d -->
+<div id="2d" style="width:720px;background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:24px 28px;border-bottom:1.5px solid #0F2A4A">
+    <div style="width:40px;height:40px;background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">2d</div>
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">方案 2D · N✦VA WORDMARK</div>
+      <div style="font-weight:600;font-size:22px;letter-spacing:-0.02em;color:#0F2A4A">以字为主 — 像素星替代 "O"</div>
+    </div>
+  </div>
+  <div style="padding:18px 28px;font-size:14px;line-height:1.6;color:#454A50;text-wrap:pretty">把像素星嵌进字标，替代 NOVA 中的 "O"，大字标本身就是主视觉，在白底上靠字号取胜。头像、图标场景用黄底方形简标。背书和 CMYK 四色标一起放在字标下方通栏，和母公司的签名动作相呼应。</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(23,58,99,.12)">
+    <div style="height:240px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#6E7379">POSITIVE</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;font-family:'IBM Plex Mono';font-weight:600;font-size:38px;line-height:1;letter-spacing:-0.02em;color:#0F2A4A">SUPER&nbsp;N<svg viewBox="0 0 7 7" width="25" height="25" style="margin:0 1px"><use href="#px" fill="#0F2A4A"></use><use href="#pxc" fill="#FFCD00"></use></svg>VA</div>
+        <div style="display:flex;align-items:center;gap:10px;border-top:1px solid rgba(23,58,99,.28);padding-top:8px">
+          <div style="display:flex;gap:2px"><div style="width:7px;height:3px;background:#0F2A4A"></div><div style="width:7px;height:3px;background:#00A3E0"></div><div style="width:7px;height:3px;background:#CE0058"></div><div style="width:7px;height:3px;background:#FFCD00"></div></div>
+          <div style="flex:1;display:flex;justify-content:space-between;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.14em;color:#53565A"><span>INDUSTRY · HK</span><span style="color:#0F2A4A">A UNITED STAR COMPANY</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="height:240px;background:#0F2A4A;display:flex;align-items:center;justify-content:center;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#B9C6D6">REVERSED</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;font-family:'IBM Plex Mono';font-weight:600;font-size:38px;line-height:1;letter-spacing:-0.02em;color:#FFFFFF">SUPER&nbsp;N<svg viewBox="0 0 7 7" width="25" height="25" style="margin:0 1px"><use href="#px" fill="#FFCD00"></use><use href="#pxc" fill="#FFFFFF"></use></svg>VA</div>
+        <div style="display:flex;align-items:center;gap:10px;border-top:1px solid rgba(255,255,255,.28);padding-top:8px">
+          <div style="display:flex;gap:2px"><div style="width:7px;height:3px;background:#FFFFFF"></div><div style="width:7px;height:3px;background:#00A3E0"></div><div style="width:7px;height:3px;background:#CE0058"></div><div style="width:7px;height:3px;background:#FFCD00"></div></div>
+          <div style="flex:1;display:flex;justify-content:space-between;font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.14em;color:#B9C6D6"><span>INDUSTRY · HK</span><span style="color:#FFFFFF">A UNITED STAR COMPANY</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:22px 28px 0">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">小尺寸 · 方形简标</div>
+      <div style="display:flex;align-items:flex-end;gap:20px;border-top:1.5px solid #0F2A4A;padding-top:14px">
+        <svg viewBox="0 0 64 64" width="48" height="48"><use href="#ic2d"></use></svg>
+        <svg viewBox="0 0 64 64" width="24" height="24"><use href="#ic2d"></use></svg>
+        <svg viewBox="0 0 64 64" width="16" height="16"><use href="#ic2d"></use></svg>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">背书位置 · ENDORSEMENT</div>
+      <div style="border-top:1.5px solid #0F2A4A;padding-top:12px;font-size:13px;line-height:1.55;color:#454A50">字标下方通栏，左为 CMYK 四色标 + 地区，右为背书，两端对齐。整体最像一个"签名条"。</div>
+    </div>
+  </div>
+  <div style="padding:22px 28px 0;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">应用 · 网站顶栏</div>
+  <div style="margin:12px 28px 28px;height:68px;border:1px solid rgba(23,58,99,.28);padding:0 20px;display:flex;align-items:center;justify-content:space-between">
+    <div style="display:flex;align-items:center;font-family:'IBM Plex Mono';font-weight:600;font-size:20px;letter-spacing:-0.02em;color:#0F2A4A">SUPER&nbsp;N<svg viewBox="0 0 7 7" width="13" height="13" style="margin:0 1px"><use href="#px" fill="#0F2A4A"></use><use href="#pxc" fill="#FFCD00"></use></svg>VA</div>
+    <div style="display:flex;gap:22px;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.12em;color:#454A50"><span style="color:#0F2A4A;border-bottom:2px solid #0F2A4A;padding-bottom:3px">PRODUCTS</span><span>QC LAB</span><span>CONTACT</span></div>
+  </div>
+</div>
+
+</div>
+</section>
+
+<section data-screen-label="Round 1" style="padding:56px;display:flex;flex-direction:column;gap:32px">
+
+<div style="max-width:2224px;background:#FFFFFF;display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:1px;border-top:1.5px solid #173A63">
+  <div style="padding:32px;display:flex;flex-direction:column;gap:18px;background:#FFFFFF">
+    <div style="display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.14em;color:#6E7379">
+      <div style="display:flex;gap:2px"><div style="width:7px;height:3px;background:#173A63"></div><div style="width:7px;height:3px;background:#00A3E0"></div><div style="width:7px;height:3px;background:#CE0058"></div><div style="width:7px;height:3px;background:#FFCD00"></div></div>
+      ROUND 01 · VI EXPLORATION
+    </div>
+    <div style="font-weight:600;font-size:40px;letter-spacing:-0.02em;color:#173A63;line-height:1.1">Super Nova Industry<br>VI 方案 · 第一轮</div>
+    <div style="font-size:15px;line-height:1.6;color:#454A50;max-width:520px;text-wrap:pretty">香港子公司与母公司业务、产品结构完全一致，仅承接不同客户。三套方案都保留"星"的图形基因与 IBM Plex 字体家族，让两者一眼可见是一家人；差异集中在主色、外框形态与辅助图形上，整体更亮、更年轻。</div>
+    <div style="display:flex;align-items:center;gap:11px;padding-top:8px">
+      <svg viewBox="0 0 64 64" width="32" height="32" style="overflow:visible"><rect x="2.25" y="2.25" width="59.5" height="59.5" rx="11" fill="none" stroke="#173A63" stroke-width="4.5"></rect><circle cx="53" cy="11" r="16" fill="#FFFFFF"></circle><path d="M53,-5 L56.7,7.3 L69,11 L56.7,14.7 L53,27 L49.3,14.7 L37,11 L49.3,7.3 Z" fill="#173A63"></path></svg>
+      <div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:600;font-size:19px;line-height:.9;color:#173A63">United Star</div><div style="font-family:'IBM Plex Mono';font-size:8px;letter-spacing:.15em;color:#53565A">母品牌 · PARENT BRAND</div></div>
+    </div>
+  </div>
+  <div style="padding:32px;display:flex;flex-direction:column;gap:14px;background:#F4F5F6">
+    <div style="font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.14em;color:#6E7379">统一保留 · SHARED DNA</div>
+    <div style="display:flex;flex-direction:column;font-size:14px;color:#161815;border-top:1.5px solid #173A63">
+      <div style="padding:10px 0;border-bottom:1px solid rgba(23,58,99,.12)">星形图形 + IBM Plex 字体家族</div>
+      <div style="padding:10px 0;border-bottom:1px solid rgba(23,58,99,.12)">CMYK 四色标与像素带（形态各自演化）</div>
+      <div style="padding:10px 0;border-bottom:1px solid rgba(23,58,99,.12)">直角、细线网格、无阴影</div>
+      <div style="padding:10px 0;border-bottom:1px solid rgba(23,58,99,.12);display:flex;align-items:center;gap:10px;flex-wrap:wrap">产品线色码不变：
+        <span style="display:flex;align-items:center;gap:4px;font-family:'IBM Plex Mono';font-size:11px"><span style="width:10px;height:10px;background:#00A3E0"></span>ORGANIC</span>
+        <span style="display:flex;align-items:center;gap:4px;font-family:'IBM Plex Mono';font-size:11px"><span style="width:10px;height:10px;background:#CE0058"></span>INORGANIC</span>
+        <span style="display:flex;align-items:center;gap:4px;font-family:'IBM Plex Mono';font-size:11px"><span style="width:10px;height:10px;background:#FFCD00"></span>FLUORESCENT</span>
+        <span style="display:flex;align-items:center;gap:4px;font-family:'IBM Plex Mono';font-size:11px"><span style="width:10px;height:10px;background:#173A63"></span>SOLVENT</span>
+      </div>
+      <div style="padding:10px 0">背书标识 "A UNITED STAR COMPANY"</div>
+    </div>
+  </div>
+  <div style="padding:32px;display:flex;flex-direction:column;gap:14px;background:#F4F5F6">
+    <div style="font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.14em;color:#6E7379">待确认信息 · TO CONFIRM</div>
+    <div style="display:flex;flex-direction:column;font-size:14px;color:#161815;border-top:1.5px solid #173A63">
+      <div style="padding:10px 0;border-bottom:1px solid rgba(23,58,99,.12)">香港公司法定英文全称（Limited？）</div>
+      <div style="padding:10px 0;border-bottom:1px solid rgba(23,58,99,.12)">中文名称（如 超新星实业？）</div>
+      <div style="padding:10px 0;border-bottom:1px solid rgba(23,58,99,.12)">注册地址、电话、邮箱、网址</div>
+      <div style="padding:10px 0">口号：图中为建议文案，可替换</div>
+    </div>
+  </div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start">
+
+<!-- 1a -->
+<div id="1a" style="width:720px;background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:24px 28px;border-bottom:1.5px solid #0B1B3A">
+    <div style="width:40px;height:40px;background:#2F5BFF;color:#FFFFFF;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">1a</div>
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">方案 A · NOVA BURST</div>
+      <div style="font-weight:600;font-size:22px;letter-spacing:-0.02em;color:#0B1B3A">星爆 — 同一个框，更亮的星</div>
+    </div>
+  </div>
+  <div style="padding:18px 28px;font-size:14px;line-height:1.6;color:#454A50;text-wrap:pretty">与母公司最接近。保留圆角方框，四角星"爆开"为八芒星（超新星）；主色从海军蓝提亮为电光蓝，小写字标更轻松。适合希望客户明显感知"同一集团"的场景。</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(23,58,99,.12)">
+    <div style="height:220px;background:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#6E7379">POSITIVE</div>
+      <div style="display:flex;align-items:center;gap:14px">
+        <svg viewBox="0 0 64 64" width="56" height="56" style="overflow:visible"><rect x="2.25" y="2.25" width="59.5" height="59.5" rx="11" fill="none" stroke="#0B1B3A" stroke-width="4.5"></rect><circle cx="53" cy="11" r="16" fill="#FFFFFF"></circle><path d="M62.9,1.1 L56,11 L62.9,20.9 L53,14 L43.1,20.9 L50,11 L43.1,1.1 L53,8 Z" fill="#2F5BFF"></path><path d="M53,-5 L56.7,7.3 L69,11 L56.7,14.7 L53,27 L49.3,14.7 L37,11 L49.3,7.3 Z" fill="#0B1B3A"></path></svg>
+        <div style="display:flex;flex-direction:column;gap:7px"><div style="font-weight:600;font-size:32px;line-height:.9;letter-spacing:-0.03em;color:#0B1B3A">super nova</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#53565A">INDUSTRY · HONG KONG</div></div>
+      </div>
+      <div style="font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.16em;color:#6E7379">A UNITED STAR COMPANY</div>
+    </div>
+    <div style="height:220px;background:#2F5BFF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#E6ECFF">REVERSED</div>
+      <div style="display:flex;align-items:center;gap:14px">
+        <svg viewBox="0 0 64 64" width="56" height="56" style="overflow:visible"><rect x="2.25" y="2.25" width="59.5" height="59.5" rx="11" fill="none" stroke="#FFFFFF" stroke-width="4.5"></rect><circle cx="53" cy="11" r="16" fill="#2F5BFF"></circle><path d="M62.9,1.1 L56,11 L62.9,20.9 L53,14 L43.1,20.9 L50,11 L43.1,1.1 L53,8 Z" fill="#FFCD00"></path><path d="M53,-5 L56.7,7.3 L69,11 L56.7,14.7 L53,27 L49.3,14.7 L37,11 L49.3,7.3 Z" fill="#FFFFFF"></path></svg>
+        <div style="display:flex;flex-direction:column;gap:7px"><div style="font-weight:600;font-size:32px;line-height:.9;letter-spacing:-0.03em;color:#FFFFFF">super nova</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#E6ECFF">INDUSTRY · HONG KONG</div></div>
+      </div>
+      <div style="font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.16em;color:#E6ECFF">A UNITED STAR COMPANY</div>
+    </div>
+  </div>
+  <div style="padding:22px 28px 0;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">01 · 色彩 COLOUR</div>
+  <div style="display:grid;grid-template-columns:2fr 2fr 1fr 1fr 1fr 1fr;gap:1px;margin:12px 28px 0;background:rgba(23,58,99,.12);border:1px solid rgba(23,58,99,.12)">
+    <div style="height:96px;background:#2F5BFF;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#FFFFFF;font-family:'IBM Plex Mono';font-size:10px;gap:2px"><span style="font-family:'IBM Plex Sans';font-weight:600;font-size:13px">Nova Blue</span>#2F5BFF</div>
+    <div style="height:96px;background:#0B1B3A;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#FFFFFF;font-family:'IBM Plex Mono';font-size:10px;gap:2px"><span style="font-family:'IBM Plex Sans';font-weight:600;font-size:13px">Night</span>#0B1B3A</div>
+    <div style="height:96px;background:#E6ECFF;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#0B1B3A;font-family:'IBM Plex Mono';font-size:10px">#E6ECFF</div>
+    <div style="height:96px;background:#00A3E0;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#0B1B3A;font-family:'IBM Plex Mono';font-size:10px">#00A3E0</div>
+    <div style="height:96px;background:#CE0058;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#FFFFFF;font-family:'IBM Plex Mono';font-size:10px">#CE0058</div>
+    <div style="height:96px;background:#FFCD00;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#0B1B3A;font-family:'IBM Plex Mono';font-size:10px">#FFCD00</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:22px 28px 0">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">02 · 字体 TYPE</div>
+      <div style="display:flex;align-items:baseline;gap:14px;border-top:1.5px solid #0B1B3A;padding-top:10px"><span style="font-weight:600;font-size:44px;letter-spacing:-0.03em;color:#0B1B3A">Aa</span><span style="font-size:13px;color:#454A50">IBM Plex Sans 600 · 小写字标</span></div>
+      <div style="font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.1em;color:#2F5BFF">C.I. PIGMENT RED 254</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">03 · 辅助图形 BURST BAND</div>
+      <div style="display:flex;gap:2px;border-top:1.5px solid #0B1B3A;padding-top:10px">
+        <div style="flex:1;aspect-ratio:1;background:#0B1B3A"></div><div style="flex:1;aspect-ratio:1;background:#13306E"></div><div style="flex:1;aspect-ratio:1;background:#2F5BFF"></div><div style="flex:1;aspect-ratio:1;background:#1D44A8"></div><div style="flex:1;aspect-ratio:1;background:#FFCD00"></div><div style="flex:1;aspect-ratio:1;background:#5B7DFF"></div><div style="flex:1;aspect-ratio:1;background:#0B1B3A"></div><div style="flex:1;aspect-ratio:1;background:#2F5BFF"></div><div style="flex:1;aspect-ratio:1;background:#13306E"></div><div style="flex:1;aspect-ratio:1;background:#00A3E0"></div><div style="flex:1;aspect-ratio:1;background:#1D44A8"></div><div style="flex:1;aspect-ratio:1;background:#5B7DFF"></div><div style="flex:1;aspect-ratio:1;background:#2F5BFF"></div><div style="flex:1;aspect-ratio:1;background:#0B1B3A"></div><div style="flex:1;aspect-ratio:1;background:#CE0058"></div><div style="flex:1;aspect-ratio:1;background:#13306E"></div>
+      </div>
+      <div style="font-size:12px;color:#6E7379">母公司像素带的提亮版，蓝阶更跳</div>
+    </div>
+  </div>
+  <div style="padding:22px 28px 0;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">04 · 应用 APPLICATION</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:12px 28px 28px">
+    <div style="aspect-ratio:85/55;background:#FFFFFF;border:1px solid rgba(23,58,99,.28);padding:20px;display:flex;flex-direction:column;justify-content:space-between">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:600;font-size:18px;color:#0B1B3A">[姓名 Name]</div><div style="font-size:11px;color:#454A50">[职位 Title]</div></div>
+        <svg viewBox="0 0 64 64" width="26" height="26" style="overflow:visible"><rect x="2.25" y="2.25" width="59.5" height="59.5" rx="11" fill="none" stroke="#0B1B3A" stroke-width="4.5"></rect><circle cx="53" cy="11" r="16" fill="#FFFFFF"></circle><path d="M62.9,1.1 L56,11 L62.9,20.9 L53,14 L43.1,20.9 L50,11 L43.1,1.1 L53,8 Z" fill="#2F5BFF"></path><path d="M53,-5 L56.7,7.3 L69,11 L56.7,14.7 L53,27 L49.3,14.7 L37,11 L49.3,7.3 Z" fill="#0B1B3A"></path></svg>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:3px;font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.06em;color:#454A50"><span>[EMAIL]</span><span>[TEL]</span><span style="color:#2F5BFF">[WEBSITE]</span></div>
+      <div style="display:flex;gap:2px"><div style="flex:1;height:3px;background:#2F5BFF"></div><div style="flex:1;height:3px;background:#00A3E0"></div><div style="flex:1;height:3px;background:#CE0058"></div><div style="flex:1;height:3px;background:#FFCD00"></div></div>
+    </div>
+    <div style="aspect-ratio:85/55;background:#2F5BFF;padding:20px;display:flex;flex-direction:column;justify-content:space-between">
+      <div style="font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#E6ECFF">建议口号 · PIGMENTS &amp; DYES</div>
+      <div style="font-weight:600;font-size:30px;line-height:1.02;letter-spacing:-0.03em;color:#FFFFFF">bright color.<br>fast answers.</div>
+      <div style="display:flex;gap:6px"><div style="width:22px;height:8px;background:#00A3E0"></div><div style="width:22px;height:8px;background:#CE0058"></div><div style="width:22px;height:8px;background:#FFCD00"></div><div style="width:22px;height:8px;background:#FFFFFF"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 1b -->
+<div id="1b" style="width:720px;background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:24px 28px;border-bottom:1.5px solid #173A63">
+    <div style="width:40px;height:40px;background:#E5006D;color:#FFFFFF;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">1b</div>
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">方案 B · MAGENTA ORBIT</div>
+      <div style="font-weight:600;font-size:22px;letter-spacing:-0.02em;color:#173A63">星轨 — 方框变圆，星落在轨道上</div>
+    </div>
+  </div>
+  <div style="padding:18px 28px;font-size:14px;line-height:1.6;color:#454A50;text-wrap:pretty">外框由圆角方变为正圆，四角星恰好坐落在 45° 轨道点上，更柔和、更有动感。沿用母公司海军蓝作为稳定色，把母公司的品红提为主色，压缩体大写字标更有态度。识别度与差异度平衡。</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(23,58,99,.12)">
+    <div style="height:220px;background:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#6E7379">POSITIVE</div>
+      <div style="display:flex;align-items:center;gap:14px">
+        <svg viewBox="0 0 64 64" width="56" height="56" style="overflow:visible"><circle cx="32" cy="32" r="29.75" fill="none" stroke="#173A63" stroke-width="4.5"></circle><circle cx="53" cy="11" r="15" fill="#FFFFFF"></circle><path d="M53,-5 L56.7,7.3 L69,11 L56.7,14.7 L53,27 L49.3,14.7 L37,11 L49.3,7.3 Z" fill="#E5006D"></path></svg>
+        <div style="display:flex;flex-direction:column;gap:7px"><div style="font-family:'IBM Plex Sans Condensed';font-weight:700;font-size:34px;line-height:.85;letter-spacing:.01em;color:#173A63">SUPER NOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#53565A">INDUSTRY · HONG KONG</div></div>
+      </div>
+      <div style="font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.16em;color:#6E7379">A UNITED STAR COMPANY</div>
+    </div>
+    <div style="height:220px;background:#E5006D;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#FDE6EF">REVERSED</div>
+      <div style="display:flex;align-items:center;gap:14px">
+        <svg viewBox="0 0 64 64" width="56" height="56" style="overflow:visible"><circle cx="32" cy="32" r="29.75" fill="none" stroke="#FFFFFF" stroke-width="4.5"></circle><circle cx="53" cy="11" r="15" fill="#E5006D"></circle><path d="M53,-5 L56.7,7.3 L69,11 L56.7,14.7 L53,27 L49.3,14.7 L37,11 L49.3,7.3 Z" fill="#FFCD00"></path></svg>
+        <div style="display:flex;flex-direction:column;gap:7px"><div style="font-family:'IBM Plex Sans Condensed';font-weight:700;font-size:34px;line-height:.85;letter-spacing:.01em;color:#FFFFFF">SUPER NOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#FDE6EF">INDUSTRY · HONG KONG</div></div>
+      </div>
+      <div style="font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.16em;color:#FDE6EF">A UNITED STAR COMPANY</div>
+    </div>
+  </div>
+  <div style="padding:22px 28px 0;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">01 · 色彩 COLOUR</div>
+  <div style="display:grid;grid-template-columns:2fr 2fr 1fr 1fr 1fr 1fr;gap:1px;margin:12px 28px 0;background:rgba(23,58,99,.12);border:1px solid rgba(23,58,99,.12)">
+    <div style="height:96px;background:#E5006D;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#FFFFFF;font-family:'IBM Plex Mono';font-size:10px;gap:2px"><span style="font-family:'IBM Plex Sans';font-weight:600;font-size:13px">Nova Magenta</span>#E5006D</div>
+    <div style="height:96px;background:#173A63;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#FFFFFF;font-family:'IBM Plex Mono';font-size:10px;gap:2px"><span style="font-family:'IBM Plex Sans';font-weight:600;font-size:13px">Navy（母色）</span>#173A63</div>
+    <div style="height:96px;background:#FDE6EF;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#173A63;font-family:'IBM Plex Mono';font-size:10px">#FDE6EF</div>
+    <div style="height:96px;background:#FFCD00;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#173A63;font-family:'IBM Plex Mono';font-size:10px">#FFCD00</div>
+    <div style="height:96px;background:#00A3E0;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#173A63;font-family:'IBM Plex Mono';font-size:10px">#00A3E0</div>
+    <div style="height:96px;background:#F4F5F6;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#173A63;font-family:'IBM Plex Mono';font-size:10px">#F4F5F6</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:22px 28px 0">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">02 · 字体 TYPE</div>
+      <div style="display:flex;align-items:baseline;gap:14px;border-top:1.5px solid #173A63;padding-top:10px"><span style="font-family:'IBM Plex Sans Condensed';font-weight:700;font-size:44px;color:#173A63">AA</span><span style="font-size:13px;color:#454A50">IBM Plex Sans Condensed 700 · 标题</span></div>
+      <div style="font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.1em;color:#E5006D">C.I. PIGMENT RED 254</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">03 · 辅助图形 ORBIT DOTS</div>
+      <div style="display:flex;gap:3px;border-top:1.5px solid #173A63;padding-top:10px">
+        <div style="flex:1;aspect-ratio:1;border-radius:50%;background:#173A63"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#E5006D"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#173A63"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#2A5585"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#FFCD00"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#173A63"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#F7A3C6"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#E5006D"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#2A5585"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#00A3E0"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#173A63"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#E5006D"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#F7A3C6"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#173A63"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#FFCD00"></div><div style="flex:1;aspect-ratio:1;border-radius:50%;background:#2A5585"></div>
+      </div>
+      <div style="font-size:12px;color:#6E7379">像素带改为圆点，呼应圆形外框</div>
+    </div>
+  </div>
+  <div style="padding:22px 28px 0;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">04 · 应用 APPLICATION</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:12px 28px 28px">
+    <div style="aspect-ratio:85/55;background:#FFFFFF;border:1px solid rgba(23,58,99,.28);padding:20px;display:flex;flex-direction:column;justify-content:space-between">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div style="display:flex;flex-direction:column;gap:4px"><div style="font-family:'IBM Plex Sans Condensed';font-weight:700;font-size:19px;color:#173A63">[姓名 NAME]</div><div style="font-size:11px;color:#454A50">[职位 Title]</div></div>
+        <svg viewBox="0 0 64 64" width="26" height="26" style="overflow:visible"><circle cx="32" cy="32" r="29.75" fill="none" stroke="#173A63" stroke-width="4.5"></circle><circle cx="53" cy="11" r="15" fill="#FFFFFF"></circle><path d="M53,-5 L56.7,7.3 L69,11 L56.7,14.7 L53,27 L49.3,14.7 L37,11 L49.3,7.3 Z" fill="#E5006D"></path></svg>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:3px;font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.06em;color:#454A50"><span>[EMAIL]</span><span>[TEL]</span><span style="color:#E5006D">[WEBSITE]</span></div>
+      <div style="display:flex;gap:4px"><div style="width:8px;height:8px;border-radius:50%;background:#173A63"></div><div style="width:8px;height:8px;border-radius:50%;background:#00A3E0"></div><div style="width:8px;height:8px;border-radius:50%;background:#E5006D"></div><div style="width:8px;height:8px;border-radius:50%;background:#FFCD00"></div></div>
+    </div>
+    <div style="aspect-ratio:85/55;background:#E5006D;padding:20px;display:flex;flex-direction:column;justify-content:space-between">
+      <div style="font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#FDE6EF">建议口号 · PIGMENTS &amp; DYES</div>
+      <div style="font-family:'IBM Plex Sans Condensed';font-weight:700;font-size:36px;line-height:.92;color:#FFFFFF">COLOR THAT<br>TRAVELS.</div>
+      <div style="display:flex;gap:6px"><div style="width:10px;height:10px;border-radius:50%;background:#00A3E0"></div><div style="width:10px;height:10px;border-radius:50%;background:#173A63"></div><div style="width:10px;height:10px;border-radius:50%;background:#FFCD00"></div><div style="width:10px;height:10px;border-radius:50%;background:#FFFFFF"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 1c -->
+<div id="1c" style="width:720px;background:#FFFFFF;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:24px 28px;border-bottom:1.5px solid #0F2A4A">
+    <div style="width:40px;height:40px;background:#FFCD00;color:#0F2A4A;font-family:'IBM Plex Mono';font-weight:500;font-size:15px;display:flex;align-items:center;justify-content:center">1c</div>
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">方案 C · PIXEL NOVA</div>
+      <div style="font-weight:600;font-size:22px;letter-spacing:-0.02em;color:#0F2A4A">像素星 — 从母公司像素带里长出的星</div>
+    </div>
+  </div>
+  <div style="padding:18px 28px;font-size:14px;line-height:1.6;color:#454A50;text-wrap:pretty">把母公司的"像素带"变成主角：星由方格拼成，像屏幕像素，也像色粉颗粒。深海军蓝 + 信号黄高对比，等宽字标带科技感。最年轻、差异最大，适合面向新客户、线上渠道为主。</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(23,58,99,.12)">
+    <div style="height:220px;background:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#6E7379">POSITIVE</div>
+      <div style="display:flex;align-items:center;gap:14px">
+        <svg viewBox="0 0 64 64" width="56" height="56" style="overflow:visible"><rect x="2.25" y="2.25" width="59.5" height="59.5" rx="11" fill="none" stroke="#0F2A4A" stroke-width="4.5"></rect><circle cx="53" cy="11" r="17" fill="#FFFFFF"></circle><g fill="#0F2A4A"><rect x="51" y="-3" width="3.5" height="3.5"></rect><rect x="51" y="1" width="3.5" height="3.5"></rect><rect x="47" y="5" width="3.5" height="3.5"></rect><rect x="51" y="5" width="3.5" height="3.5"></rect><rect x="55" y="5" width="3.5" height="3.5"></rect><rect x="39" y="9" width="3.5" height="3.5"></rect><rect x="43" y="9" width="3.5" height="3.5"></rect><rect x="47" y="9" width="3.5" height="3.5"></rect><rect x="55" y="9" width="3.5" height="3.5"></rect><rect x="59" y="9" width="3.5" height="3.5"></rect><rect x="63" y="9" width="3.5" height="3.5"></rect><rect x="47" y="13" width="3.5" height="3.5"></rect><rect x="51" y="13" width="3.5" height="3.5"></rect><rect x="55" y="13" width="3.5" height="3.5"></rect><rect x="51" y="17" width="3.5" height="3.5"></rect><rect x="51" y="21" width="3.5" height="3.5"></rect></g><rect x="51" y="9" width="3.5" height="3.5" fill="#FFCD00"></rect></svg>
+        <div style="display:flex;flex-direction:column;gap:7px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:27px;line-height:.9;letter-spacing:-0.02em;color:#0F2A4A">SUPER NOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#53565A">INDUSTRY · HONG KONG</div></div>
+      </div>
+      <div style="font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.16em;color:#6E7379">A UNITED STAR COMPANY</div>
+    </div>
+    <div style="height:220px;background:#0F2A4A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;position:relative">
+      <div style="position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#B9C6D6">REVERSED</div>
+      <div style="display:flex;align-items:center;gap:14px">
+        <svg viewBox="0 0 64 64" width="56" height="56" style="overflow:visible"><rect x="2.25" y="2.25" width="59.5" height="59.5" rx="11" fill="none" stroke="#FFFFFF" stroke-width="4.5"></rect><circle cx="53" cy="11" r="17" fill="#0F2A4A"></circle><g fill="#FFCD00"><rect x="51" y="-3" width="3.5" height="3.5"></rect><rect x="51" y="1" width="3.5" height="3.5"></rect><rect x="47" y="5" width="3.5" height="3.5"></rect><rect x="51" y="5" width="3.5" height="3.5"></rect><rect x="55" y="5" width="3.5" height="3.5"></rect><rect x="39" y="9" width="3.5" height="3.5"></rect><rect x="43" y="9" width="3.5" height="3.5"></rect><rect x="47" y="9" width="3.5" height="3.5"></rect><rect x="55" y="9" width="3.5" height="3.5"></rect><rect x="59" y="9" width="3.5" height="3.5"></rect><rect x="63" y="9" width="3.5" height="3.5"></rect><rect x="47" y="13" width="3.5" height="3.5"></rect><rect x="51" y="13" width="3.5" height="3.5"></rect><rect x="55" y="13" width="3.5" height="3.5"></rect><rect x="51" y="17" width="3.5" height="3.5"></rect><rect x="51" y="21" width="3.5" height="3.5"></rect></g><rect x="51" y="9" width="3.5" height="3.5" fill="#FFFFFF"></rect></svg>
+        <div style="display:flex;flex-direction:column;gap:7px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:27px;line-height:.9;letter-spacing:-0.02em;color:#FFFFFF">SUPER NOVA</div><div style="font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.15em;color:#B9C6D6">INDUSTRY · HONG KONG</div></div>
+      </div>
+      <div style="font-family:'IBM Plex Mono';font-size:9px;letter-spacing:.16em;color:#B9C6D6">A UNITED STAR COMPANY</div>
+    </div>
+  </div>
+  <div style="padding:22px 28px 0;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">01 · 色彩 COLOUR</div>
+  <div style="display:grid;grid-template-columns:2fr 2fr 1fr 1fr 1fr 1fr;gap:1px;margin:12px 28px 0;background:rgba(23,58,99,.12);border:1px solid rgba(23,58,99,.12)">
+    <div style="height:96px;background:#FFCD00;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#0F2A4A;font-family:'IBM Plex Mono';font-size:10px;gap:2px"><span style="font-family:'IBM Plex Sans';font-weight:600;font-size:13px">Signal Yellow</span>#FFCD00</div>
+    <div style="height:96px;background:#0F2A4A;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#FFFFFF;font-family:'IBM Plex Mono';font-size:10px;gap:2px"><span style="font-family:'IBM Plex Sans';font-weight:600;font-size:13px">Navy Deep（母色）</span>#0F2A4A</div>
+    <div style="height:96px;background:#FFF3C4;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#0F2A4A;font-family:'IBM Plex Mono';font-size:10px">#FFF3C4</div>
+    <div style="height:96px;background:#00A3E0;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#0F2A4A;font-family:'IBM Plex Mono';font-size:10px">#00A3E0</div>
+    <div style="height:96px;background:#CE0058;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#FFFFFF;font-family:'IBM Plex Mono';font-size:10px">#CE0058</div>
+    <div style="height:96px;background:#355F8F;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;color:#FFFFFF;font-family:'IBM Plex Mono';font-size:10px">#355F8F</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:22px 28px 0">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">02 · 字体 TYPE</div>
+      <div style="display:flex;align-items:baseline;gap:14px;border-top:1.5px solid #0F2A4A;padding-top:10px"><span style="font-family:'IBM Plex Mono';font-weight:600;font-size:44px;color:#0F2A4A">Aa</span><span style="font-size:13px;color:#454A50">IBM Plex Mono 600 · 字标/标题</span></div>
+      <div style="font-size:13px;color:#454A50">正文仍用 IBM Plex Sans 400/500</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">03 · 辅助图形 PIXEL FIELD</div>
+      <div style="display:grid;grid-template-columns:repeat(16,1fr);gap:2px;border-top:1.5px solid #0F2A4A;padding-top:10px">
+        <div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#FFCD00"></div><div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#355F8F"></div><div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#FFCD00"></div><div style="aspect-ratio:1;background:#FFCD00"></div><div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#00A3E0"></div><div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#355F8F"></div><div style="aspect-ratio:1;background:#FFCD00"></div><div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#CE0058"></div><div style="aspect-ratio:1;background:#0F2A4A"></div>
+        <div style="aspect-ratio:1;background:#FFCD00"></div><div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#355F8F"></div><div style="aspect-ratio:1;background:#FFCD00"></div><div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#FFCD00"></div><div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#FFCD00"></div><div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#FFCD00"></div><div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#FFCD00"></div><div style="aspect-ratio:1;background:#0F2A4A"></div><div style="aspect-ratio:1;background:#FFCD00"></div>
+      </div>
+      <div style="font-size:12px;color:#6E7379">像素带升级为双行"颗粒场"，可无限延展</div>
+    </div>
+  </div>
+  <div style="padding:22px 28px 0;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.14em;color:#6E7379">04 · 应用 APPLICATION</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:12px 28px 28px">
+    <div style="aspect-ratio:85/55;background:#FFFFFF;border:1px solid rgba(23,58,99,.28);padding:20px;display:flex;flex-direction:column;justify-content:space-between">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div style="display:flex;flex-direction:column;gap:4px"><div style="font-family:'IBM Plex Mono';font-weight:600;font-size:16px;color:#0F2A4A">[姓名 NAME]</div><div style="font-size:11px;color:#454A50">[职位 Title]</div></div>
+        <div style="display:grid;grid-template-columns:repeat(3,7px);gap:2px"><div style="height:7px"></div><div style="height:7px;background:#0F2A4A"></div><div style="height:7px"></div><div style="height:7px;background:#0F2A4A"></div><div style="height:7px;background:#FFCD00"></div><div style="height:7px;background:#0F2A4A"></div><div style="height:7px"></div><div style="height:7px;background:#0F2A4A"></div><div style="height:7px"></div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:3px;font-family:'IBM Plex Mono';font-size:9.5px;letter-spacing:.06em;color:#454A50"><span>[EMAIL]</span><span>[TEL]</span><span style="color:#0F2A4A;font-weight:600">[WEBSITE]</span></div>
+      <div style="display:flex;gap:2px"><div style="width:10px;height:4px;background:#0F2A4A"></div><div style="width:10px;height:4px;background:#00A3E0"></div><div style="width:10px;height:4px;background:#CE0058"></div><div style="width:10px;height:4px;background:#FFCD00"></div></div>
+    </div>
+    <div style="aspect-ratio:85/55;background:#0F2A4A;padding:20px;display:flex;flex-direction:column;justify-content:space-between">
+      <div style="font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.14em;color:#B9C6D6">建议口号 · PIGMENTS &amp; DYES</div>
+      <div style="font-family:'IBM Plex Mono';font-weight:600;font-size:26px;line-height:1.05;letter-spacing:-0.02em;color:#FFFFFF">EVERY SHADE,<br><span style="color:#FFCD00">VERIFIED.</span></div>
+      <div style="display:flex;gap:2px"><div style="width:9px;height:9px;background:#FFCD00"></div><div style="width:9px;height:9px;background:#355F8F"></div><div style="width:9px;height:9px;background:#FFCD00"></div><div style="width:9px;height:9px;background:#00A3E0"></div><div style="width:9px;height:9px;background:#FFCD00"></div><div style="width:9px;height:9px;background:#CE0058"></div><div style="width:9px;height:9px;background:#FFCD00"></div></div>
+    </div>
+  </div>
+</div>
+
+</div>
+</section>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,19 @@
+/* SUPERNOVA brand tokens v1.0 — all fonts SIL OFL 1.1 (free for commercial use) */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap');
+:root{
+  --sn-navy:#0F2A4A; --sn-yellow:#FFCD00;
+  --sn-cyan:#00A3E0; --sn-magenta:#CE0058;
+  --sn-white:#FFFFFF; --sn-mist:#F4F5F6; --sn-line:#D9DEE6; --sn-grey:#6E7379; --sn-graphite:#454A50; --sn-ink:#161815;
+  --sn-descriptor:#53565A; --sn-on-navy-muted:#B9C6D6; --sn-steel:#355F8F; --sn-highlight:#FFF3C4;
+  --sn-line-organic:#00A3E0; --sn-line-inorganic:#CE0058; --sn-line-fluorescent:#FFCD00; --sn-line-solvent:#173A63;
+  --sn-font-mono:'IBM Plex Mono','Noto Sans SC',monospace;
+  --sn-font-sans:'IBM Plex Sans','Noto Sans SC',sans-serif;
+  --sn-rule-heavy:1.5px solid var(--sn-navy);
+  --sn-rule-hair:1px solid rgba(23,58,99,.12);
+  --sn-radius:0;
+}
+body{font-family:var(--sn-font-sans);color:var(--sn-ink);background:var(--sn-white)}
+a{color:var(--sn-navy)} a:hover{color:var(--sn-magenta)}
+.sn-label{font-family:var(--sn-font-mono);text-transform:uppercase;letter-spacing:.14em;color:var(--sn-grey)}
+.sn-heading{font-weight:600;letter-spacing:-.02em;color:var(--sn-navy)}
+.sn-data{font-family:var(--sn-font-mono);font-variant-numeric:tabular-nums}

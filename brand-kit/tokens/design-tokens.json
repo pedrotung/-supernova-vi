@@ -1,0 +1,242 @@
+{
+  "meta": {
+    "brand": "SUPERNOVA",
+    "legalName": "SUPERNOVA INDUSTRY CO., LIMITED",
+    "parent": "United Star",
+    "version": "1.0",
+    "date": "2026-10"
+  },
+  "color": {
+    "brand": {
+      "navy": {
+        "hex": "#0F2A4A",
+        "rgb": [
+          15,
+          42,
+          74
+        ],
+        "cmyk": [
+          100,
+          85,
+          35,
+          40
+        ],
+        "pantoneRef": "289 C",
+        "role": "primary"
+      },
+      "yellow": {
+        "hex": "#FFCD00",
+        "rgb": [
+          255,
+          205,
+          0
+        ],
+        "cmyk": [
+          0,
+          15,
+          100,
+          0
+        ],
+        "pantoneRef": "116 C",
+        "role": "accent"
+      }
+    },
+    "secondary": {
+      "cyan": {
+        "hex": "#00A3E0",
+        "rgb": [
+          0,
+          163,
+          224
+        ],
+        "cmyk": [
+          80,
+          15,
+          0,
+          0
+        ],
+        "pantoneRef": "299 C"
+      },
+      "magenta": {
+        "hex": "#CE0058",
+        "rgb": [
+          206,
+          0,
+          88
+        ],
+        "cmyk": [
+          0,
+          100,
+          40,
+          10
+        ],
+        "pantoneRef": "214 C"
+      }
+    },
+    "neutral": {
+      "white": "#FFFFFF",
+      "mist": "#F4F5F6",
+      "line": "#D9DEE6",
+      "grey": "#6E7379",
+      "graphite": "#454A50",
+      "ink": "#161815",
+      "descriptor": "#53565A",
+      "onNavyMuted": "#B9C6D6",
+      "steel": "#355F8F",
+      "highlight": "#FFF3C4"
+    },
+    "productLine": {
+      "organic": "#00A3E0",
+      "inorganic": "#CE0058",
+      "fluorescent": "#FFCD00",
+      "solvent": "#173A63"
+    },
+    "usageRatio": {
+      "white": 60,
+      "navy": 25,
+      "yellow": 10,
+      "secondary": 5
+    },
+    "printNote": "CMYK / Pantone values are references only; confirm with printer proofs."
+  },
+  "typography": {
+    "families": {
+      "mono": "'IBM Plex Mono','Noto Sans SC',monospace",
+      "sans": "'IBM Plex Sans','Noto Sans SC',sans-serif",
+      "cjk": "'Noto Sans SC',sans-serif"
+    },
+    "licenses": {
+      "IBM Plex Mono": "SIL OFL 1.1",
+      "IBM Plex Sans": "SIL OFL 1.1",
+      "Noto Sans SC": "SIL OFL 1.1"
+    },
+    "weights": [
+      400,
+      500,
+      600
+    ],
+    "roles": {
+      "wordmark": "IBM Plex Mono 600, tracking -0.03em, uppercase",
+      "heading": "IBM Plex Sans 600, tracking -0.02em",
+      "body": "IBM Plex Sans 400, line-height 1.6",
+      "label": "IBM Plex Mono 400–500, uppercase, tracking 0.14em",
+      "data": "IBM Plex Mono 400, right-aligned, tabular"
+    },
+    "documentScale": {
+      "title": "20pt",
+      "sectionTitle": "12pt",
+      "body": "10.5pt",
+      "table": "7.5–9.5pt",
+      "label": "7–7.5pt",
+      "footer": "7pt"
+    },
+    "forbiddenSubstitutes": [
+      "Microsoft YaHei 微软雅黑",
+      "Arial",
+      "Helvetica",
+      "SimSun 宋体",
+      "Any system font"
+    ]
+  },
+  "logo": {
+    "gridUnit": "1u = 1/11 of construction grid; icon viewBox 0 -2 66 66",
+    "pixel": {
+      "standard": 0.88,
+      "print": 0.8,
+      "solid": 1
+    },
+    "clearSpace": "X = 1/4 of icon width on all sides",
+    "minSize": {
+      "standardLockup": {
+        "print": "40mm",
+        "screen": "200px"
+      },
+      "simplifiedLockup": {
+        "print": "25mm",
+        "screen": "120px"
+      },
+      "icon": {
+        "print": "6mm",
+        "screen": "16px"
+      }
+    },
+    "printTiers": {
+      "standard": "icon ≥ 18mm / ≥ 32px",
+      "print": "icon 11–18mm / 24–32px",
+      "solid": "icon < 11mm / < 24px, foil, emboss, embroidery, laser"
+    },
+    "colorSchemes": {
+      "positive": {
+        "frame": "#0F2A4A",
+        "star": "#0F2A4A",
+        "center": "#FFCD00"
+      },
+      "reversed": {
+        "frame": "#FFFFFF",
+        "star": "#FFCD00",
+        "center": "#FFFFFF"
+      },
+      "onYellow": {
+        "frame": "#0F2A4A",
+        "star": "#0F2A4A",
+        "center": "#FFFFFF"
+      },
+      "mono": {
+        "frame": "#161815",
+        "star": "#161815",
+        "center": "none (knockout)"
+      }
+    }
+  },
+  "graphics": {
+    "pixelBlock": {
+      "grid": "8x2",
+      "cells": [
+        [
+          "yellow",
+          "navy",
+          null,
+          "yellow",
+          null,
+          "cyan",
+          "navy",
+          "yellow"
+        ],
+        [
+          null,
+          "yellow",
+          "navy",
+          null,
+          "magenta",
+          "yellow",
+          null,
+          "navy"
+        ]
+      ],
+      "note": "on navy backgrounds replace navy cells with steel #355F8F and last cell with white"
+    },
+    "cmykBar": [
+      "#0F2A4A",
+      "#00A3E0",
+      "#CE0058",
+      "#FFCD00"
+    ],
+    "endorsementStar": "United Star 4-point star; magenta on light, yellow on dark; only before \"A UNITED STAR COMPANY\""
+  },
+  "layout": {
+    "corners": "square (0 radius) for all UI and print containers",
+    "rules": {
+      "heavy": "1.5px #0F2A4A",
+      "hairline": "1px rgba(23,58,99,.12)"
+    },
+    "shadows": "none"
+  },
+  "company": {
+    "name": "SUPERNOVA INDUSTRY CO., LIMITED",
+    "address": "Room A35, Unit 10, 2/F, Man Lee Industrial Building, 13 Kin Hong Street, Kwai Chung, New Territories, Hong Kong",
+    "tel": "+852 3119 8808",
+    "email": null,
+    "website": null,
+    "chineseName": null
+  }
+}

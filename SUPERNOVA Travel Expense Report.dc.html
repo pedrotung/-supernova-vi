@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="./doc-page.js"></script>
+<style>doc-page:not(:defined){visibility:hidden}body{margin:0;font-family:'IBM Plex Sans','Noto Sans SC',sans-serif;color:#161815}a{color:#0F2A4A}a:hover{color:#CE0058}tr{break-inside:avoid}</style>
+</helmet>
+<doc-page size="a4" margin="0">
+  <div slot="header" style="padding:16mm 20mm 0;font-family:'IBM Plex Sans','Noto Sans SC',sans-serif">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:5mm;border-bottom:1.5px solid #0F2A4A">
+      <div style="display:flex;align-items:center;gap:4mm">
+        <svg viewBox="0 0 64 64" style="width:16mm;height:16mm;overflow:visible"><path fill="#0F2A4A" d="M0 4h4.8v4.8h-4.8zM6 4h4.8v4.8h-4.8zM12 4h4.8v4.8h-4.8zM18 4h4.8v4.8h-4.8zM24 4h4.8v4.8h-4.8zM0 58h4.8v4.8h-4.8zM6 58h4.8v4.8h-4.8zM12 58h4.8v4.8h-4.8zM18 58h4.8v4.8h-4.8zM24 58h4.8v4.8h-4.8zM30 58h4.8v4.8h-4.8zM36 58h4.8v4.8h-4.8zM42 58h4.8v4.8h-4.8zM48 58h4.8v4.8h-4.8zM54 58h4.8v4.8h-4.8zM0 10h4.8v4.8h-4.8zM0 16h4.8v4.8h-4.8zM0 22h4.8v4.8h-4.8zM0 28h4.8v4.8h-4.8zM0 34h4.8v4.8h-4.8zM0 40h4.8v4.8h-4.8zM0 46h4.8v4.8h-4.8zM0 52h4.8v4.8h-4.8zM54 34h4.8v4.8h-4.8zM54 40h4.8v4.8h-4.8zM54 46h4.8v4.8h-4.8zM54 52h4.8v4.8h-4.8z"></path><path fill="#0F2A4A" transform="translate(24,-2) scale(6)" d="M3 0h.8v.8h-.8zM3 1h.8v.8h-.8zM2 2h.8v.8h-.8zM3 2h.8v.8h-.8zM4 2h.8v.8h-.8zM0 3h.8v.8h-.8zM1 3h.8v.8h-.8zM2 3h.8v.8h-.8zM4 3h.8v.8h-.8zM5 3h.8v.8h-.8zM6 3h.8v.8h-.8zM2 4h.8v.8h-.8zM3 4h.8v.8h-.8zM4 4h.8v.8h-.8zM3 5h.8v.8h-.8zM3 6h.8v.8h-.8z"></path><path fill="#FFCD00" transform="translate(24,-2) scale(6)" d="M3 3h.8v.8h-.8z"></path></svg>
+        <div style="display:flex;flex-direction:column;gap:1.6mm">
+          <div style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:600;font-size:17pt;line-height:.9;letter-spacing:-0.03em;color:#0F2A4A">SUPERNOVA</div>
+          <div style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:6.5pt;letter-spacing:.15em;color:#53565A">INDUSTRY CO., LIMITED</div>
+          <div style="display:flex;align-items:center;gap:1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:6pt;letter-spacing:.16em;color:#0F2A4A;border-top:1px solid rgba(23,58,99,.28);padding-top:1.4mm"><svg viewBox="0 0 16 16" style="width:2mm;height:2mm"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(8,2.2mm);grid-auto-rows:2.2mm;gap:.7mm">
+        <div style="background:#FFCD00"></div><div style="background:#0F2A4A"></div><div></div><div style="background:#FFCD00"></div><div></div><div style="background:#00A3E0"></div><div style="background:#0F2A4A"></div><div style="background:#FFCD00"></div>
+        <div></div><div style="background:#FFCD00"></div><div style="background:#0F2A4A"></div><div></div><div style="background:#CE0058"></div><div style="background:#FFCD00"></div><div></div><div style="background:#0F2A4A"></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:10mm 20mm 0;font-family:'IBM Plex Sans','Noto Sans SC',sans-serif;font-size:9.5pt;line-height:1.5;color:#161815">
+    <div style="display:flex;align-items:center;gap:2mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:7.5pt;letter-spacing:.14em;color:#6E7379;margin-bottom:2mm">
+      <div style="display:flex;gap:.6mm"><div style="width:2.4mm;height:1mm;background:#0F2A4A"></div><div style="width:2.4mm;height:1mm;background:#00A3E0"></div><div style="width:2.4mm;height:1mm;background:#CE0058"></div><div style="width:2.4mm;height:1mm;background:#FFCD00"></div></div>
+      EXPENSE REPORT
+    </div>
+    <div style="font-weight:600;font-size:20pt;letter-spacing:-0.02em;line-height:1.15;color:#0F2A4A;margin-bottom:5mm">Travel Expense Report</div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1.5px solid #0F2A4A;border-bottom:1px solid rgba(23,58,99,.12);margin-bottom:8mm">
+      <div style="padding:2.5mm 0;display:flex;flex-direction:column;gap:.5mm"><span style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:7pt;letter-spacing:.14em;color:#6E7379">TRAVEL PERIOD</span><span style="font-weight:500;color:#0F2A4A">August 1–7, 2026</span></div>
+      <div style="padding:2.5mm 0;display:flex;flex-direction:column;gap:.5mm"><span style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:7pt;letter-spacing:.14em;color:#6E7379">PREPARED</span><span style="font-weight:500;color:#0F2A4A">October 14, 2026</span></div>
+      <div style="padding:2.5mm 0;display:flex;flex-direction:column;gap:.5mm"><span style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:7pt;letter-spacing:.14em;color:#6E7379">CURRENCY</span><span style="font-weight:500;color:#0F2A4A">CNY and USD</span></div>
+    </div>
+
+    <div style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:7.5pt;letter-spacing:.14em;color:#6E7379;margin-bottom:1.5mm">01 · SUMMARY</div>
+    <div style="font-weight:600;font-size:12pt;color:#0F2A4A;margin-bottom:3mm">Expense summary</div>
+    <table style="width:100%;border-collapse:collapse;margin-bottom:9mm;font-size:9.5pt">
+      <thead><tr style="border-top:1.5px solid #0F2A4A;background:#F4F5F6">
+        <th style="text-align:left;padding:2mm 2mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:7pt;letter-spacing:.12em;color:#454A50">CATEGORY</th>
+        <th style="text-align:right;padding:2mm 2mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:7pt;letter-spacing:.12em;color:#454A50">AMOUNT (CNY)</th>
+        <th style="text-align:right;padding:2mm 2mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:7pt;letter-spacing:.12em;color:#454A50">AMOUNT (USD)</th>
+      </tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid rgba(23,58,99,.12)"><td style="padding:2mm"><span style="display:inline-block;width:2mm;height:2mm;background:#00A3E0;margin-right:2mm"></span>Airfare</td><td style="padding:2mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace">¥7,308.00</td><td style="padding:2mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace">$1,092.79</td></tr>
+        <tr style="border-bottom:1px solid rgba(23,58,99,.12)"><td style="padding:2mm"><span style="display:inline-block;width:2mm;height:2mm;background:#CE0058;margin-right:2mm"></span>Rail fare</td><td style="padding:2mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace">¥3,083.00</td><td style="padding:2mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace">$461.01</td></tr>
+        <tr style="border-bottom:1px solid rgba(23,58,99,.12)"><td style="padding:2mm;color:#454A50"><span style="display:inline-block;width:2mm;height:2mm;margin-right:2mm"></span>Rounding adjustment</td><td style="padding:2mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace;color:#454A50">—</td><td style="padding:2mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace;color:#454A50">-0.01</td></tr>
+        <tr style="border-top:1.5px solid #0F2A4A"><td style="padding:2.5mm 2mm;font-weight:600;color:#0F2A4A">Total reimbursement</td><td style="padding:2.5mm 2mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:600;color:#0F2A4A">¥10,391.00</td><td style="padding:2.5mm 2mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:600;color:#0F2A4A;background:#FFF3C4">$1,553.79</td></tr>
+      </tbody>
+    </table>
+
+    <div style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:7.5pt;letter-spacing:.14em;color:#6E7379;margin-bottom:1.5mm">02 · AIRFARE</div>
+    <div style="font-weight:600;font-size:12pt;color:#0F2A4A;margin-bottom:3mm">Airfare</div>
+    <table style="width:100%;border-collapse:collapse;font-size:7.5pt;line-height:1.35">
+      <thead><tr style="border-top:1.5px solid #0F2A4A;background:#F4F5F6">
+        <th style="text-align:left;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">DATE</th>
+        <th style="text-align:left;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">AIRLINE</th>
+        <th style="text-align:left;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">FLIGHT</th>
+        <th style="text-align:left;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">ROUTE</th>
+        <th style="text-align:left;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">TRAVELER</th>
+        <th style="text-align:left;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">TICKET NO.</th>
+        <th style="text-align:right;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">CNY</th>
+        <th style="text-align:right;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">USD</th>
+      </tr></thead>
+      <tbody>
+        <sc-for list="{{ air }}" as="r" hint-placeholder-count="8">
+          <tr style="border-bottom:1px solid rgba(23,58,99,.12)">
+            <td style="padding:1.6mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;white-space:nowrap">{{ r.date }}</td>
+            <td style="padding:1.6mm 1.4mm">{{ r.airline }}</td>
+            <td style="padding:1.6mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace">{{ r.flight }}</td>
+            <td style="padding:1.6mm 1.4mm">{{ r.route }}</td>
+            <td style="padding:1.6mm 1.4mm">{{ r.traveler }}</td>
+            <td style="padding:1.6mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;white-space:nowrap">{{ r.ticket }}</td>
+            <td style="padding:1.6mm 1.4mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace;white-space:nowrap">{{ r.cny }}</td>
+            <td style="padding:1.6mm 1.4mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace;white-space:nowrap">{{ r.usd }}</td>
+          </tr>
+        </sc-for>
+        <tr style="border-top:1.5px solid #0F2A4A"><td colspan="6" style="padding:2mm 1.4mm;font-weight:600;color:#0F2A4A;font-size:8.5pt">Airfare subtotal</td><td style="padding:2mm 1.4mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:600;color:#0F2A4A;white-space:nowrap">¥7,308.00</td><td style="padding:2mm 1.4mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:600;color:#0F2A4A;white-space:nowrap">$1,092.79</td></tr>
+      </tbody>
+    </table>
+    <div style="height:9mm"></div>
+
+    <div style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:7.5pt;letter-spacing:.14em;color:#6E7379;margin-bottom:1.5mm">03 · RAIL</div>
+    <div style="font-weight:600;font-size:12pt;color:#0F2A4A;margin-bottom:3mm">Rail fare</div>
+    <table style="width:100%;border-collapse:collapse;font-size:7.5pt;line-height:1.35">
+      <thead><tr style="border-top:1.5px solid #0F2A4A;background:#F4F5F6">
+        <th style="text-align:left;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">DATE</th>
+        <th style="text-align:left;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">TRAIN</th>
+        <th style="text-align:left;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">ROUTE</th>
+        <th style="text-align:left;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">TRAVELER</th>
+        <th style="text-align:left;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">CLASS</th>
+        <th style="text-align:right;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">CNY</th>
+        <th style="text-align:right;padding:1.8mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:500;font-size:6.5pt;letter-spacing:.1em;color:#454A50">USD</th>
+      </tr></thead>
+      <tbody>
+        <sc-for list="{{ rail }}" as="r" hint-placeholder-count="8">
+          <tr style="border-bottom:1px solid rgba(23,58,99,.12)">
+            <td style="padding:1.6mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;white-space:nowrap">{{ r.date }}</td>
+            <td style="padding:1.6mm 1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace">{{ r.train }}</td>
+            <td style="padding:1.6mm 1.4mm">{{ r.route }}</td>
+            <td style="padding:1.6mm 1.4mm">{{ r.traveler }}</td>
+            <td style="padding:1.6mm 1.4mm">{{ r.cls }}</td>
+            <td style="padding:1.6mm 1.4mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace;white-space:nowrap">{{ r.cny }}</td>
+            <td style="padding:1.6mm 1.4mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace;white-space:nowrap">{{ r.usd }}</td>
+          </tr>
+        </sc-for>
+        <tr style="border-top:1.5px solid #0F2A4A"><td colspan="5" style="padding:2mm 1.4mm;font-weight:600;color:#0F2A4A;font-size:8.5pt">Rail fare subtotal</td><td style="padding:2mm 1.4mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:600;color:#0F2A4A;white-space:nowrap">¥3,083.00</td><td style="padding:2mm 1.4mm;text-align:right;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:600;color:#0F2A4A;white-space:nowrap">$461.01</td></tr>
+      </tbody>
+    </table>
+    <div style="height:9mm"></div>
+
+    <div style="break-inside:avoid">
+      <div style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:7.5pt;letter-spacing:.14em;color:#6E7379;margin-bottom:1.5mm">04 · NOTES</div>
+      <div style="font-weight:600;font-size:12pt;color:#0F2A4A;margin-bottom:3mm">Exchange rate and notes</div>
+      <div style="display:flex;flex-direction:column;border-top:1.5px solid #0F2A4A;font-size:8.5pt;line-height:1.55;color:#454A50">
+        <div style="display:grid;grid-template-columns:6mm 1fr;padding:2.2mm 0;border-bottom:1px solid rgba(23,58,99,.12)"><span style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;color:#6E7379">01</span><span>USD conversion uses the October 14, 2026 reference rate of USD 1 = CNY 6.6875 (published reference rate via ExchangeRateTool/Frankfurter). USD amounts are rounded to two decimal places. A -$0.01 rounding adjustment reconciles independently rounded category subtotals to the converted grand total.</span></div>
+        <div style="display:grid;grid-template-columns:6mm 1fr;padding:2.2mm 0;border-bottom:1px solid rgba(23,58,99,.12)"><span style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;color:#6E7379">02</span><span>CNY amounts are shown as supplied. Airfare excludes passenger Dong Yan, whose tickets are 999-2570148953 and 479-4288535396.</span></div>
+        <div style="display:grid;grid-template-columns:6mm 1fr;padding:2.2mm 0;border-bottom:1px solid rgba(23,58,99,.12)"><span style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;color:#6E7379">03</span><span>The source records a spelling variation for Eduardo Antonio Arcegamas across itineraries; the traveler is presented consistently as ARCEGAMAS / EDUARDO ANTONIO.</span></div>
+        <div style="display:grid;grid-template-columns:6mm 1fr;padding:2.2mm 0"><span style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;color:#6E7379">04</span><span style="color:#0F2A4A;font-weight:600">Total reimbursement requested: $1,553.79 USD (¥10,391.00 CNY).</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div slot="footer" style="padding:0 20mm 12mm;font-family:'IBM Plex Sans','Noto Sans SC',sans-serif">
+    <div style="display:flex;flex-direction:column;gap:2.5mm;border-top:1px solid rgba(23,58,99,.12);padding-top:4mm">
+      <div style="display:flex;justify-content:space-between;gap:8mm;font-size:7pt;line-height:1.5;color:#454A50">
+        <div style="display:flex;flex-direction:column;gap:.5mm"><span style="font-weight:600;color:#0F2A4A">SUPERNOVA INDUSTRY CO., LIMITED</span><span>Room A35, Unit 10, 2/F, Man Lee Industrial Building, 13 Kin Hong Street, Kwai Chung, New Territories, Hong Kong</span></div>
+      </div>
+      <div style="display:flex;gap:.6mm"><div style="flex:1;height:1mm;background:#0F2A4A"></div><div style="flex:1;height:1mm;background:#00A3E0"></div><div style="flex:1;height:1mm;background:#CE0058"></div><div style="flex:1;height:1mm;background:#FFCD00"></div></div>
+    </div>
+  </div>
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const A = 'ARCEGAMAS / EDUARDO ANTONIO', P = 'PALOMOHERNANDEZ / CARMEN C', M = 'MAIERLOPEZ / CHRISTIAN CHARLES', U = 'UGALDECEDILLO / GRACIELA A';
+const AIR = [
+  ['2026-08-01','Shenzhen Airlines','ZH9535','Guangzhou to Shanghai',A,'479-4288535395','¥940.00','$140.56'],
+  ['2026-08-01','Shenzhen Airlines','ZH9535','Guangzhou to Shanghai',P,'479-4288535398','¥940.00','$140.56'],
+  ['2026-08-01','Shenzhen Airlines','ZH9535','Guangzhou to Shanghai',M,'479-4288535397','¥940.00','$140.56'],
+  ['2026-08-01','Shenzhen Airlines','ZH9535','Guangzhou to Shanghai',U,'479-4288535399','¥940.00','$140.56'],
+  ['2026-08-05','Air China','CA1707','Hangzhou to Beijing',A,'999-2570148952','¥887.00','$132.64'],
+  ['2026-08-05','Air China','CA1707','Hangzhou to Beijing',P,'999-2570148955','¥887.00','$132.64'],
+  ['2026-08-05','Air China','CA1707','Hangzhou to Beijing',M,'999-2570148954','¥887.00','$132.64'],
+  ['2026-08-05','Air China','CA1707','Hangzhou to Beijing',U,'999-2570148956','¥887.00','$132.64'],
+].map(([date,airline,flight,route,traveler,ticket,cny,usd]) => ({date,airline,flight,route,traveler,ticket,cny,usd}));
+const RAIL = [
+  ['2026-08-03','G7084','Shanghai to Huangshan North',A,'First Class','¥465.00','$69.53'],
+  ['2026-08-03','G7084','Shanghai to Huangshan North',M,'First Class','¥465.00','$69.53'],
+  ['2026-08-03','G1510','Huangshan North to Hangzhou East',A,'Business Class','¥375.50','$56.15'],
+  ['2026-08-03','G1510','Huangshan North to Hangzhou East',M,'Business Class','¥375.50','$56.15'],
+  ['2026-08-06','G3627','Beijing Chaoyang to Jinzhou North',A,'First Class','¥423.00','$63.25'],
+  ['2026-08-06','G3627','Beijing Chaoyang to Jinzhou North',M,'First Class','¥423.00','$63.25'],
+  ['2026-08-07','G164','Jinzhou North to Beijing Chaoyang',A,'Second Class','¥278.00','$41.57'],
+  ['2026-08-07','G164','Jinzhou North to Beijing Chaoyang',M,'Second Class','¥278.00','$41.57'],
+].map(([date,train,route,traveler,cls,cny,usd]) => ({date,train,route,traveler,cls,cny,usd}));
+class Component extends DCLogic {
+  renderVals() { return { air: AIR, rail: RAIL }; }
+}
+</script>
+</body>
+</html>

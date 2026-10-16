@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="./doc-page.js"></script>
+<style>doc-page:not(:defined){visibility:hidden}body{margin:0;font-family:'IBM Plex Sans','Noto Sans SC',sans-serif;color:#161815}a{color:#0F2A4A}a:hover{color:#CE0058}</style>
+</helmet>
+<doc-page size="a4" margin="0">
+  <div slot="header" style="padding:16mm 20mm 0;font-family:'IBM Plex Sans','Noto Sans SC',sans-serif">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:5mm;border-bottom:1.5px solid #0F2A4A">
+      <div style="display:flex;align-items:center;gap:4mm">
+        <svg viewBox="0 0 64 64" style="width:16mm;height:16mm;overflow:visible"><path fill="#0F2A4A" d="M0 4h4.8v4.8h-4.8zM6 4h4.8v4.8h-4.8zM12 4h4.8v4.8h-4.8zM18 4h4.8v4.8h-4.8zM24 4h4.8v4.8h-4.8zM0 58h4.8v4.8h-4.8zM6 58h4.8v4.8h-4.8zM12 58h4.8v4.8h-4.8zM18 58h4.8v4.8h-4.8zM24 58h4.8v4.8h-4.8zM30 58h4.8v4.8h-4.8zM36 58h4.8v4.8h-4.8zM42 58h4.8v4.8h-4.8zM48 58h4.8v4.8h-4.8zM54 58h4.8v4.8h-4.8zM0 10h4.8v4.8h-4.8zM0 16h4.8v4.8h-4.8zM0 22h4.8v4.8h-4.8zM0 28h4.8v4.8h-4.8zM0 34h4.8v4.8h-4.8zM0 40h4.8v4.8h-4.8zM0 46h4.8v4.8h-4.8zM0 52h4.8v4.8h-4.8zM54 34h4.8v4.8h-4.8zM54 40h4.8v4.8h-4.8zM54 46h4.8v4.8h-4.8zM54 52h4.8v4.8h-4.8z"></path><path fill="#0F2A4A" transform="translate(24,-2) scale(6)" d="M3 0h.8v.8h-.8zM3 1h.8v.8h-.8zM2 2h.8v.8h-.8zM3 2h.8v.8h-.8zM4 2h.8v.8h-.8zM0 3h.8v.8h-.8zM1 3h.8v.8h-.8zM2 3h.8v.8h-.8zM4 3h.8v.8h-.8zM5 3h.8v.8h-.8zM6 3h.8v.8h-.8zM2 4h.8v.8h-.8zM3 4h.8v.8h-.8zM4 4h.8v.8h-.8zM3 5h.8v.8h-.8zM3 6h.8v.8h-.8z"></path><path fill="#FFCD00" transform="translate(24,-2) scale(6)" d="M3 3h.8v.8h-.8z"></path></svg>
+        <div style="display:flex;flex-direction:column;gap:1.6mm">
+          <div style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-weight:600;font-size:17pt;line-height:.9;letter-spacing:-0.03em;color:#0F2A4A">SUPERNOVA</div>
+          <div style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:6.5pt;letter-spacing:.15em;color:#53565A">INDUSTRY CO., LIMITED</div>
+          <div style="display:flex;align-items:center;gap:1.4mm;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:6pt;letter-spacing:.16em;color:#0F2A4A;border-top:1px solid rgba(23,58,99,.28);padding-top:1.4mm"><svg viewBox="0 0 16 16" style="width:2mm;height:2mm"><path d="M8 0 L9.85 6.15 L16 8 L9.85 9.85 L8 16 L6.15 9.85 L0 8 L6.15 6.15 Z" fill="#CE0058"></path></svg>A UNITED STAR COMPANY</div>
+        </div>
+      </div>
+      <sc-if value="{{ showPixels }}" hint-placeholder-val="{{ true }}">
+        <div style="display:grid;grid-template-columns:repeat(8,2.2mm);grid-auto-rows:2.2mm;gap:.7mm">
+          <div style="background:#FFCD00"></div><div style="background:#0F2A4A"></div><div></div><div style="background:#FFCD00"></div><div></div><div style="background:#00A3E0"></div><div style="background:#0F2A4A"></div><div style="background:#FFCD00"></div>
+          <div></div><div style="background:#FFCD00"></div><div style="background:#0F2A4A"></div><div></div><div style="background:#CE0058"></div><div style="background:#FFCD00"></div><div></div><div style="background:#0F2A4A"></div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+
+  <div style="padding:12mm 20mm 0;font-family:'IBM Plex Sans','Noto Sans SC',sans-serif;font-size:10.5pt;line-height:1.6;color:#161815">
+    <div style="display:flex;justify-content:space-between;gap:10mm;margin-bottom:10mm">
+      <div style="display:flex;flex-direction:column;gap:.5mm">
+        <div style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:7.5pt;letter-spacing:.14em;color:#6E7379">TO</div>
+        <div style="font-weight:600;color:#0F2A4A">All Valued Customers and Partners</div>
+      </div>
+      <div style="display:grid;grid-template-columns:auto auto;column-gap:5mm;row-gap:1mm;align-content:start;font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:8.5pt;letter-spacing:.04em">
+        <span style="color:#6E7379;letter-spacing:.14em;font-size:7.5pt">DATE</span><span>14 OCT 2026</span>
+        <span style="color:#6E7379;letter-spacing:.14em;font-size:7.5pt">REF</span><span>SN-2026-[000]</span>
+      </div>
+    </div>
+    <div style="font-weight:600;font-size:12pt;letter-spacing:-0.01em;color:#0F2A4A;margin-bottom:6mm">Notice of Change of Company Address</div>
+    <p style="margin:0 0 4mm">Dear Valued Customers and Partners,</p>
+    <p style="margin:0 0 4mm">We are pleased to inform you that, with immediate effect from 14 October 2026, SUPERNOVA INDUSTRY CO., LIMITED has relocated to the following address:</p>
+    <div style="break-inside:avoid;margin:0 0 5mm;border-top:1.5px solid #0F2A4A;border-bottom:1px solid rgba(23,58,99,.12);padding:4mm 0;display:grid;grid-template-columns:22mm 1fr;row-gap:2mm;column-gap:4mm">
+      <span style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:7.5pt;letter-spacing:.14em;color:#6E7379;padding-top:.6mm">NEW ADDRESS</span>
+      <span style="font-weight:500;color:#0F2A4A">Room A35, Unit 10, 2/F, Man Lee Industrial Building,<br>13 Kin Hong Street, Kwai Chung,<br>New Territories, Hong Kong</span>
+      <span style="font-family:'IBM Plex Mono','Noto Sans SC',monospace;font-size:7.5pt;letter-spacing:.14em;color:#6E7379;padding-top:.6mm">TEL</span>
+      <span>+852 3119 8808</span>
+    </div>
+    <p style="margin:0 0 4mm">Please update your records accordingly and direct all correspondence, documents and deliveries to the new address from this date. Our products and services remain unchanged, and the relocation does not affect any existing orders or agreements.</p>
+    <p style="margin:0 0 4mm">Should you have any questions, please contact us at +852 3119 8808. Thank you for your continued trust and support.</p>
+    <p style="margin:0 0 12mm">Yours sincerely,</p>
+    <div style="display:flex;flex-direction:column;gap:.5mm;break-inside:avoid">
+      <div style="height:14mm;width:50mm;border-bottom:1px solid rgba(23,58,99,.28);margin-bottom:2mm"></div>
+      <div style="font-weight:600;color:#0F2A4A">[Signatory Name]</div>
+      <div style="color:#454A50">[Title]</div>
+      <div style="color:#454A50">SUPERNOVA INDUSTRY CO., LIMITED</div>
+    </div>
+  </div>
+
+  <div slot="footer" style="padding:0 20mm 12mm;font-family:'IBM Plex Sans','Noto Sans SC',sans-serif">
+    <div style="display:flex;flex-direction:column;gap:2.5mm;border-top:1px solid rgba(23,58,99,.12);padding-top:4mm">
+      <div style="display:flex;justify-content:space-between;gap:8mm;font-size:7pt;line-height:1.5;color:#454A50">
+        <div style="display:flex;flex-direction:column;gap:.5mm"><span style="font-weight:600;color:#0F2A4A">SUPERNOVA INDUSTRY CO., LIMITED</span><span>Room A35, Unit 10, 2/F, Man Lee Industrial Building, 13 Kin Hong Street, Kwai Chung, New Territories, Hong Kong</span></div>
+      </div>
+      <div style="display:flex;gap:.6mm"><div style="flex:1;height:1mm;background:#0F2A4A"></div><div style="flex:1;height:1mm;background:#00A3E0"></div><div style="flex:1;height:1mm;background:#CE0058"></div><div style="flex:1;height:1mm;background:#FFCD00"></div></div>
+    </div>
+  </div>
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showPixels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showPixels: this.props.showPixels ?? true,
+      showTaxId: this.props.showTaxId ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>
