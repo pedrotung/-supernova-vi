@@ -19,6 +19,8 @@
 .t-cta{grid-column:span 3;background:var(--yellow);border-color:var(--yellow);justify-content:space-between}
 .t-cta::after{display:none}
 .t-cta::before{background:var(--navy)}
+.head-mark{display:none}
+.head-mark svg{display:block;width:100%;height:auto}
 .prompt{font:500 .8rem/1 var(--mono);color:var(--grey);letter-spacing:.06em}
 .prompt b{color:var(--magenta);font-weight:500}
 .t-head h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.02;letter-spacing:-.035em}
@@ -124,12 +126,18 @@
   .t-pad{display:none}
   .t-head{grid-column:span 12;grid-row:auto}
 }
+/* touch tablets: the official icon (fixed 1:1 viewBox, never stretched) fills the space the pad leaves */
+@media (hover:none) and (pointer:coarse) and (min-width:760px){
+  .t-head>*:not(.head-mark){max-width:60%}
+  .head-mark{display:block;position:absolute;right:clamp(32px,5vw,72px);top:50%;transform:translateY(-50%);width:min(28%,280px)}
+}
 </style>
 <div class="ver">SKETCH C · PIXEL BENTO · DRAFT COPY</div>
 {{HEADER}}
 <main>
 <div class="wrap bento">
   <div class="tile t-head">
+    <div class="head-mark" aria-hidden="true">{{ICON_POS}}</div>
     <span class="prompt"><b>&gt;</b> supernova --pigments --dyes --qc</span>
     <h1 id="hl">Bright <span class="m">color</span>.<br>Proven <span class="m">data</span>.<span class="caret" aria-hidden="true"></span></h1>
     <p class="lede">Part of the United Star group. Organic, inorganic and fluorescent pigments plus solvent dyes, with every batch lab-checked before it ships.</p>

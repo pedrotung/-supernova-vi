@@ -96,6 +96,8 @@ p{margin:0;text-wrap:pretty}
 .t-cta{grid-column:span 3;background:var(--yellow);border-color:var(--yellow);justify-content:space-between}
 .t-cta::after{display:none}
 .t-cta::before{background:var(--navy)}
+.head-mark{display:none}
+.head-mark svg{display:block;width:100%;height:auto}
 .prompt{font:500 .8rem/1 var(--mono);color:var(--grey);letter-spacing:.06em}
 .prompt b{color:var(--magenta);font-weight:500}
 .t-head h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.02;letter-spacing:-.035em}
@@ -201,6 +203,11 @@ p{margin:0;text-wrap:pretty}
   .t-pad{display:none}
   .t-head{grid-column:span 12;grid-row:auto}
 }
+/* touch tablets: the official icon (fixed 1:1 viewBox, never stretched) fills the space the pad leaves */
+@media (hover:none) and (pointer:coarse) and (min-width:760px){
+  .t-head>*:not(.head-mark){max-width:60%}
+  .head-mark{display:block;position:absolute;right:clamp(32px,5vw,72px);top:50%;transform:translateY(-50%);width:min(28%,280px)}
+}
 </style>
 <div class="ver">SKETCH C · PIXEL BENTO · DRAFT COPY</div>
 <header class="site-header" id="top">
@@ -220,6 +227,7 @@ p{margin:0;text-wrap:pretty}
 <main>
 <div class="wrap bento">
   <div class="tile t-head">
+    <div class="head-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 66 66"><path d="M0 4h5.28v5.28h-5.28zM6 4h5.28v5.28h-5.28zM12 4h5.28v5.28h-5.28zM18 4h5.28v5.28h-5.28zM24 4h5.28v5.28h-5.28zM0 58h5.28v5.28h-5.28zM6 58h5.28v5.28h-5.28zM12 58h5.28v5.28h-5.28zM18 58h5.28v5.28h-5.28zM24 58h5.28v5.28h-5.28zM30 58h5.28v5.28h-5.28zM36 58h5.28v5.28h-5.28zM42 58h5.28v5.28h-5.28zM48 58h5.28v5.28h-5.28zM54 58h5.28v5.28h-5.28zM0 10h5.28v5.28h-5.28zM0 16h5.28v5.28h-5.28zM0 22h5.28v5.28h-5.28zM0 28h5.28v5.28h-5.28zM0 34h5.28v5.28h-5.28zM0 40h5.28v5.28h-5.28zM0 46h5.28v5.28h-5.28zM0 52h5.28v5.28h-5.28zM54 34h5.28v5.28h-5.28zM54 40h5.28v5.28h-5.28zM54 46h5.28v5.28h-5.28zM54 52h5.28v5.28h-5.28z" fill="#0F2A4A"></path><path d="M42 -2h5.28v5.28h-5.28zM42 4h5.28v5.28h-5.28zM36 10h5.28v5.28h-5.28zM42 10h5.28v5.28h-5.28zM48 10h5.28v5.28h-5.28zM24 16h5.28v5.28h-5.28zM30 16h5.28v5.28h-5.28zM36 16h5.28v5.28h-5.28zM48 16h5.28v5.28h-5.28zM54 16h5.28v5.28h-5.28zM60 16h5.28v5.28h-5.28zM36 22h5.28v5.28h-5.28zM42 22h5.28v5.28h-5.28zM48 22h5.28v5.28h-5.28zM42 28h5.28v5.28h-5.28zM42 34h5.28v5.28h-5.28z" fill="#0F2A4A"></path><path d="M42 16h5.28v5.28h-5.28z" fill="#FFCD00"></path></svg></div>
     <span class="prompt"><b>&gt;</b> supernova --pigments --dyes --qc</span>
     <h1 id="hl">Bright <span class="m">color</span>.<br>Proven <span class="m">data</span>.<span class="caret" aria-hidden="true"></span></h1>
     <p class="lede">Part of the United Star group. Organic, inorganic and fluorescent pigments plus solvent dyes, with every batch lab-checked before it ships.</p>
