@@ -328,7 +328,7 @@ p{margin:0;text-wrap:pretty}
   /* paint pad */
   var pad=document.getElementById('pad'),cells=[],C=16,R=12,col='#FFCD00',n=0,pc=document.getElementById('pcount'),idle=0;
   for(var k=0;k<C*R;k++){var i=document.createElement('i');pad.appendChild(i);cells.push(i)}
-  function paint(el,c){if(!el||el.parentNode!==pad)return;if(!el.dataset.p){el.dataset.p=1;n++;pc.textContent=String(n).padStart(3,'0')}el.classList.add('on');el.style.background=c||col;clearTimeout(el._t);el._t=setTimeout(function(){el.classList.remove('on');el.style.background=''},1600)}
+  function paint(el,c,dur){if(!el||el.parentNode!==pad)return;if(!el.dataset.p){el.dataset.p=1;n++;pc.textContent=String(n).padStart(3,'0')}el.classList.add('on');el.style.background=c||col;clearTimeout(el._t);el._t=setTimeout(function(){el.classList.remove('on');el.style.background=''},dur||1600)}
   var down=false;
   pad.addEventListener('pointerdown',function(e){down=true;idle=Date.now();paint(document.elementFromPoint(e.clientX,e.clientY))});
   addEventListener('pointerup',function(){down=false});
@@ -336,9 +336,11 @@ p{margin:0;text-wrap:pretty}
   document.querySelectorAll('.pad-tools button').forEach(function(b){b.addEventListener('click',function(){col=b.dataset.c;document.querySelectorAll('.pad-tools button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')})})});
   /* idle demo: draws the four-point pixel star, then lets it fade */
   var starPts=[[10,1],[10,2],[9,3],[10,3],[11,3],[7,4],[8,4],[9,4],[11,4],[12,4],[13,4],[9,5],[10,5],[11,5],[10,6],[10,7]];
-  var frame=[[3,2],[4,2],[5,2],[6,2],[7,2],[3,3],[3,4],[3,5],[3,6],[3,7],[3,8],[3,9],[3,10],[4,10],[5,10],[6,10],[7,10],[8,10],[9,10],[10,10],[11,10],[12,10],[12,9],[12,8],[12,7]];
-  var seq=frame.concat(starPts),si=0;
-  function demo(){if(Date.now()-idle<3000)return;var p=seq[si%seq.length];var isStar=si%seq.length>=frame.length;paint(cells[p[1]*C+p[0]],isStar?(p[0]===10&&p[1]===4?'#FFFFFF':'#FFCD00'):'#FFFFFF');si++}
+  /* frame = icon-standard-*.svg geometry (10x10 cells, open top-right), offset +3,+1 */
+  var frame=[[3,2],[4,2],[5,2],[6,2],[7,2],[3,3],[3,4],[3,5],[3,6],[3,7],[3,8],[3,9],[3,10],[3,11],[4,11],[5,11],[6,11],[7,11],[8,11],[9,11],[10,11],[11,11],[12,11],[12,10],[12,9],[12,8],[12,7]];
+  var seq=frame.concat(starPts,[[10,4]]),si=0;
+  /* builds the whole icon, holds it at true proportions, then fades and repeats */
+  function demo(){if(Date.now()-idle<3000)return;var L=seq.length,j=si%(L+30);si++;if(j>=L)return;var p=seq[j];var isStar=j>=frame.length;paint(cells[p[1]*C+p[0]],isStar?(p[0]===10&&p[1]===4?'#FFFFFF':'#FFCD00'):'#FFFFFF',(L-j)*90+2200)}
   if(!reduce)setInterval(demo,90);else seq.forEach(function(p,j){var c=cells[p[1]*C+p[0]];c.style.background=j>=frame.length?'#FFCD00':'#FFFFFF'});
   /* pixel blocks burst on hover / tap */
   var boom=document.getElementById('boom');
