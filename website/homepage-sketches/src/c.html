@@ -85,10 +85,10 @@
 .steps div{display:grid;grid-template-columns:72px 1fr;gap:16px;padding-block:16px;border-bottom:1px solid var(--hair);align-items:baseline}
 .steps .n{font:500 .72rem/1 var(--mono);letter-spacing:.14em;color:var(--grey)}
 .steps h3{font-size:1rem}.steps p{font-size:.86rem;color:var(--graphite);margin:2px 0 0}
-.endorse{position:relative;display:flex;align-items:center;justify-content:center;padding-block:48px}
+.endorse{position:relative;display:flex;align-items:center;justify-content:flex-end;padding-block:48px}
 .endorse::before{content:"";position:absolute;top:0;height:1px;background:var(--hair);left:max(20px,env(safe-area-inset-left,0px));right:max(20px,env(safe-area-inset-right,0px))}
 .endorse .logo-std{width:280px;line-height:0}
-.boom{--pb:16px;position:relative;cursor:pointer;padding:24px;margin:-24px;touch-action:manipulation}
+.boom{--pb:16px;position:relative;cursor:pointer;padding:24px;margin:-24px -24px -24px 0;touch-action:manipulation}
 .boom i{transition:transform .55s cubic-bezier(.15,.9,.3,1)}
 .boom.out i{transition:transform .32s cubic-bezier(.2,1.4,.4,1)}
 .boom .spark{position:absolute;width:6px;height:6px;pointer-events:none;transition:transform .7s cubic-bezier(.1,.8,.3,1),opacity .7s steps(4)}
@@ -118,6 +118,11 @@
   .split{grid-template-columns:1fr;gap:28px}
   .sec{padding-block:52px}
   .t-head .cta .btn{flex:1;justify-content:center}
+}
+/* touch devices (phones, tablets): no paint pad; headline tile takes the full row */
+@media (hover:none) and (pointer:coarse){
+  .t-pad{display:none}
+  .t-head{grid-column:span 12;grid-row:auto}
 }
 </style>
 <div class="ver">SKETCH C · PIXEL BENTO · DRAFT COPY</div>
@@ -226,7 +231,8 @@
   var seq=frame.concat(starPts,[[10,4]]),si=0;
   /* builds the whole icon, holds it at true proportions, then fades and repeats */
   function demo(){if(Date.now()-idle<3000)return;var L=seq.length,j=si%(L+30);si++;if(j>=L)return;var p=seq[j];var isStar=j>=frame.length;paint(cells[p[1]*C+p[0]],isStar?(p[0]===10&&p[1]===4?'#FFFFFF':'#FFCD00'):'#FFFFFF',(L-j)*90+2200)}
-  if(!reduce)setInterval(demo,90);else seq.forEach(function(p,j){var c=cells[p[1]*C+p[0]];c.style.background=j>=frame.length?'#FFCD00':'#FFFFFF'});
+  var touch=matchMedia('(hover: none) and (pointer: coarse)').matches;
+  if(!touch&&!reduce)setInterval(demo,90);else if(!touch)seq.forEach(function(p,j){var c=cells[p[1]*C+p[0]];c.style.background=j>=frame.length?'#FFCD00':'#FFFFFF'});
   /* pixel blocks burst on hover / tap */
   var boom=document.getElementById('boom');
   if(boom&&!reduce){var busy=false,blocks=[].slice.call(boom.querySelectorAll('i')),sc=['#FFCD00','#FFCD00','#00A3E0','#CE0058','#0F2A4A'];
