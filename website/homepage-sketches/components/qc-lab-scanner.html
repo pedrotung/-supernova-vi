@@ -1,0 +1,51 @@
+<!-- SUPERNOVA · QC lab scanner component (from homepage C, v2, 2026-10-16)
+     Reserved for the QC subpage, per Jason: pixel sample block + yellow scan bar moving up/down,
+     lot / product-grade name underneath that rotates, shade/strength/purity meters that fill then stamp PASS.
+     Uses SUPERNOVA tokens (--navy --yellow --cyan --magenta --line --hl --grey --graphite --mono). -->
+<style>
+.qc-scan{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
+.qc-scan>*{min-width:0}
+.sample{position:relative;width:120px;display:grid;grid-template-columns:repeat(6,1fr);gap:2px}
+.sample i{aspect-ratio:1;background:var(--c)}
+.sample .scan{position:absolute;left:-4px;right:-4px;height:3px;background:var(--yellow);outline:1px solid var(--navy);top:0;animation:scan 2.4s steps(24) infinite alternate}
+@keyframes scan{to{top:calc(100% - 3px)}}
+.sample-cap{font:500 .66rem/1.4 var(--mono);letter-spacing:.12em;color:var(--grey);margin-top:8px}
+.readout{display:grid;gap:10px}
+.rd{display:grid;grid-template-columns:84px 1fr auto;gap:12px;align-items:center;font:500 .74rem/1 var(--mono);letter-spacing:.1em;color:var(--graphite)}
+.rd .meter{display:grid;grid-template-columns:repeat(12,1fr);gap:2px;height:10px}
+.rd .meter i{background:var(--line)}
+.rd .meter i.f{background:var(--navy)}
+.rd .ok{font-weight:600;color:var(--navy);background:var(--hl);padding:4px 6px;letter-spacing:.12em}
+.rd .ok.wait{background:transparent;color:var(--grey)}
+@media (max-width:600px){.qc-scan{grid-template-columns:1fr;gap:18px}.sample{width:140px}.rd{grid-template-columns:72px 1fr auto}}
+@media (prefers-reduced-motion:reduce){.sample .scan{animation:none}}
+</style>
+<div class="qc-scan">
+  <div>
+    <div class="sample" style="--c:var(--magenta)" id="sample" aria-hidden="true"><span class="scan"></span></div>
+    <div class="sample-cap" id="lot">LOT · PR-122</div>
+  </div>
+  <div class="readout" id="readout">
+    <div class="rd"><span>SHADE</span><span class="meter"></span><span class="ok">PASS</span></div>
+    <div class="rd"><span>STRENGTH</span><span class="meter"></span><span class="ok">PASS</span></div>
+    <div class="rd"><span>PURITY</span><span class="meter"></span><span class="ok">PASS</span></div>
+  </div>
+</div>
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var smp=document.getElementById('sample'),lot=document.getElementById('lot'),scan=smp.querySelector('.scan');
+  for(var k=0;k<36;k++)smp.insertBefore(document.createElement('i'),scan);
+  var rds=[].slice.call(document.querySelectorAll('#readout .rd'));
+  /* grade names are placeholders: swap in real SUPERNOVA product grades */
+  var lots=[['PR-122','#CE0058'],['PB-15:3','#00A3E0'],['PY-83','#FFCD00'],['SB-35','#173A63']],li=0;
+  rds.forEach(function(r){var m=r.querySelector('.meter');for(var k=0;k<12;k++){var i=document.createElement('i');i.className='f';m.appendChild(i)}});
+  function run(){
+    li=(li+1)%lots.length;smp.style.setProperty('--c',lots[li][1]);lot.textContent='LOT · '+lots[li][0];
+    rds.forEach(function(r,j){var cells=r.querySelectorAll('.meter i'),ok=r.querySelector('.ok');ok.textContent='····';ok.classList.add('wait');cells.forEach(function(c){c.className=''});
+      cells.forEach(function(c,k){setTimeout(function(){c.className='f'},j*700+k*55)});
+      setTimeout(function(){ok.textContent='PASS';ok.classList.remove('wait')},j*700+12*55+150)});
+  }
+  if(!reduce){setTimeout(run,1200);setInterval(run,5200)}
+})();
+</script>
