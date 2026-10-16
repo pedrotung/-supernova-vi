@@ -21,7 +21,7 @@
 .t-cta::before{background:var(--navy)}
 .prompt{font:500 .8rem/1 var(--mono);color:var(--grey);letter-spacing:.06em}
 .prompt b{color:var(--magenta);font-weight:500}
-.t-head h1{font-size:clamp(2.3rem,5vw,4.1rem);line-height:1.02;letter-spacing:-.035em}
+.t-head h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.02;letter-spacing:-.035em}
 .t-head h1 .m{font-family:var(--mono);font-weight:600;letter-spacing:-.05em}
 .t-head h1 .caret{display:inline-block;width:.45em;height:.1em;background:var(--yellow);margin-left:.06em;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
@@ -85,9 +85,10 @@
 .steps div{display:grid;grid-template-columns:72px 1fr;gap:16px;padding-block:16px;border-bottom:1px solid var(--hair);align-items:baseline}
 .steps .n{font:500 .72rem/1 var(--mono);letter-spacing:.14em;color:var(--grey)}
 .steps h3{font-size:1rem}.steps p{font-size:.86rem;color:var(--graphite);margin:2px 0 0}
-.endorse{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-block:36px;border-top:1px solid var(--hair)}
+.endorse{position:relative;display:flex;align-items:center;justify-content:center;padding-block:48px}
+.endorse::before{content:"";position:absolute;top:0;height:1px;background:var(--hair);left:max(20px,env(safe-area-inset-left,0px));right:max(20px,env(safe-area-inset-right,0px))}
 .endorse .logo-std{width:280px;line-height:0}
-.boom{--pb:14px;position:relative;cursor:pointer;padding:24px;margin:-24px;touch-action:manipulation}
+.boom{--pb:16px;position:relative;cursor:pointer;padding:24px;margin:-24px;touch-action:manipulation}
 .boom i{transition:transform .55s cubic-bezier(.15,.9,.3,1)}
 .boom.out i{transition:transform .32s cubic-bezier(.2,1.4,.4,1)}
 .boom .spark{position:absolute;width:6px;height:6px;pointer-events:none;transition:transform .7s cubic-bezier(.1,.8,.3,1),opacity .7s steps(4)}
@@ -125,7 +126,7 @@
 <div class="wrap bento">
   <div class="tile t-head">
     <span class="prompt"><b>&gt;</b> supernova --pigments --dyes --hk</span>
-    <h1 id="hl">Pigments &amp; dyes,<br>sourced <span class="m">fast</span>,<br>checked <span class="m">twice</span>.<span class="caret" aria-hidden="true"></span></h1>
+    <h1 id="hl">Bright <span class="m">color</span>.<br>Proven <span class="m">data</span>.<span class="caret" aria-hidden="true"></span></h1>
     <p class="lede">The Hong Kong team of United Star. Organic, inorganic and fluorescent pigments plus solvent dyes, with every batch lab-checked before it ships.</p>
     <div class="cta"><a class="btn btn-solid" href="#contact">Request Samples <span class="px"></span></a><a class="btn btn-line" href="#products">See Products</a></div>
   </div>
@@ -193,7 +194,6 @@
     </div>
   </div>
   <div class="wrap endorse">
-    <div class="logo-std">{{LOGO_STD_POS}}</div>
     <span class="pxblocks boom" id="boom" aria-hidden="true"><i class="y"></i><i class="n"></i><i></i><i class="y"></i><i></i><i class="c"></i><i class="n"></i><i class="y"></i><i></i><i class="y"></i><i class="n"></i><i></i><i class="m"></i><i class="y"></i><i></i><i class="n"></i></span>
   </div>
 </section>
