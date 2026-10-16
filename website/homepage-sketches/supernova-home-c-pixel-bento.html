@@ -180,11 +180,17 @@ p{margin:0;text-wrap:pretty}
   .t-head{padding:24px}
   .t-prod{grid-column:span 6;padding:18px}
   .t-prod .bar{margin:-18px -18px 6px;width:calc(100% + 36px)}
-  .t-prod p{display:none}
+  .t-prod p{font-size:.8rem;line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .t-pad{order:2}
+  .t-stat,.t-qc,.t-cta{order:3}
+  .pad{min-height:0;aspect-ratio:16/10}
+  .chips{display:grid;grid-template-columns:1fr 1fr;overflow:visible;gap:10px}
+  .chip{padding:16px;align-content:start}
+  .chip .lab{font-size:.95rem}
+  .chip p{font-size:.8rem}
   .t-prod .g{width:48px;height:48px}
   .t-stat,.t-cta{grid-column:span 12}
   .svc{margin-left:0}
-  .pad{min-height:220px}
   .split{grid-template-columns:1fr;gap:28px}
   .sec{padding-block:52px}
   .t-head .cta .btn{flex:1;justify-content:center}
