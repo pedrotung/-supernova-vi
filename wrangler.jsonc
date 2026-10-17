@@ -1,0 +1,11 @@
+{
+  // Cloudflare Workers 静态网站配置：目前只发布 website/easter-eggs/ 里的彩蛋测试页
+  // （首页 index.html = C 版首页 + ΔE 彩蛋）。正式网站上线时把 directory 改成正式网站文件夹。
+  "name": "supernova-website",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./website/easter-eggs"
+  },
+  // PR 分支的预览部署需要这一项，可以留空
+  "previews": {}
+}
