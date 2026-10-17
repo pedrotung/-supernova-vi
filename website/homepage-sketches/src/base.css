@@ -4,8 +4,8 @@
   --white:#FFFFFF; --mist:#F4F5F6; --line:#D9DEE6; --grey:#6E7379; --graphite:#454A50; --ink:#161815;
   --steel:#355F8F; --hl:#FFF3C4; --on-navy:#B9C6D6;
   --hair:rgba(23,58,99,.12);
-  --mono:'IBM Plex Mono','Noto Sans SC',ui-monospace,monospace;
-  --sans:'IBM Plex Sans','Noto Sans SC',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
   color-scheme:light;
 }
 *,*::before,*::after{box-sizing:border-box}
