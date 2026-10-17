@@ -1,0 +1,259 @@
+<title>SUPERNOVA Homepage C</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+{{BASE_CSS}}
+/* Direction C · Pixel Bento — modular tiles, each framed like the logo (open top-right corner), playful interactions */
+.ver{background:var(--mist);color:var(--navy);font:600 .7rem/1 var(--mono);letter-spacing:.12em;text-align:center;padding:8px 16px;border-bottom:1px solid var(--line)}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;padding-block:28px 72px}
+.tile{position:relative;border:1.5px solid var(--navy);background:var(--white);padding:26px;min-width:0;display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit}
+.tile::after{content:"";position:absolute;top:-2px;right:-2px;width:34px;height:20px;background:var(--white)}
+.tile::before{content:"";position:absolute;top:-6px;right:14px;width:10px;height:10px;background:var(--pop,var(--navy));z-index:1;transition:transform .25s cubic-bezier(.2,1.8,.4,1)}
+.tile:hover::before{transform:translate(8px,-8px)}
+.t-head{grid-column:span 7;grid-row:span 2;justify-content:space-between;padding:32px}
+.t-pad{grid-column:span 5;grid-row:span 2;background:var(--navy);color:var(--white);padding:0;--pop:var(--yellow)}
+.t-prod{grid-column:span 3}
+.t-stat{grid-column:span 3;background:var(--mist)}
+.t-qc{grid-column:span 6;--pop:var(--yellow)}
+.t-cta{grid-column:span 3;background:var(--yellow);border-color:var(--yellow);justify-content:space-between}
+.t-cta::after{display:none}
+.t-cta::before{background:var(--navy)}
+.head-mark{display:none}
+.head-mark svg{display:block;width:100%;height:auto}
+.prompt{font:500 .8rem/1 var(--mono);color:var(--grey);letter-spacing:.06em}
+.prompt b{color:var(--magenta);font-weight:500}
+.t-head h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.02;letter-spacing:-.035em}
+.t-head h1 .m{font-family:var(--mono);font-weight:600;letter-spacing:-.05em}
+.t-head h1 .caret{display:inline-block;width:.45em;height:.1em;background:var(--yellow);margin-left:.06em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.t-head .lede{color:var(--graphite);max-width:48ch}
+.t-head .cta{display:flex;gap:12px;flex-wrap:wrap}
+.pad-top{display:flex;justify-content:space-between;gap:12px;padding:18px 20px 0;font:500 .7rem/1 var(--mono);letter-spacing:.14em;color:var(--on-navy)}
+.pad-top b{color:var(--yellow);font-weight:500}
+.pad{flex:1;display:grid;grid-template-columns:repeat(16,1fr);grid-auto-rows:auto;align-content:center;gap:2px;padding:16px 20px 20px;touch-action:none;cursor:crosshair}
+.pad i{aspect-ratio:1;background:rgba(255,255,255,.06);transition:background 1.2s ease}
+.pad i.on{transition:background .05s}
+.pad-tools{display:flex;gap:8px;padding:0 20px 20px}
+.pad-tools button{width:28px;height:28px;border:1.5px solid rgba(255,255,255,.4);background:var(--c);cursor:pointer;padding:0}
+.pad-tools button[aria-pressed="true"]{border-color:var(--white);outline:2px solid var(--white);outline-offset:2px}
+.t-prod .g{width:64px;height:64px;display:grid;grid-template-columns:repeat(8,1fr);gap:1px}
+.t-prod .g i.f{background:var(--c)}
+.t-prod:hover .g i.f{animation:pop .35s steps(2) both;animation-delay:calc(var(--k)*12ms)}
+@keyframes pop{50%{transform:scale(.4)}}
+.t-prod .code{font:500 .7rem/1 var(--mono);letter-spacing:.14em;color:var(--grey);margin-top:auto}
+.t-prod h3{font-size:1.15rem}
+.t-prod p{font-size:.86rem;color:var(--graphite)}
+.t-prod .bar{height:6px;background:var(--c);margin:-26px -26px 8px;width:calc(100% + 52px);transform-origin:left;transition:transform .35s}
+.t-prod:hover .bar{transform:scaleX(.35)}
+.t-stat .big{font:600 clamp(2.4rem,4.4vw,3.4rem)/1 var(--mono);color:var(--navy);letter-spacing:-.05em}
+.t-stat .big span{background:var(--hl);padding:0 6px}
+.t-stat .rows{display:grid;gap:6px;margin-top:4px}
+.t-stat .row{display:grid;grid-template-columns:1fr auto;gap:10px;font-size:.84rem;color:var(--graphite);align-items:center}
+.t-stat .row .b{height:6px;background:var(--line);position:relative;grid-column:1/-1}
+.t-stat .row .b i{position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--c);animation:grow 1.2s steps(12) both}
+@keyframes grow{from{width:0}}
+.qc-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.qc-top .label{color:var(--navy)}
+.qc-top .live{font:500 .7rem/1 var(--mono);letter-spacing:.14em;color:var(--grey);display:flex;align-items:center;gap:8px}
+.qc-top .live::before{content:"";width:8px;height:8px;background:var(--magenta);animation:blink 1s steps(1) infinite}
+.qc h3{font-size:clamp(1.3rem,2.2vw,1.6rem);line-height:1.2}
+.certs{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.cert{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1.5px solid var(--navy)}
+.cert b{font:600 .95rem/1 var(--mono);color:var(--navy)}
+.cert::before{content:"";width:10px;height:10px;background:var(--c);animation:chk 3.6s steps(1) infinite;animation-delay:calc(var(--k)*.4s)}
+@keyframes chk{0%,8%{transform:scale(.4)}9%,100%{transform:none}}
+.svc{margin-left:auto;display:flex;align-items:center;gap:10px;padding:9px 14px;background:var(--navy);color:var(--white);font:600 .72rem/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+.svc i{width:8px;height:8px;background:var(--yellow);transition:transform .2s}
+.svc:hover i{transform:translateX(4px)}
+.t-cta h3{font-size:1.5rem;line-height:1.15}
+.t-cta .go{display:flex;align-items:center;justify-content:space-between;font:600 .78rem/1 var(--mono);letter-spacing:.14em;color:var(--navy)}
+.t-cta .go i{width:40px;height:40px;background:var(--navy);display:grid;place-items:center;transition:transform .2s}
+.t-cta .go i::before{content:"";width:10px;height:10px;background:var(--yellow)}
+.t-cta:hover .go i{transform:translateX(6px)}
+/* below the fold */
+.sec{padding-block:72px;border-top:1px solid var(--hair)}
+.sec h2{font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.1;margin:10px 0 28px}
+.chips{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.chip{flex:1 0 220px;scroll-snap-align:start;border:1px solid var(--line);padding:22px;display:grid;gap:8px;background:var(--white);transition:border-color .2s,background .2s}
+.chip:hover{border-color:var(--navy);background:var(--mist)}
+.chip .lab{display:flex;align-items:center;gap:10px;font:600 1.05rem/1.2 var(--sans);color:var(--navy)}
+.chip .lab::before{content:"";width:12px;height:12px;background:var(--c)}
+.chip p{font-size:.86rem;color:var(--graphite)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.split>*{min-width:0}
+.split p{color:var(--graphite);margin-bottom:12px;max-width:52ch}
+.steps{display:grid;gap:0;border-top:1.5px solid var(--navy)}
+.steps div{display:grid;grid-template-columns:72px 1fr;gap:16px;padding-block:16px;border-bottom:1px solid var(--hair);align-items:baseline}
+.steps .n{font:500 .72rem/1 var(--mono);letter-spacing:.14em;color:var(--grey)}
+.steps h3{font-size:1rem}.steps p{font-size:.86rem;color:var(--graphite);margin:2px 0 0}
+.endorse{position:relative;display:flex;align-items:center;justify-content:flex-end;padding-block:48px}
+.endorse::before{content:"";position:absolute;top:0;height:1px;background:var(--hair);left:max(20px,env(safe-area-inset-left,0px));right:max(20px,env(safe-area-inset-right,0px))}
+.endorse .logo-std{width:280px;line-height:0}
+.boom{--pb:16px;position:relative;cursor:pointer;padding:24px;margin:-24px -24px -24px 0;touch-action:manipulation}
+.boom i{transition:transform .55s cubic-bezier(.15,.9,.3,1)}
+.boom.out i{transition:transform .32s cubic-bezier(.2,1.4,.4,1)}
+.boom .spark{position:absolute;width:6px;height:6px;pointer-events:none;transition:transform .7s cubic-bezier(.1,.8,.3,1),opacity .7s steps(4)}
+@media (max-width:1020px){
+  .t-head,.t-pad{grid-column:span 12;grid-row:auto}
+  .pad{width:100%;max-width:520px;margin-inline:auto}
+  .t-prod{grid-column:span 6}
+  .t-qc{grid-column:span 12}
+  .t-stat,.t-cta{grid-column:span 6}
+}
+@media (max-width:600px){
+  .bento{gap:12px;padding-block:16px 48px}
+  .tile{padding:22px}
+  .t-head{padding:24px}
+  .t-prod{grid-column:span 6;padding:18px}
+  .t-prod .bar{margin:-18px -18px 6px;width:calc(100% + 36px)}
+  .t-prod p{font-size:.8rem;line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .t-pad{order:2}
+  .t-stat,.t-qc,.t-cta{order:3}
+  .chips{display:grid;grid-template-columns:1fr 1fr;overflow:visible;gap:10px}
+  .chip{padding:16px;align-content:start}
+  .chip .lab{font-size:.95rem}
+  .chip p{font-size:.8rem}
+  .t-prod .g{width:48px;height:48px}
+  .t-stat,.t-cta{grid-column:span 12}
+  .svc{margin-left:0}
+  .split{grid-template-columns:1fr;gap:28px}
+  .sec{padding-block:52px}
+  .t-head .cta .btn{flex:1;justify-content:center}
+}
+/* touch devices (phones, tablets): no paint pad; headline tile takes the full row */
+@media (hover:none) and (pointer:coarse){
+  .t-pad{display:none}
+  .t-head{grid-column:span 12;grid-row:auto}
+}
+/* touch tablets: the official icon (fixed 1:1 viewBox, never stretched) fills the space the pad leaves */
+@media (hover:none) and (pointer:coarse) and (min-width:760px){
+  .t-head>*:not(.head-mark){max-width:60%}
+  .head-mark{display:block;position:absolute;right:clamp(32px,5vw,72px);top:50%;transform:translateY(-50%);width:min(28%,280px)}
+}
+</style>
+<div class="ver">SKETCH C · PIXEL BENTO · DRAFT COPY</div>
+{{HEADER}}
+<main>
+<div class="wrap bento">
+  <div class="tile t-head">
+    <div class="head-mark" aria-hidden="true">{{ICON_POS}}</div>
+    <span class="prompt"><b>&gt;</b> supernova --pigments --dyes --qc</span>
+    <h1 id="hl">Bright <span class="m">color</span>.<br>Proven <span class="m">data</span>.<span class="caret" aria-hidden="true"></span></h1>
+    <p class="lede">Part of the United Star group. Organic, inorganic and fluorescent pigments plus solvent dyes, with every batch lab-checked before it ships.</p>
+    <div class="cta"><a class="btn btn-solid" href="#contact">Request Samples <span class="px"></span></a><a class="btn btn-line" href="#products">See Products</a></div>
+  </div>
+  <div class="tile t-pad">
+    <div class="pad-top"><span>TAP &amp; PAINT</span><span><b id="pcount">000</b> / 192 PX</span></div>
+    <div class="pad" id="pad" aria-label="Pixel paint pad" role="img"></div>
+    <div class="pad-tools" role="group" aria-label="Paint color">
+      <button type="button" style="--c:var(--yellow)" aria-label="Yellow" aria-pressed="true" data-c="#FFCD00"></button>
+      <button type="button" style="--c:var(--cyan)" aria-label="Cyan" aria-pressed="false" data-c="#00A3E0"></button>
+      <button type="button" style="--c:var(--magenta)" aria-label="Magenta" aria-pressed="false" data-c="#CE0058"></button>
+      <button type="button" style="--c:var(--white)" aria-label="White" aria-pressed="false" data-c="#FFFFFF"></button>
+    </div>
+  </div>
+  <a class="tile t-prod" id="products" href="#products" style="--c:var(--cyan);--pop:var(--cyan)"><span class="bar"></span><span class="g" data-g="organic"></span><h3>Organic Pigments</h3><p>Strong tinting strength for coatings, inks and plastics.</p><span class="code">120+ ITEMS</span></a>
+  <a class="tile t-prod" href="#products" style="--c:var(--magenta);--pop:var(--magenta)"><span class="bar"></span><span class="g" data-g="inorganic"></span><h3>Inorganic Pigments</h3><p>Heat and weather stable chrome, molybdate and ultramarine.</p><span class="code">20+ ITEMS</span></a>
+  <a class="tile t-prod" href="#products" style="--c:var(--yellow);--pop:var(--yellow)"><span class="bar"></span><span class="g" data-g="fluo"></span><h3>Fluorescent Pigments</h3><p>HX, HB, HK and HZ daylight series, formaldehyde-free grades.</p><span class="code">4 SERIES</span></a>
+  <a class="tile t-prod" href="#products" style="--c:var(--solvent);--pop:var(--solvent)"><span class="bar"></span><span class="g" data-g="solvent"></span><h3>Solvent Dyes</h3><p>Solvent, metal complex and basic dyes for wood, leather, plastic.</p><span class="code">80+ ITEMS</span></a>
+  <div class="tile t-stat">
+    <span class="label">Range</span>
+    <div class="big"><span>220+</span></div>
+    <div class="rows">
+      <div class="row"><span>Organic</span><span class="data">120+</span><span class="b"><i style="--w:55%;--c:var(--cyan)"></i></span></div>
+      <div class="row"><span>Solvent</span><span class="data">80+</span><span class="b"><i style="--w:36%;--c:var(--solvent)"></i></span></div>
+      <div class="row"><span>Inorganic</span><span class="data">20+</span><span class="b"><i style="--w:9%;--c:var(--magenta)"></i></span></div>
+    </div>
+  </div>
+  <div class="tile t-qc qc" id="qc">
+    <div class="qc-top"><span class="label">In-house QC lab</span><span class="live">EVERY BATCH TESTED</span></div>
+    <h3>Tested in our own lab.<br>Certified by third parties.</h3>
+    <div class="certs">
+      <span class="cert" style="--c:var(--cyan);--k:0"><b>SGS</b></span>
+      <span class="cert" style="--c:var(--magenta);--k:1"><b>ASTM</b></span>
+      <span class="cert" style="--c:var(--yellow);--k:2"><b>EN71</b></span>
+      <a class="svc" href="#contact">QC service <i></i></a>
+    </div>
+  </div>
+  <a class="tile t-cta" href="#contact"><span class="label" style="color:var(--navy)">Samples</span><h3>Send a shade.<br>Get samples.</h3><span class="go">GET A QUOTE <i></i></span></a>
+</div>
+<section class="sec" id="applications">
+  <div class="wrap">
+    <span class="label">Applications</span><h2>Where the color goes</h2>
+    <div class="chips">
+      <div class="chip" style="--c:var(--cyan)"><span class="lab">Coating</span><p>Industrial, anti-corrosion, road marking and wood paint.</p></div>
+      <div class="chip" style="--c:var(--magenta)"><span class="lab">Inks</span><p>Water-based and solvent inks, high dispersion and gloss.</p></div>
+      <div class="chip" style="--c:var(--yellow)"><span class="lab">Plastic</span><p>PVC, PP, PE, PC, PA and PU colouration.</p></div>
+      <div class="chip" style="--c:var(--navy)"><span class="lab">Dispersion</span><p>Pre-dispersed pastes, no in-house milling needed.</p></div>
+    </div>
+  </div>
+</section>
+<section class="sec" id="about">
+  <div class="wrap split">
+    <div>
+      <span class="label">Company</span><h2>Small team, big backbone</h2>
+      <p>SUPERNOVA INDUSTRY CO., LIMITED is a wholly owned subsidiary of United Star. We carry the same four product lines and run the same quality checks, with our own team for our own customers.</p>
+      <p>United Star has been vetting pigment suppliers since 1997. We build on that.</p>
+    </div>
+    <div id="service">
+      <span class="label">How an order runs</span>
+      <div class="steps" style="margin-top:16px">
+        <div><span class="n">STEP 1</span><span><h3>Send your spec</h3><p>Shade, application, quantity, target price.</p></span></div>
+        <div><span class="n">STEP 2</span><span><h3>Sourcing</h3><p>Vetted factories matched and compared.</p></span></div>
+        <div><span class="n">STEP 3</span><span><h3>Lab check</h3><p>Shade, strength and purity tested.</p></span></div>
+        <div><span class="n">STEP 4</span><span><h3>Ship &amp; docs</h3><p>Export paperwork and logistics handled for you.</p></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap endorse">
+    <span class="pxblocks boom" id="boom" aria-hidden="true"><i class="y"></i><i class="n"></i><i></i><i class="y"></i><i></i><i class="c"></i><i class="n"></i><i class="y"></i><i></i><i class="y"></i><i class="n"></i><i></i><i class="m"></i><i class="y"></i><i></i><i class="n"></i></span>
+  </div>
+</section>
+</main>
+{{FOOTER}}
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* 8x8 pixel glyphs per product line */
+  var G={
+    organic:  '..ffff..'+'.f....f.'+'f..ff..f'+'f.f..f.f'+'f.f..f.f'+'f..ff..f'+'.f....f.'+'..ffff..',
+    inorganic:'...ff...'+'..ffff..'+'.ffffff.'+'ffffffff'+'ff.ff.ff'+'.f.ff.f.'+'..ffff..'+'...ff...',
+    fluo:     'f..f..f.'+'.f.f.f..'+'..fff...'+'fffffff.'+'..fff...'+'.f.f.f..'+'f..f..f.'+'........',
+    solvent:  '...f....'+'...f....'+'..fff...'+'.fffff..'+'fffffff.'+'fff.fff.'+'.fffff..'+'..fff...'
+  };
+  document.querySelectorAll('.g').forEach(function(g){var s=G[g.dataset.g],k=0;s.split('').forEach(function(ch){var i=document.createElement('i');if(ch==='f'){i.className='f';i.style.setProperty('--k',k++)}g.appendChild(i)})});
+  /* paint pad */
+  var pad=document.getElementById('pad'),cells=[],C=16,R=12,col='#FFCD00',n=0,pc=document.getElementById('pcount'),idle=0;
+  for(var k=0;k<C*R;k++){var i=document.createElement('i');pad.appendChild(i);cells.push(i)}
+  function paint(el,c,dur){if(!el||el.parentNode!==pad)return;if(!el.dataset.p){el.dataset.p=1;n++;pc.textContent=String(n).padStart(3,'0')}el.classList.add('on');el.style.background=c||col;clearTimeout(el._t);el._t=setTimeout(function(){el.classList.remove('on');el.style.background=''},dur||1600)}
+  var down=false;
+  pad.addEventListener('pointerdown',function(e){down=true;idle=Date.now();paint(document.elementFromPoint(e.clientX,e.clientY))});
+  addEventListener('pointerup',function(){down=false});
+  pad.addEventListener('pointermove',function(e){idle=Date.now();if(down||e.pointerType==='mouse')paint(document.elementFromPoint(e.clientX,e.clientY))});
+  document.querySelectorAll('.pad-tools button').forEach(function(b){b.addEventListener('click',function(){col=b.dataset.c;document.querySelectorAll('.pad-tools button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')})})});
+  /* idle demo: draws the four-point pixel star, then lets it fade */
+  var starPts=[[10,1],[10,2],[9,3],[10,3],[11,3],[7,4],[8,4],[9,4],[11,4],[12,4],[13,4],[9,5],[10,5],[11,5],[10,6],[10,7]];
+  /* frame = icon-standard-*.svg geometry (10x10 cells, open top-right), offset +3,+1 */
+  var frame=[[3,2],[4,2],[5,2],[6,2],[7,2],[3,3],[3,4],[3,5],[3,6],[3,7],[3,8],[3,9],[3,10],[3,11],[4,11],[5,11],[6,11],[7,11],[8,11],[9,11],[10,11],[11,11],[12,11],[12,10],[12,9],[12,8],[12,7]];
+  var seq=frame.concat(starPts,[[10,4]]),si=0;
+  /* builds the whole icon, holds it at true proportions, then fades and repeats */
+  function demo(){if(Date.now()-idle<3000)return;var L=seq.length,j=si%(L+30);si++;if(j>=L)return;var p=seq[j];var isStar=j>=frame.length;paint(cells[p[1]*C+p[0]],isStar?(p[0]===10&&p[1]===4?'#FFFFFF':'#FFCD00'):'#FFFFFF',(L-j)*90+2200)}
+  var touch=matchMedia('(hover: none) and (pointer: coarse)').matches;
+  if(!touch&&!reduce)setInterval(demo,90);else if(!touch)seq.forEach(function(p,j){var c=cells[p[1]*C+p[0]];c.style.background=j>=frame.length?'#FFCD00':'#FFFFFF'});
+  /* pixel blocks burst on hover / tap */
+  var boom=document.getElementById('boom');
+  if(boom&&!reduce){var busy=false,blocks=[].slice.call(boom.querySelectorAll('i')),sc=['#FFCD00','#FFCD00','#00A3E0','#CE0058','#0F2A4A'];
+    function explode(){if(busy)return;busy=true;boom.classList.add('out');
+      var br=boom.getBoundingClientRect(),cxp=br.width/2,cyp=br.height/2;
+      blocks.forEach(function(b){if(!b.className)return;var r=b.getBoundingClientRect(),dx=r.left-br.left+r.width/2-cxp,dy=r.top-br.top+r.height/2-cyp,d=Math.hypot(dx,dy)||1,f=28+Math.random()*46;
+        b.style.transform='translate('+Math.round((dx/d*f+(Math.random()-.5)*20)/4)*4+'px,'+Math.round((dy/d*f+(Math.random()-.5)*36-10)/4)*4+'px)'});
+      for(var k=0;k<18;k++){var p=document.createElement('span');p.className='spark';p.style.background=sc[Math.random()*sc.length|0];p.style.left=cxp-3+'px';p.style.top=cyp-3+'px';boom.appendChild(p);
+        (function(p){var a=Math.random()*6.283,v=50+Math.random()*80;requestAnimationFrame(function(){requestAnimationFrame(function(){p.style.transform='translate('+Math.round(Math.cos(a)*v/3)*3+'px,'+Math.round(Math.sin(a)*v/3)*3+'px)';p.style.opacity='0'})});setTimeout(function(){p.remove()},800)})(p)}
+      setTimeout(function(){boom.classList.remove('out');blocks.forEach(function(b){b.style.transform=''})},380);
+      setTimeout(function(){busy=false},950)}
+    boom.addEventListener('pointerenter',explode);boom.addEventListener('pointerdown',explode)}
+  /* headline scramble on load (text is complete before and after) */
+  if(!reduce){var ms=document.querySelectorAll('#hl .m'),chars='▖▗▘▙▚▛▜▝▞▟■□';ms.forEach(function(m){var t=m.textContent,f=0,iv=setInterval(function(){f++;m.textContent=t.split('').map(function(ch,j){return j<f/2?ch:chars[Math.random()*chars.length|0]}).join('');if(f>t.length*2){clearInterval(iv);m.textContent=t}},45)})}
+})();
+</script>

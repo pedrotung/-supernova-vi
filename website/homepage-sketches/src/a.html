@@ -1,0 +1,238 @@
+<title>SUPERNOVA Homepage A</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+{{BASE_CSS}}
+/* Direction A · Pixel Field — closest to United Star: white page, split hero, interactive pixel field */
+.ver{background:var(--navy);color:var(--white);font:500 .7rem/1 var(--mono);letter-spacing:.12em;text-align:center;padding:8px 16px}
+.ver b{color:var(--yellow);font-weight:600}
+.hero{padding-block:64px 56px;border-bottom:1px solid var(--hair)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero-grid>*{min-width:0}
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.4rem);line-height:1.1;margin-bottom:24px}
+.hero h1 .hl{background:var(--yellow);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hero h1 .caret{display:inline-block;width:.42em;height:.12em;background:var(--magenta);margin-left:.08em;vertical-align:baseline;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lede{font-size:1.06rem;color:var(--graphite);max-width:48ch;margin-bottom:32px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:40px;padding-top:20px;border-top:1.5px solid var(--navy)}
+.hero-meta div{display:grid;gap:2px}
+.hero-meta b{font:600 1.5rem/1.1 var(--mono);color:var(--navy)}
+/* pixel field */
+.field-box{position:relative}
+.field{display:grid;grid-template-columns:repeat(15,1fr);gap:3px;aspect-ratio:15/13;max-width:100%;touch-action:pan-y}
+.field i{display:block;background:var(--mist);transition:background .6s ease}
+.field i.on{transition:background .08s}
+.field i.logo{background:var(--navy);animation:land .5s cubic-bezier(.2,1.6,.4,1) both;animation-delay:calc(var(--d)*40ms)}
+.field i.logo.core{background:var(--yellow)}
+@keyframes land{from{transform:translateY(-40px) scale(.4);opacity:0}to{transform:none;opacity:1}}
+.field-cap{display:flex;justify-content:space-between;gap:12px;margin-top:14px}
+/* ticker */
+.ticker{background:var(--navy);color:var(--white);overflow:hidden;border-block:1px solid var(--navy)}
+.ticker-track{display:flex;width:max-content;animation:tick 38s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker span{font:500 .8rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:16px 28px;display:flex;align-items:center;gap:12px;white-space:nowrap}
+.ticker span::before{content:"";width:8px;height:8px;background:var(--c,var(--yellow))}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* sections */
+.sec{padding-block:88px;border-bottom:1px solid var(--hair)}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:40px}
+.sec-head>*{min-width:0}
+.sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.1;margin-top:10px}
+.sec-head p{color:var(--graphite);justify-self:end;max-width:44ch}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--white);padding:0 0 26px;display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;position:relative;overflow:hidden;min-width:0}
+.card .sw{display:grid;grid-template-columns:repeat(8,1fr);height:10px}
+.card .sw i{background:var(--c);transform-origin:top;transition:transform .3s}
+.card:hover .sw i{transform:scaleY(3.2)}
+.card:hover .sw i:nth-child(odd){transform:scaleY(1.6)}
+.card .code{padding:18px 24px 0;font:500 .72rem/1 var(--mono);letter-spacing:.12em;color:var(--grey)}
+.card h3{padding:0 24px;font-size:1.25rem}
+.card p{padding:0 24px;color:var(--graphite);font-size:.9rem;flex-grow:1}
+.card .go{padding:0 24px;font-weight:600;font-size:.88rem;color:var(--navy);display:flex;align-items:center;gap:8px}
+.card .go::after{content:"";width:8px;height:8px;background:var(--c);transition:transform .2s}
+.card:hover .go::after{transform:translateX(6px)}
+.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair)}
+.app{background:var(--mist);padding:28px 24px;display:grid;gap:10px;align-content:start;min-width:0}
+.app .ic{width:36px;height:36px;display:grid;grid-template-columns:repeat(6,1fr);gap:1px}
+.app .ic i{background:transparent}
+.app .ic i.f{background:var(--navy)}
+.app .ic i.a{background:var(--yellow)}
+.app:hover .ic i.f{animation:jig .4s steps(2) 1}
+@keyframes jig{50%{transform:translateY(-2px)}}
+.app h3{font-size:1.05rem}
+.app p{font-size:.88rem;color:var(--graphite)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.about>*{min-width:0}
+.about h2{font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.1;margin:10px 0 22px}
+.about p{color:var(--graphite);margin-bottom:14px;max-width:52ch}
+.family{display:flex;align-items:center;gap:16px;margin-top:28px;padding:18px 20px;border:1.5px solid var(--navy)}
+.family .mini{width:44px;flex-shrink:0;line-height:0}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair);border:1px solid var(--hair)}
+.stat{background:var(--white);padding:24px}
+.stat b{display:block;font:600 2.4rem/1 var(--mono);color:var(--navy);letter-spacing:-.03em;margin-bottom:8px}
+.stat.key b{background:var(--hl);display:inline-block;padding:2px 6px}
+.stat span{display:block;font-size:.86rem;color:var(--graphite)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+.step{border-top:1.5px solid var(--navy);padding-top:18px;display:grid;gap:8px;min-width:0}
+.step .n{font:500 .74rem/1 var(--mono);letter-spacing:.14em;color:var(--grey)}
+.step h3{font-size:1.05rem}
+.step p{font-size:.88rem;color:var(--graphite)}
+.cta-band{background:var(--navy);color:var(--white);padding-block:64px}
+.cta-in{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.cta-in h2{color:var(--white);font-size:clamp(1.6rem,3vw,2.2rem)}
+.cta-in p{color:var(--on-navy);margin-top:8px}
+.cta-band .pxblocks{--pb:12px}
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .field-box{order:-1;max-width:520px}
+  .cards,.apps{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .about{grid-template-columns:1fr;gap:40px}
+}
+@media (max-width:600px){
+  .hero{padding-block:28px 40px}
+  .field-box{max-width:300px}
+  .sec{padding-block:60px}
+  .sec-head{grid-template-columns:1fr}.sec-head p{justify-self:start}
+  .cards,.apps,.steps{grid-template-columns:1fr}
+  .stat b{font-size:2rem}
+  .cta .btn{flex:1;justify-content:center}
+}
+</style>
+<div class="ver">SKETCH <b>A</b> · PIXEL FIELD · DRAFT COPY</div>
+{{HEADER}}
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="cmyk" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="label">Pigments · Dyes · Hong Kong</span></div>
+      <h1>Bright color.<br><span class="hl">Proven data.</span><span class="caret" aria-hidden="true"></span></h1>
+      <p class="lede">SUPERNOVA supplies organic and inorganic pigments, solvent dyes and fluorescent pigments to manufacturers worldwide, backed by the supplier network and QC lab of our parent company, United Star.</p>
+      <div class="cta"><a class="btn btn-solid" href="#contact">Request Samples <span class="px"></span></a><a class="btn btn-line" href="#products">Browse Products</a></div>
+      <div class="hero-meta">
+        <div><b>4</b><span class="label">Product lines</span></div>
+        <div><b>220+</b><span class="label">Grades</span></div>
+        <div><b>1997</b><span class="label">United Star est.</span></div>
+      </div>
+    </div>
+    <div class="field-box">
+      <div class="field" id="field" aria-hidden="true"></div>
+      <div class="field-cap"><span class="label">Move or tap over the field</span><span class="label" id="fcount">000 px lit</span></div>
+    </div>
+  </div>
+</section>
+<div class="ticker" aria-label="Product lines">
+  <div class="ticker-track">
+    <span style="--c:var(--cyan)">Organic Pigment · 120+ items</span><span style="--c:var(--magenta)">Inorganic Pigment · 20+ items</span><span style="--c:var(--yellow)">Fluorescent · HX HB HK HZ</span><span style="--c:var(--white)">Solvent Dyes · 80+ items</span><span>Lab-checked before shipment</span><span style="--c:var(--cyan)">Ships from Hong Kong</span>
+    <span style="--c:var(--cyan)" aria-hidden="true">Organic Pigment · 120+ items</span><span style="--c:var(--magenta)" aria-hidden="true">Inorganic Pigment · 20+ items</span><span style="--c:var(--yellow)" aria-hidden="true">Fluorescent · HX HB HK HZ</span><span style="--c:var(--white)" aria-hidden="true">Solvent Dyes · 80+ items</span><span aria-hidden="true">Lab-checked before shipment</span><span style="--c:var(--cyan)" aria-hidden="true">Ships from Hong Kong</span>
+  </div>
+</div>
+<section class="sec" id="products">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="label">Product lines</span><h2>Four families of color</h2></div><p>Supplied as powder, water-based dispersion or masterbatch. Same range as United Star.</p></div>
+    <div class="cards">
+      <a class="card" href="#products" style="--c:var(--cyan)"><span class="sw"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="code">ORGANIC · 120+ ITEMS</span><h3>Organic Pigments</h3><p>Blue, green, orange, red, violet and yellow with strong tinting strength for coatings, inks and plastics.</p><span class="go">View range</span></a>
+      <a class="card" href="#products" style="--c:var(--magenta)"><span class="sw"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="code">INORGANIC · 20+ ITEMS</span><h3>Inorganic Pigments</h3><p>Chrome yellow, molybdate red, ultramarine and carbon black, built for heat and weather stability.</p><span class="go">View range</span></a>
+      <a class="card" href="#products" style="--c:var(--yellow)"><span class="sw"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="code">FLUORESCENT · HX HB HK HZ</span><h3>Fluorescent Pigments</h3><p>Daylight fluorescent series with formaldehyde-free grades for injection, extrusion and blow moulding.</p><span class="go">View range</span></a>
+      <a class="card" href="#products" style="--c:var(--solvent)"><span class="sw"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="code">SOLVENT · 80+ ITEMS</span><h3>Solvent Dyes</h3><p>Solvent, metal complex and basic dyes for wood stain, leather finishing and plastic colouration.</p><span class="go">View range</span></a>
+    </div>
+  </div>
+</section>
+<section class="sec" id="applications">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="label">Applications</span><h2>Where our color ends up</h2></div><p>One pigment family, formulated differently for each end use.</p></div>
+    <div class="apps" id="apps"></div>
+  </div>
+</section>
+<section class="sec" id="about">
+  <div class="wrap about">
+    <div>
+      <span class="label">Company</span>
+      <h2>Young name, 1997 roots</h2>
+      <p>SUPERNOVA INDUSTRY CO., LIMITED is the Hong Kong subsidiary of United Star. We carry the same product range and the same quality checks, and we serve our own customers directly.</p>
+      <p>You get fast quotes and flexible orders, with a parent company that has been vetting pigment suppliers since 1997.</p>
+      <div class="family"><span class="mini">{{ICON_POS}}</span><div><span class="label" style="color:var(--navy)">A United Star company</span><p style="margin:4px 0 0;font-size:.88rem">Shared supplier network, shared QC lab.</p></div></div>
+    </div>
+    <div class="stats" id="stats">
+      <div class="stat"><b data-to="120">120</b><span>Organic pigment items</span></div>
+      <div class="stat"><b data-to="80">80</b><span>Solvent dye items</span></div>
+      <div class="stat"><b data-to="20">20</b><span>Inorganic pigment items</span></div>
+      <div class="stat key"><b data-to="1997" data-from="1960">1997</b><span>United Star founded</span></div>
+    </div>
+  </div>
+</section>
+<section class="sec" id="service">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="label">How an order runs</span><h2>From brief to shipment</h2></div><p>Four steps, one contact person.</p></div>
+    <div class="steps">
+      <div class="step"><span class="n">STEP 1</span><h3>Send your spec</h3><p>Shade, application, quantity and target price.</p></div>
+      <div class="step"><span class="n">STEP 2</span><h3>Sourcing</h3><p>We match vetted factories and compare quotes.</p></div>
+      <div class="step"><span class="n">STEP 3</span><h3>Lab check</h3><p>Shade, strength and purity tested before shipment.</p></div>
+      <div class="step"><span class="n">STEP 4</span><h3>Ship &amp; docs</h3><p>Export paperwork and logistics from Hong Kong.</p></div>
+    </div>
+  </div>
+</section>
+<section class="cta-band">
+  <div class="wrap cta-in">
+    <div><h2>Need samples or a quote?</h2><p>Tell us the shade, quantity and application.</p></div>
+    <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+      <span class="pxblocks" aria-hidden="true"><i class="y"></i><i class="s"></i><i></i><i class="y"></i><i></i><i class="c"></i><i class="s"></i><i class="y"></i><i></i><i class="y"></i><i class="s"></i><i></i><i class="m"></i><i class="y"></i><i></i><i class="w"></i></span>
+      <a class="btn btn-yellow" href="#contact">Contact Us <span class="px"></span></a>
+    </div>
+  </div>
+</section>
+</main>
+{{FOOTER}}
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* Logo icon geometry from icon-standard-*.svg, in 6u cells (col,row), offset into a 15x13 field */
+  var frame=[[0,1],[1,1],[2,1],[3,1],[4,1],[0,10],[1,10],[2,10],[3,10],[4,10],[5,10],[6,10],[7,10],[8,10],[9,10],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9],[9,6],[9,7],[9,8],[9,9]];
+  var star=[[7,0],[7,1],[6,2],[7,2],[8,2],[4,3],[5,3],[6,3],[8,3],[9,3],[10,3],[6,4],[7,4],[8,4],[7,5],[7,6]];
+  var core=[7,3], C=15, R=13, OX=2, OY=1;
+  var f=document.getElementById('field'), cells=[], logo={};
+  frame.concat(star).forEach(function(p,i){logo[(p[0]+OX)+','+(p[1]+OY)]=i});
+  for(var r=0;r<R;r++)for(var c=0;c<C;c++){
+    var i=document.createElement('i'),k=c+','+r;
+    if(k in logo){i.className='logo';i.style.setProperty('--d',logo[k]);}
+    if(c===core[0]+OX&&r===core[1]+OY){i.className='logo core';i.style.setProperty('--d',44);}
+    f.appendChild(i);cells.push(i);
+  }
+  var pal=['#00A3E0','#CE0058','#FFCD00','#FFCD00','#355F8F'], lit=0, cnt=document.getElementById('fcount');
+  function light(el){
+    if(!el||el.classList.contains('logo'))return;
+    el.classList.add('on');el.style.background=pal[Math.random()*pal.length|0];lit++;
+    cnt.textContent=String(lit).padStart(3,'0')+' px lit';
+    clearTimeout(el._t);el._t=setTimeout(function(){el.classList.remove('on');el.style.background='';},700);
+  }
+  f.addEventListener('pointermove',function(e){light(document.elementFromPoint(e.clientX,e.clientY))});
+  f.addEventListener('pointerdown',function(e){light(document.elementFromPoint(e.clientX,e.clientY))});
+  if(!reduce)setInterval(function(){light(cells[Math.random()*cells.length|0])},260);
+
+  /* pixel icons for applications (6x6) */
+  var apps=[
+    ['Coating','Industrial, anti-corrosion, road marking and wood paint.','.ffff.'+'f....f'+'ffffff'+'faaaaf'+'faaaaf'+'ffffff'],
+    ['Inks','Water-based and solvent inks with high dispersion and gloss.','..f....fff...fff..fffff.ffaff..fff..'],
+    ['Plastic','Pigments for PVC, PP, PE, PC, PA and PU colouration.','ff..ffff..ff..aa....aa..ff..ffff..ff'],
+    ['Dispersion','Pre-dispersed pastes for customers who skip in-house milling.','ff..ff..ff........aa..aa..aa........']
+  ];
+  var A=document.getElementById('apps');
+  apps.forEach(function(a){
+    var d=document.createElement('div');d.className='app';
+    var ic='<span class="ic" aria-hidden="true">'+a[2].split('').map(function(ch){return '<i class="'+(ch==='f'?'f':ch==='a'?'a':'')+'"></i>'}).join('')+'</span>';
+    d.innerHTML=ic+'<h3>'+a[0]+'</h3><p>'+a[1]+'</p>';A.appendChild(d);
+  });
+
+  /* count-up when stats scroll in (final values are already in the markup) */
+  if(!reduce&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.disconnect();
+      document.querySelectorAll('#stats b').forEach(function(b){var to=+b.dataset.to,fr=+(b.dataset.from||0),t0=performance.now();
+        (function step(t){var p=Math.min(1,(t-t0)/900);b.textContent=Math.round(fr+(to-fr)*(1-Math.pow(1-p,3)))+(b.dataset.from?'':'+');if(p<1)requestAnimationFrame(step)})(t0)});
+    })},{threshold:.4});io.observe(document.getElementById('stats'));
+  }
+  document.querySelectorAll('#stats b').forEach(function(b){if(!b.dataset.from)b.textContent=b.dataset.to+'+'});
+})();
+</script>
