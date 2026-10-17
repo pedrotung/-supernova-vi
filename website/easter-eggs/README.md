@@ -35,7 +35,7 @@
 ## 3. ΔE 色差挑战（已实现）
 和 QC 实验室主题呼应，最有"讲数据"的品牌味。
 - 代码：[`delta-e-egg.js`](delta-e-egg.js)（独立脚本，自带样式，无依赖；`window.SupernovaEgg.open()` 可由其他模块直接调用）。
-- 预览：https://claude.ai/artifact/Vo897AGH4jbxkn1GdBKXsF （C 版首页 + 彩蛋）；本地预览 [`delta-e-egg-preview.html`](delta-e-egg-preview.html)（C 版首页副本 + 彩蛋）
+- 预览：https://claude.ai/artifact/Vo897AGH4jbxkn1GdBKXsF （C 版首页 + 彩蛋）；本地预览 [`index.html`](index.html)（C 版首页副本 + 彩蛋）
 - 玩法：用青 / 品红 / 黄三支滑块调色去匹配目标色块，点 Measure 后扫描条扫过两块样品，按 CIEDE2000 算出 ΔE 并盖 PASS / FAIL 章。
 - 判定：ΔE ≤ 1.0 实验室级 PASS；≤ 2.0 商业级 PASS；≤ 3.5 接近但 FAIL；更高 FAIL。
 - 目标色由同一套混色模型随机生成，保证一定调得出来；牌号（PR-122、PB-15:3、PY-83 等）是占位，需换成真实产品牌号。
